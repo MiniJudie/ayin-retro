@@ -1,0 +1,5250 @@
+[
+  {
+    "address": "25ywM8iGxKpZWuGA5z6DXKGcZCXtPBmnbQyJEsjvjjWTy",
+    "tokenPairId": "a7ca90b2af892713ed95f23b37a6db00c0650c16bad1ccc601443e9020f89f00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "reserve0": "552601024740807885811832",
+    "reserve1": "348356056541538989534747",
+    "poolType": "V2",
+    "TVL": 544455.7118925516,
+    "liquidity": 544455.7118925516,
+    "mobulaPrice": 1.8083603156569006,
+    "pair": 1.8083603156569006,
+    "ticker": "AYIN",
+    "name": "Ayin"
+  },
+  {
+    "address": "tx1Uck1idLzfyjAbyqrFkNWrxz1MfKCV5FELnJdtbVUs",
+    "tokenPairId": "03db8420584363266d520e23fb17a766ca45556b4a5f586f5f30f594ff2a1400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "1516c410b54470d667e1315ce2faa81870c76c5c7a491e3e86eeec8366495502",
+      "name": "Montycoin",
+      "symbol": "TAIL",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TAIL.png"
+    },
+    "reserve0": "37294539775712631906",
+    "reserve1": "36278",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "27wpryy3RtEYLnkuF2xgPKQfcYAxWY4mFxaM8XHpXndfD",
+    "tokenPairId": "c4f771c70502651b6b0d84e8a55dc859aaa7254c353de93b9c20231d0924a500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "b2d71c116408ae47b931482a440f675dc9ea64453db24ee931dacd578cae9002",
+      "name": "ALPHpaca",
+      "symbol": "PACA",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PACA.png"
+    },
+    "reserve0": "1112010625682424493895",
+    "reserve1": "2781860",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0003421595778017625,
+    "pair": 0.0003421595778017625,
+    "ticker": "PACA",
+    "name": "ALPHpaca"
+  },
+  {
+    "address": "222n8qN9jiujjjbzzMZ9up2dy4gpTD7V3CXfLUWpqsHX5",
+    "tokenPairId": "6d1624d321239bbedf568fe0f157452b97b87b7bd5254bfef5801753d9407000",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "b2d71c116408ae47b931482a440f675dc9ea64453db24ee931dacd578cae9002",
+      "name": "ALPHpaca",
+      "symbol": "PACA",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PACA.png"
+    },
+    "reserve0": "2921490806590298849",
+    "reserve1": "15302",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "w5ZU1rV34YJryDCXCXJBXA77Wbx5L4DCmunDG3Pn5GWb",
+    "tokenPairId": "2382205d49cf1bbc0c5a054b7e7fe38b4f52975fd896890aea278776adc2a400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "b522184377a33e376e997a950288fa76c1f48e97bc29cd10779adc7cfb673200",
+      "name": "Berry",
+      "symbol": "BERRY",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BERRY.png"
+    },
+    "reserve0": "3602923291146791383",
+    "reserve1": "1394",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0024527169746938584,
+    "pair": 0.0024527169746938584,
+    "ticker": "BERRY",
+    "name": "Berry"
+  },
+  {
+    "address": "22PUN5TpytzGRXZnzkHViRaWioiGNzdufJH1CxFyQF5Sf",
+    "tokenPairId": "72633f106d27b1f1e1e40aaae262a4315c6af729685eb8564610865b29101c00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "66da610efb5129c062e88e5fd65fe810f31efd1597021b2edf887a4360fa0800",
+      "name": "Alf",
+      "symbol": "ALF",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALF.png"
+    },
+    "reserve0": "1796239309683422437088",
+    "reserve1": "16894887979383",
+    "poolType": "V2",
+    "TVL": 1784.497806109693,
+    "liquidity": 1784.497806109693,
+    "mobulaPrice": 0.06500091986964643,
+    "pair": 0.06500091986964643,
+    "ticker": "ALF",
+    "name": "Alf"
+  },
+  {
+    "address": "28kZejt34N8nDWT76bDTo3w7j2PZrPrnPMcsMGh6KsTDH",
+    "tokenPairId": "d0f08b11eae7024f194f131def58bda9ba5ff23a2f86184d2a963803290c1700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "7da28936499f56ffed497fe7eba856aa85eeb943bab2478e36f7020d89cd2400",
+      "name": "Vlad",
+      "symbol": "VLAD",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/VLAD.png"
+    },
+    "reserve0": "6056020245257422851",
+    "reserve1": "6045886730278",
+    "poolType": "V2",
+    "TVL": 7.566408771430814,
+    "liquidity": 7.566408771430814,
+    "mobulaPrice": 0.0009505665041572462,
+    "pair": 0.0009505665041572462,
+    "ticker": "VLAD",
+    "name": "Vlad"
+  },
+  {
+    "address": "21AZGmopRPA6Se4Fg9Lj4ZmeMRhh2ELCKdivFzPtPYnoh",
+    "tokenPairId": "60388f1b3ca8117a21272acb6b864ce061aaf769ba891efa6501f23a3044a700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "2bc4b844502d6c27b57dfe064f95353647a606b3d92150786ecacb56c885c800",
+      "name": "Jekyll",
+      "symbol": "JKL",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JKL.png"
+    },
+    "reserve0": "19444761955891183398",
+    "reserve1": "72407274395384465801937",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0002548447116193425,
+    "pair": 0.0002548447116193425,
+    "ticker": "JKL",
+    "name": "Jekyll"
+  },
+  {
+    "address": "21T5h3hcruVUp1EQg3qsumDCenSnLGVVVDjiJm3TEc5G3",
+    "tokenPairId": "64743f0c56b6aab7c1bf66c224a45c590499b0bb018623b149fe4a53e5160500",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "2bc4b844502d6c27b57dfe064f95353647a606b3d92150786ecacb56c885c800",
+      "name": "Jekyll",
+      "symbol": "JKL",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JKL.png"
+    },
+    "reserve0": "825018138072096362",
+    "reserve1": "6312643124859545638820",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "2A5R8KZQ3rhKYrW7bAS4JTjY9FCFLJg6HjQpqSFZBqACX",
+    "tokenPairId": "e4a0a07be5f42446732a63fcda5aa455a608909cc09a8ab66147d0379bbed700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "reserve0": "334977043968931038122811",
+    "reserve1": "155628109053",
+    "poolType": "V2",
+    "TVL": 328586.9735732605,
+    "liquidity": 328586.9735732605,
+    "mobulaPrice": 0.887370276849862,
+    "pair": 0.887370276849862,
+    "ticker": "ALPH",
+    "name": "Alephium"
+  },
+  {
+    "address": "21NEBCk8nj5JBKpS7eN8kX6xGJoLHNqTS3WBFnZ7q8L9m",
+    "tokenPairId": "6335efcfa33cd52ef1622d66d17601462eb0f9e10cd8c8002231da5b2f1b0e00",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "reserve0": "36684572636664060265542",
+    "reserve1": "26909056985",
+    "poolType": "V2",
+    "TVL": 55798.94594986581,
+    "liquidity": 55798.94594986581
+  },
+  {
+    "address": "yXMFxdoKcE86W9NAyajc8Z3T3k2f5FGiHqHtuA69DYT1",
+    "tokenPairId": "47d4cc3fc9a433bb5152f1822c910bca5d494f9f6c5162b4e0b4ca6eca7f2900",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "19246e8c2899bc258a1156e08466e3cdd3323da756d8a543c7fc911847b96f00",
+      "name": "Wrapped Ether (AlphBridge)",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WETH.png"
+    },
+    "reserve0": "10898913542430474125929",
+    "reserve1": "2337614342975382544",
+    "poolType": "V2",
+    "TVL": 12550.873175855912,
+    "liquidity": 12550.873175855912,
+    "mobulaPrice": 2182.595052746609,
+    "pair": 2182.595052746609,
+    "ticker": "WETH",
+    "name": "Ethereum"
+  },
+  {
+    "address": "26eDqhe5Xiyy7PsiwwG9A7qAKktAKToQkZevBGTfT1Ufy",
+    "tokenPairId": "b19948be49bda98b2c1f99caa5acab67accdbd8f105cba5bb39f3c0d6fdfa500",
+    "token0": {
+      "id": "19246e8c2899bc258a1156e08466e3cdd3323da756d8a543c7fc911847b96f00",
+      "name": "Wrapped Ether (AlphBridge)",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WETH.png"
+    },
+    "token1": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "reserve0": "127202601",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 201.80822153811613,
+    "liquidity": 201.80822153811613
+  },
+  {
+    "address": "283R192Z8n6PhXSpSciyvCsLEiiEVFkSE6MbRBA4KSaAj",
+    "tokenPairId": "c665f38ff7c2ae900ce9fe5258486d6e4507dc59a97f181fe3ce8657ad460300",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "722954d9067c5a5ad532746a024f2a9d7a18ed9b90e27d0a3a504962160b5600",
+      "name": "USD Coin (Ethereum via AlphBridge)",
+      "symbol": "USDCeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
+    },
+    "reserve0": "143631273087640315315634",
+    "reserve1": "66539238588",
+    "poolType": "V2",
+    "TVL": 163581.98451777507,
+    "liquidity": 163581.98451777507,
+    "mobulaPrice": 1.1775551489755731,
+    "pair": 1.1775551489755731,
+    "ticker": "USDC",
+    "name": "USDC"
+  },
+  {
+    "address": "22xTACB7PqjgK95RARfPDb5bCfvn5mJtKoqRRxNr8gNAT",
+    "tokenPairId": "7ad60cf7e494c41465d748921a12941d3e892b5eb0104fc2d7e13a65399bae00",
+    "token0": {
+      "id": "66da610efb5129c062e88e5fd65fe810f31efd1597021b2edf887a4360fa0800",
+      "name": "Alf",
+      "symbol": "ALF",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALF.png"
+    },
+    "token1": {
+      "id": "b2d71c116408ae47b931482a440f675dc9ea64453db24ee931dacd578cae9002",
+      "name": "ALPHpaca",
+      "symbol": "PACA",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PACA.png"
+    },
+    "reserve0": "3273553",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "21nj6sBTtQfTwCErYAHF3CNBaDRAc1E1Q3aUCcbsuG8mu",
+    "tokenPairId": "697c94ffde46634c7fe1a72098b47e2572cc8bde595efe3df0a91652bf9a0000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "df3008f43a7cc1d4a37eef71bf581fc4b9c3be4e2d58ed6d1df483bbb83bd200",
+      "name": "NUMBER GO UP",
+      "symbol": "NGU",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NGU.png"
+    },
+    "reserve0": "2451669832220824250202",
+    "reserve1": "32408373888481",
+    "poolType": "V2",
+    "TVL": 2422.0900684249464,
+    "liquidity": 2422.0900684249464
+  },
+  {
+    "address": "y5wtLo8GjRpH3QAG3W55dPHyw7dMQxUvkPzoGxX41cbq",
+    "tokenPairId": "4152d9999354bf26cda7758c21ae4582b78dd41519390a80c5d2795f6f87b100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "7dd0c01b2c835ed659c85c1ae64c7c10b916c06f13cf5b91f1369a5a3feda000",
+      "name": "CYXE",
+      "symbol": "CYXE",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CYXE.png"
+    },
+    "reserve0": "99469178911147015",
+    "reserve1": "25216282",
+    "poolType": "V2",
+    "TVL": 0.12427707261872471,
+    "liquidity": 0.12427707261872471
+  },
+  {
+    "address": "2AKnjWYf941YJBsYQN4RqBf7cYcw6gC2o4TvSgsmARrnT",
+    "tokenPairId": "e84f3062cac5d7ced84b9f504ecbd367d58bf09c526cfffae441ee3cfc3b9c00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "130f008dcc71ad5138bdae00d918acef3b78ddbe95e627215a36a47b6b151100",
+      "name": "BUBBLE",
+      "symbol": "BUBBLE",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BUBBLE.png"
+    },
+    "reserve0": "147256961790447349628",
+    "reserve1": "413684200023598",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "yA3bgPj5buMjmv1S54ysCcv4tT3x3HDJfM7enHDYAL9m",
+    "tokenPairId": "425fa1f41e4821e3769f8221fe270a4f85336d4bb9caaa0035cd5bb656080d00",
+    "token0": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "token1": {
+      "id": "df3008f43a7cc1d4a37eef71bf581fc4b9c3be4e2d58ed6d1df483bbb83bd200",
+      "name": "NUMBER GO UP",
+      "symbol": "NGU",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NGU.png"
+    },
+    "reserve0": "16662448",
+    "reserve1": "397313892119",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0007667601561588571,
+    "pair": 0.0007667601561588571,
+    "ticker": "NGU",
+    "name": "NUMBER GO UP"
+  },
+  {
+    "address": "22po9GJCMoLcYgXL3Znv2cSXcMnKmfm36MrBdqB4rSoKV",
+    "tokenPairId": "78e00009adc8c6ed0adbd20862a0aa430404e76970031476dfb62e16b8f68200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "5bf2f559ae714dab83ff36bed4d9e634dfda3ca9ed755d60f00be89e2a20bd00",
+      "name": "Staked Ayin",
+      "symbol": "XAYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/XAYIN.png"
+    },
+    "reserve0": "40699903836975637709",
+    "reserve1": "13582052826002367551",
+    "poolType": "V2",
+    "TVL": 40.208853400166646,
+    "liquidity": 40.208853400166646,
+    "mobulaPrice": 3.823505144714723,
+    "pair": 3.823505144714723,
+    "ticker": "XAYIN",
+    "name": "Staked Ayin"
+  },
+  {
+    "address": "29F3ZoA2h9VkX7Fv24YpAtfp8hdyLPdGTg1i8cDWuWCY7",
+    "tokenPairId": "d83c5e85731420a9603a590079277d1be8435f23f0745751882a6704f9504c00",
+    "token0": {
+      "id": "19246e8c2899bc258a1156e08466e3cdd3323da756d8a543c7fc911847b96f00",
+      "name": "Wrapped Ether (AlphBridge)",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WETH.png"
+    },
+    "token1": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "reserve0": "22",
+    "reserve1": "48509",
+    "poolType": "V2",
+    "TVL": 1.0538988846763196e-13,
+    "liquidity": 1.0538988846763196e-13
+  },
+  {
+    "address": "22eWT6jY9d3eQUMmbhaZRjHjoyM1xgvY1nm36iaU9Gzeb",
+    "tokenPairId": "763d515aa466141df9132bd655f3dbc7e57e9ca165852d7dbc9342e68e345c00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "93cc555d3dfc0a81aa6f3127c0108e529a32c87c595c1b89f1855e698c2bc700",
+      "name": "SUCC",
+      "symbol": "SUCC",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SUCC.png"
+    },
+    "reserve0": "17190906492426974033",
+    "reserve1": "69989286184287798",
+    "poolType": "V2",
+    "TVL": 16.983495630326125,
+    "liquidity": 16.983495630326125,
+    "mobulaPrice": 0.0000034689300072406747,
+    "pair": 0.0000034689300072406747,
+    "ticker": "SUCC",
+    "name": "SUCC"
+  },
+  {
+    "address": "26UMD2mtbxJbXkRjJkXy8QsMcYbJMwpxrPFU3GXqy9zKh",
+    "tokenPairId": "af11ce8b3f89e89b933bb6e17dac18fd5fbcd9f848743b198ceeea7dc289dd00",
+    "token0": {
+      "id": "1516c410b54470d667e1315ce2faa81870c76c5c7a491e3e86eeec8366495502",
+      "name": "Montycoin",
+      "symbol": "TAIL",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TAIL.png"
+    },
+    "token1": {
+      "id": "93cc555d3dfc0a81aa6f3127c0108e529a32c87c595c1b89f1855e698c2bc700",
+      "name": "SUCC",
+      "symbol": "SUCC",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SUCC.png"
+    },
+    "reserve0": "1",
+    "reserve1": "952517027",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "xXzsxzdwx2vWvA5opvfnzjBCZRgHk1rP4sq4RjExZGNK",
+    "tokenPairId": "3923a61dcb8e1892ae19a634a20348b250037cd7fece3f4c3868d437d507fc00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "4e0eb20afb173cd534ae29acd013861115482c1e3d8ed626294bbe1008a3f900",
+      "name": "KleoMixer",
+      "symbol": "MIX",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MIX.png"
+    },
+    "reserve0": "4971717399906478011891",
+    "reserve1": "296981653304282",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0016336451981270041,
+    "pair": 0.0016336451981270041,
+    "ticker": "MIX",
+    "name": "KleoMixer"
+  },
+  {
+    "address": "23Cf8hsUjPGFMwrntbQfR8DqYzmdJQvQXm9JAYE6xRUKH",
+    "tokenPairId": "7e79b8aef20b40ea3cd9859e400d9cce986f6ce705965c4688a7b32bb60d6f00",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "5bf2f559ae714dab83ff36bed4d9e634dfda3ca9ed755d60f00be89e2a20bd00",
+      "name": "Staked Ayin",
+      "symbol": "XAYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/XAYIN.png"
+    },
+    "reserve0": "1939917506830008235",
+    "reserve1": "927835024499032378",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "ums8yPzKisJi5nv2W4QKkdzC4bFzLh83oXywwKJqJkmu",
+    "tokenPairId": "101df764059d79a2ce07f40eb8831a96908af5abf8660c8a9ba0f4c57e619400",
+    "token0": {
+      "id": "93cc555d3dfc0a81aa6f3127c0108e529a32c87c595c1b89f1855e698c2bc700",
+      "name": "SUCC",
+      "symbol": "SUCC",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SUCC.png"
+    },
+    "token1": {
+      "id": "c1aeea313e36454f35beaf40130c9219faa40ba645aff93e16429146039f8202",
+      "name": "Wang",
+      "symbol": "WANG",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
+    },
+    "reserve0": "6025224825070742556",
+    "reserve1": "1012310632",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "23hGMBJv83y1r9fEvzYYzi6y2Eofg4wd7VWJ1fPRNwDYB",
+    "tokenPairId": "85cdcd46c396c3cf59b1c5e2b28d440506ae9c69a60aeeae7a98c35303042900",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "3f0139e1b0aa2cf0a9400ccdb73d00750bcfc8c7be0e858052d794491c8a5900",
+      "name": "Shin Inu",
+      "symbol": "SHIN",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SHIN.png"
+    },
+    "reserve0": "32891133958695888124",
+    "reserve1": "131012936641",
+    "poolType": "V2",
+    "TVL": 32.78801418983149,
+    "liquidity": 32.78801418983149,
+    "mobulaPrice": 0.00002741193508074168,
+    "pair": 0.00002741193508074168,
+    "ticker": "SHIN",
+    "name": "Shin Inu"
+  },
+  {
+    "address": "w1qtoyjpzpwruPWN54rzR6cmHGMUDtik7URJ5E8284fq",
+    "tokenPairId": "228e60b92f7425587ea37d6f71e252a5ddaa0222d5e5019bb09f928b01ba3400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "06bc1a82909c566eb6b00a3dc2dfca0d0564f43f3e8357114a0a59b182792a00",
+      "name": "LOVE",
+      "symbol": "LOVE",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LOVE.png"
+    },
+    "reserve0": "61507020496740783",
+    "reserve1": "4779095343532609652385",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "uReV154fNdL1fNbvw8qghk67ERGbuPkLToNMCwYjiaXh",
+    "tokenPairId": "0af00a9fdf54fb83bb17169907c2982b08637a9dc35dde74ec9fa87f7adebf00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "c1aeea313e36454f35beaf40130c9219faa40ba645aff93e16429146039f8202",
+      "name": "Wang",
+      "symbol": "WANG",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
+    },
+    "reserve0": "9162329737388436560595",
+    "reserve1": "6325790976",
+    "poolType": "V2",
+    "TVL": 9094.44511734079,
+    "liquidity": 9094.44511734079,
+    "mobulaPrice": 0.19216171925084952,
+    "pair": 0.19216171925084952,
+    "ticker": "WANG",
+    "name": "Wang"
+  },
+  {
+    "address": "yqxv1UFaeGVwV8M5Yd6A9A2je3w4Xw4uKU2SxDQW9aVM",
+    "tokenPairId": "4c99919ca8b915e4add82f75293c60d4e6cb805e50bd346f91eda99c20525100",
+    "token0": {
+      "id": "06bc1a82909c566eb6b00a3dc2dfca0d0564f43f3e8357114a0a59b182792a00",
+      "name": "LOVE",
+      "symbol": "LOVE",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LOVE.png"
+    },
+    "token1": {
+      "id": "df3008f43a7cc1d4a37eef71bf581fc4b9c3be4e2d58ed6d1df483bbb83bd200",
+      "name": "NUMBER GO UP",
+      "symbol": "NGU",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NGU.png"
+    },
+    "reserve0": "2144950138270668513112107",
+    "reserve1": "292088579354",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "294zYe5yDGjzM1cdHNQFKnbjcKxNyJ6NE5pqTvQdDp8UF",
+    "tokenPairId": "d5a9257fa13b1ae3305de9c30763d98a0974b3867e6d80b9b8d26eb1a9315900",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "c1aeea313e36454f35beaf40130c9219faa40ba645aff93e16429146039f8202",
+      "name": "Wang",
+      "symbol": "WANG",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
+    },
+    "reserve0": "68449898553530306089",
+    "reserve1": "78620550",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "2535B6wgHEF299ePEWdnVdbBsxrxvXzpjj8YzHuMp6QGf",
+    "tokenPairId": "99bc78872f8c0c4b615a6332b6fd4e5c1a6806cfcb7a8fb52116f63e4e506300",
+    "token0": {
+      "id": "06bc1a82909c566eb6b00a3dc2dfca0d0564f43f3e8357114a0a59b182792a00",
+      "name": "LOVE",
+      "symbol": "LOVE",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LOVE.png"
+    },
+    "token1": {
+      "id": "c1aeea313e36454f35beaf40130c9219faa40ba645aff93e16429146039f8202",
+      "name": "Wang",
+      "symbol": "WANG",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
+    },
+    "reserve0": "13221539297137345432",
+    "reserve1": "426",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "2AzrpxxrPTirUseiTUkkQUzMbwMPBpUcSG7B21rnb5uaP",
+    "tokenPairId": "f251784031eaea09e4521ecab9dcda5ba8f94d62ce1ab71a952086f2c5d19c00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "e565d11d6d5194dc2a65c7d67c324d341bc55f1e7131a9ef5577e8e75e199000",
+      "name": "Squirrel",
+      "symbol": "SQRL",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SQRL.png"
+    },
+    "reserve0": "1245863257128323655421",
+    "reserve1": "434821451085",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "22KehFCmTi8V4sNKYTxfDaqENfwvPEZZp25y2gpirB4qu",
+    "tokenPairId": "71689a9402a2c98304cc438e8f8a45fabc92135f5fa6c160f584e917d9092700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "1db28d7bf24e0e6dcd600d3ece2c3ac70947af8c115aa4d32670608c0e49f900",
+      "name": "Nature's Ultimate Treasure Stash",
+      "symbol": "NUTS",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NUTS.png"
+    },
+    "reserve0": "236987343770877964527",
+    "reserve1": "368747172016448301",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.000006299744787396255,
+    "pair": 0.000006299744787396255,
+    "ticker": "NUTS",
+    "name": "Nature's Ultimate Treasure Stash"
+  },
+  {
+    "address": "24N2ytovpgBtVwiqLjd89c2fvFe2qD7HzhnLY6RrivAbH",
+    "tokenPairId": "8fbc56de4c8bddcb21c0fbd97e5223a9bb19f6eed306b7a555d968e09638df00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "b49031320af0ff6fd2764ec7176687257efe1d491eff1baf315db21f10412c00",
+      "name": "Mira",
+      "symbol": "MIRA",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MIRA.png"
+    },
+    "reserve0": "126519442112398815",
+    "reserve1": "12228032293792",
+    "poolType": "V2",
+    "TVL": 0.3159645405456124,
+    "liquidity": 0.3159645405456124
+  },
+  {
+    "address": "uiR9RG8q55eGLPEhVx1Y3ieqJEFJTayD352wbBjYRZmR",
+    "tokenPairId": "0f3bd59779e3d61afe1855c1681818704af235ece32e1b249775713c22005700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "147a7acd3fe8804c37ac6012a8c72660551473d641abb9bd6ff5b1f2545bb200",
+      "name": "COFFEE",
+      "symbol": "COFFEE",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/COFFEE.png"
+    },
+    "reserve0": "821033475642097723532",
+    "reserve1": "863289586391",
+    "poolType": "V2",
+    "TVL": 1025.80153965001,
+    "liquidity": 1025.80153965001,
+    "mobulaPrice": 0.000009025256579495945,
+    "pair": 0.000009025256579495945,
+    "ticker": "COFFEE",
+    "name": "COFFEE"
+  },
+  {
+    "address": "21x5YGpNXLuMcb8UU4GnqsSNbWPiENhTSvfGKuFgEEQET",
+    "tokenPairId": "6be1eb2fea29f053b9d2421e2e1ede0957b20ae39bcab3afc03c639c8036fc00",
+    "token0": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "token1": {
+      "id": "e565d11d6d5194dc2a65c7d67c324d341bc55f1e7131a9ef5577e8e75e199000",
+      "name": "Squirrel",
+      "symbol": "SQRL",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SQRL.png"
+    },
+    "reserve0": "667739",
+    "reserve1": "160414796",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.00004174572435584411,
+    "pair": 0.00004174572435584411,
+    "ticker": "SQRL",
+    "name": "Squirrel"
+  },
+  {
+    "address": "21cwY33edMiaXDcgfUUmLVNSUnpLHinpDKUVpKgmyWc4X",
+    "tokenPairId": "66fad544117b01fe656bcf4c269df1f2e289722bb6710c653373b17bcbedea00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "e94c25c10044a9db9c4c2e191a5f520ad0e58a29ce480b8edc5dd0fb7b65aa00",
+      "name": "Canna",
+      "symbol": "LEAF",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LEAF.png"
+    },
+    "reserve0": "1",
+    "reserve1": "323806606",
+    "poolType": "V2",
+    "TVL": 1.24940281983968e-18,
+    "liquidity": 1.24940281983968e-18,
+    "mobulaPrice": 2.930687352763177e-21,
+    "pair": 2.930687352763177e-21,
+    "ticker": "LEAF",
+    "name": "Canna"
+  },
+  {
+    "address": "vDrTMDnkZNNMnR2wgr68RUQSJBqBejtQiB1We2QPtyWP",
+    "tokenPairId": "16c64b8191e964f74d66454180b3b93719d7ea02deb164010c9c905c50c69500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "b3e354fb095fffe3d5fe0431ef6209604323f9d3db069e008d9e8aeacaa30800",
+      "name": "Noodle",
+      "symbol": "Noodz",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/Noodz.png"
+    },
+    "reserve0": "5188363795353539430796",
+    "reserve1": "32192077885",
+    "poolType": "V2",
+    "TVL": 5125.765409758068,
+    "liquidity": 5125.765409758068,
+    "mobulaPrice": 1.7442411980656072e-7,
+    "pair": 1.7442411980656072e-7,
+    "ticker": "Noodz",
+    "name": "Noodle"
+  },
+  {
+    "address": "ut18R4d8fcyJ9CaSDSnJocfdLW7potZ5uxwFbfLn5Dsm",
+    "tokenPairId": "11b07c6987195124bedb2c33fbbef6723471225538117ff728770b6cc3143100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "55cdaa051f83c408f128ca8888b58bb685ed9974997cc902821b69e352915f00",
+      "name": "DRAGON",
+      "symbol": "DRAGON",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DRAGON.png"
+    },
+    "reserve0": "320928877804286425421",
+    "reserve1": "82939042735494",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.00038230795741432986,
+    "pair": 0.00038230795741432986,
+    "ticker": "DRAGON",
+    "name": "DRAGON"
+  },
+  {
+    "address": "xqCJD9o3iVeiBDvUQuJ2hSqZne7HPL15Sztrbh5fC4Xq",
+    "tokenPairId": "3d8b6eda8a1b6bd59356dc13b6934b6775405256b5aadbd8d896a46f7ff99f00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "f79530d767a13ff4baef0870f18adfd17c7b418edd214f89b53ce24df62acf00",
+      "name": "Grape",
+      "symbol": "GRAPE",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GRAPE.png"
+    },
+    "reserve0": "166679",
+    "reserve1": "7",
+    "poolType": "V2",
+    "TVL": 572.5900987658875,
+    "liquidity": 572.5900987658875,
+    "mobulaPrice": 0.000025790095574334517,
+    "pair": 0.000025790095574334517,
+    "ticker": "GRAPE",
+    "name": "Grape"
+  },
+  {
+    "address": "zTkwKEJ1ZhG2492Ln741nnL9faLth9w35ekLt8NduD7u",
+    "tokenPairId": "55c4ef5881d032a71c6205aa52f25e6deff314c031f8567c29ccadb58a3ed400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "18ee870cfaa976627c4c6fa183ccbea869edd9db89ad4ae0ec7dbd52ac753100",
+      "name": "TROLL",
+      "symbol": "TROLL",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TROLL.png"
+    },
+    "reserve0": "38313287637660548",
+    "reserve1": "329805425956",
+    "poolType": "V2",
+    "TVL": 0.047868729611821835,
+    "liquidity": 0.047868729611821835,
+    "mobulaPrice": 0.00011024193270397413,
+    "pair": 0.00011024193270397413,
+    "ticker": "TROLL",
+    "name": "TROLL"
+  },
+  {
+    "address": "26YFTrNbtBXJzb9u76X4cvd6WoJQFNm8rVsJCRSnP2ukB",
+    "tokenPairId": "b011a27f3f23dc64b56d0c001c4f981205f8448b48600326fd94c6bd9d5b1100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "0beffdfa642818060ca796ff770bb42d437c93f4f5c381ef89b226ec6ae5f500",
+      "name": "Gold Castle Club",
+      "symbol": "GOLD",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GOLD.png"
+    },
+    "reserve0": "429229708109539948750",
+    "reserve1": "78136635285",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 5.4116507120569485e-9,
+    "pair": 5.4116507120569485e-9,
+    "ticker": "GOLD",
+    "name": "Gold Castle Club"
+  },
+  {
+    "address": "uqMwHD5wjqZDTa53eddzsji6Tm9fc2pox97qQ3Qrvsrf",
+    "tokenPairId": "11034570a3e1fe082014723a28997ba007ec808b653729bdf2949531838bba00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "d5a72d57b7fbbac2189da5f26914109dcdd39dd743ae4c4008e79a505c8a9800",
+      "name": "PUTAN",
+      "symbol": "PUTAN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PUTAN.png"
+    },
+    "reserve0": "1",
+    "reserve1": "43699443",
+    "poolType": "V2",
+    "TVL": 351.6828240291905,
+    "liquidity": 351.6828240291905,
+    "mobulaPrice": 5.075877438729018e-10,
+    "pair": 5.075877438729018e-10,
+    "ticker": "PUTAN",
+    "name": "PUTAN"
+  },
+  {
+    "address": "25XfszioT9trb3GEgUh8bTQ59dKtjRusbtjs8yDy81Mfd",
+    "tokenPairId": "a10ff97ea319a843c8572f2b32ea7450cc537e9e8938c3bdf896023921971800",
+    "token0": {
+      "id": "19246e8c2899bc258a1156e08466e3cdd3323da756d8a543c7fc911847b96f00",
+      "name": "Wrapped Ether (AlphBridge)",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WETH.png"
+    },
+    "token1": {
+      "id": "df3008f43a7cc1d4a37eef71bf581fc4b9c3be4e2d58ed6d1df483bbb83bd200",
+      "name": "NUMBER GO UP",
+      "symbol": "NGU",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NGU.png"
+    },
+    "reserve0": "563189",
+    "reserve1": "2",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "22uoaFyjK45MSVamT1EQ45YpASP91QKoEFLEHq7xsm399",
+    "tokenPairId": "7a2864369c4d134da1a9882d5b292e577db3391ba994abfac97f00ca8a607900",
+    "token0": {
+      "id": "19246e8c2899bc258a1156e08466e3cdd3323da756d8a543c7fc911847b96f00",
+      "name": "Wrapped Ether (AlphBridge)",
+      "symbol": "WETH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WETH.png"
+    },
+    "token1": {
+      "id": "e565d11d6d5194dc2a65c7d67c324d341bc55f1e7131a9ef5577e8e75e199000",
+      "name": "Squirrel",
+      "symbol": "SQRL",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SQRL.png"
+    },
+    "reserve0": "675851346652614",
+    "reserve1": "1223109440",
+    "poolType": "V2",
+    "TVL": 4.148988050385469,
+    "liquidity": 4.148988050385469
+  },
+  {
+    "address": "29b2FziampVdbCb7oox9aNBKZek9GuSa2eAUFiefKqkNK",
+    "tokenPairId": "dd5a81f74a9307d53154ba3260b696c96dd5fb2c57a18155622d05dfb2434000",
+    "token0": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "token1": {
+      "id": "c1aeea313e36454f35beaf40130c9219faa40ba645aff93e16429146039f8202",
+      "name": "Wang",
+      "symbol": "WANG",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
+    },
+    "reserve0": "5898898",
+    "reserve1": "9288554",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "x8X6ezf6yYbXR2u3x1Mkued2fuCkfnEmvSXfPY8DoeD5",
+    "tokenPairId": "331fe0c2619b19d136ddaf8babce3827a0e21dd9424b0c826f61123b35285700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "6adb8983488fb726f94518c185f4a24de236c72cc2ff32889be4612e9c9d3100",
+      "name": "ALPEPE",
+      "symbol": "ALPEPE",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPEPE.png"
+    },
+    "reserve0": "33690991038363093824",
+    "reserve1": "128658214446751",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 2.820601722138789e-13,
+    "pair": 2.820601722138789e-13,
+    "ticker": "ALPEPE",
+    "name": "ALPEPE"
+  },
+  {
+    "address": "2ARBQ8p8sPu1jcUkDgpBrWZT3PXxUUdwQEacxjciCULgw",
+    "tokenPairId": "e9b0b8b60d9eab2a18555ce4e9eebe3a05c77420f6c6817aa18bc5067b79c000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "f7a14d654ef98be45b57e1f45dd8419a5e8fb43c238d5941545a437a56073a00",
+      "name": "dogwifbat",
+      "symbol": "WIFB",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WIFB.png"
+    },
+    "reserve0": "29878598031528436598",
+    "reserve1": "37393781697405878",
+    "poolType": "V2",
+    "TVL": 29.518108270339056,
+    "liquidity": 29.518108270339056,
+    "mobulaPrice": 5.845658298573247e-7,
+    "pair": 5.845658298573247e-7,
+    "ticker": "WIFB",
+    "name": "dogwifbat"
+  },
+  {
+    "address": "zS89dwqShsedaV19x3StdY6qJkC4Jdg6h8dy7rCJSUco",
+    "tokenPairId": "5559c2220126702578c86b7fe2b9307475dfedf787242630c5e7685c5f774200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "90c9ac3ff72b3043823fd814cd026536a745889d0b57b66e108c63165a00cb00",
+      "name": "Hunter x Hunter",
+      "symbol": "HUNTER",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HUNTER.png"
+    },
+    "reserve0": "1215422",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 3.035345772848572e-12,
+    "liquidity": 3.035345772848572e-12,
+    "mobulaPrice": 0.00115340621664895,
+    "pair": 0.00115340621664895,
+    "ticker": "HUNTER",
+    "name": "Hunter x Hunter"
+  },
+  {
+    "address": "zJkQGrZXVtXx1ZKTrJmvGx59tK7oZ3PxJXh8nBXaT4fR",
+    "tokenPairId": "53761a3eef8c502357a64918f8a4f05287d6fee1bf595d90e3aa28db27b2ae00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "457cf1d3c4592eeed0911cbaa823274115e7b30f566e473d07d38dc970373800",
+      "name": "Lasercat",
+      "symbol": "LCATS",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LCATS.png"
+    },
+    "reserve0": "3",
+    "reserve1": "3972448304",
+    "poolType": "V2",
+    "TVL": 3.74820845951904e-18,
+    "liquidity": 3.74820845951904e-18,
+    "mobulaPrice": 7.166683004960525e-10,
+    "pair": 7.166683004960525e-10,
+    "ticker": "LCATS",
+    "name": "Lasercat"
+  },
+  {
+    "address": "uX9XvqTBR5jf5TjhsBhWiwaBkX9LjBp3DNzTw8tq9HgB",
+    "tokenPairId": "0c58cb02e9791c21621d2885c683274c3d55885b09bae4c22add378082eaa900",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "a292e477b18aa234a7275775d0c67c3d4427f361cbe84ba89f64737cbca51b00",
+      "name": "All Mine, Not Yours",
+      "symbol": "MINE",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MINE.png"
+    },
+    "reserve0": "349707092352300047261",
+    "reserve1": "14809",
+    "poolType": "V2",
+    "TVL": 436.9250273028991,
+    "liquidity": 436.9250273028991,
+    "mobulaPrice": 0.022409589535078635,
+    "pair": 0.022409589535078635,
+    "ticker": "MINE",
+    "name": "All Mine, Not Yours"
+  },
+  {
+    "address": "uvu881y1umiVM1bU6bqQMr8JQ4A15Wfc11yWTKavKZZ1",
+    "tokenPairId": "126e703f01ae3131d5a1ebaf6a2a0d021c7545cc2f596b83582ad810067a1f00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "1df2ca5985333ad434cfe4373f956f309c52fdb77d11975f0c705befab270800",
+      "name": "LAMAWIFHAT",
+      "symbol": "LAMAWIFHAT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LAMAWIFHAT.png"
+    },
+    "reserve0": "257047101416796338",
+    "reserve1": "63088762971740418991",
+    "poolType": "V2",
+    "TVL": 0.3211553733417616,
+    "liquidity": 0.3211553733417616,
+    "mobulaPrice": 0.00386648111852812,
+    "pair": 0.00386648111852812,
+    "ticker": "LAMAWIFHAT",
+    "name": "LAMAWIFHAT"
+  },
+  {
+    "address": "26hqVwuNQ7DUEMobdySHyDiW1beoDhQHpNaoXGjoHvK2w",
+    "tokenPairId": "b28658c858a7cc8a9dd9f982364f9c1a4947fc5d2f3b2644062216926f6a5500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "11bf07230f5607f626773044414a196d0471d79ba9abc26f148b57b40d983a00",
+      "name": "Its 404ver",
+      "symbol": "TOP",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TOP.png"
+    },
+    "reserve0": "6302608456436605161836",
+    "reserve1": "9527524462131",
+    "poolType": "V2",
+    "TVL": 6097.508272011564,
+    "liquidity": 6097.508272011564,
+    "mobulaPrice": 0.0007982989804032445,
+    "pair": 0.0007982989804032445,
+    "ticker": "TOP",
+    "name": "Its 404ver"
+  },
+  {
+    "address": "2AdvZK2t6E9CTHWoNycSipv3PVjh8wre6kyebQsoqwEm5",
+    "tokenPairId": "ecf47d8999ce5e45ef2c777d5ae408894d46aad1a2c077f46586a10e90daa500",
+    "token0": {
+      "id": "11bf07230f5607f626773044414a196d0471d79ba9abc26f148b57b40d983a00",
+      "name": "Its 404ver",
+      "symbol": "TOP",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TOP.png"
+    },
+    "token1": {
+      "id": "93cc555d3dfc0a81aa6f3127c0108e529a32c87c595c1b89f1855e698c2bc700",
+      "name": "SUCC",
+      "symbol": "SUCC",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SUCC.png"
+    },
+    "reserve0": "396213843",
+    "reserve1": "900969840173635",
+    "poolType": "V2",
+    "TVL": 0.5919903480137952,
+    "liquidity": 0.5919903480137952
+  },
+  {
+    "address": "27U7xoRUMBDnaKgXgW8H5pihGgGQ8wPihiF4t9HPaJo5h",
+    "tokenPairId": "bdde84659bc631c41976f796a3a166e108301b2dcbbd16acda10dac687c41e00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "5dfc09e384aed88f9534bb30865d8028ebb3cee60593afbbbaf679c03f40d000",
+      "name": "LFG!",
+      "symbol": "LFG",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LFG.png"
+    },
+    "reserve0": "2350256222434286607476",
+    "reserve1": "807915697656",
+    "poolType": "V2",
+    "TVL": 2321.9000290298395,
+    "liquidity": 2321.9000290298395,
+    "mobulaPrice": 0.00300913511301006,
+    "pair": 0.00300913511301006,
+    "ticker": "LFG",
+    "name": "LFG!"
+  },
+  {
+    "address": "28AudXLCDHEQLQaUNziXExuL5PdfwGb3utEpiGkHhT9h1",
+    "tokenPairId": "c85162d6fb1e5baf96b1c55b0c01f8c9d569e6511dc353399298fc8b57f3a400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "e80754811030f54ccc68d027cdd47c734ecc4c5a800383ad071881d83f510800",
+      "name": "WTD Bread Token",
+      "symbol": "BREAD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BREAD.png"
+    },
+    "reserve0": "5980466292222913752005",
+    "reserve1": "7756845892410292691266206",
+    "poolType": "V2",
+    "TVL": 5971.344758590802,
+    "liquidity": 5971.344758590802,
+    "mobulaPrice": 0.000863860589947504,
+    "pair": 0.000863860589947504,
+    "ticker": "BREAD",
+    "name": "WTD Bread Token"
+  },
+  {
+    "address": "223aZEZrPoCwgdJxCYkZnTbQcTx6VrMwyYG8MdtR84mvf",
+    "tokenPairId": "6d4aa1c36e5f7ac3c046dfb4141f3654f2080461f2646523786fb6e90fcbb600",
+    "token0": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "token1": {
+      "id": "7dd0c01b2c835ed659c85c1ae64c7c10b916c06f13cf5b91f1369a5a3feda000",
+      "name": "CYXE",
+      "symbol": "CYXE",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CYXE.png"
+    },
+    "reserve0": "34301",
+    "reserve1": "1952494",
+    "poolType": "V2",
+    "TVL": 0.03422450709377365,
+    "liquidity": 0.03422450709377365
+  },
+  {
+    "address": "263H2YfMAFL8zgf46W2dJiopq6HDA6w8NPHB2vSSBUJFy",
+    "tokenPairId": "a8a58f330ec1d5a9bd51595c9c8bf30dd01bee53cc4d4bd101ab799e7b1b1200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "5476c9dd870691468fde042ca197af4039e98150313e1867b0aabe195b8f6a00",
+      "name": "Artisan",
+      "symbol": "ART",
+      "decimals": 1,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ART.png"
+    },
+    "reserve0": "396254965229766126012",
+    "reserve1": "5689769",
+    "poolType": "V2",
+    "TVL": 391.47407010337406,
+    "liquidity": 391.47407010337406,
+    "mobulaPrice": 0.0007035169964448331,
+    "pair": 0.0007035169964448331,
+    "ticker": "ART",
+    "name": "Artisan"
+  },
+  {
+    "address": "22z87B2N2EPAdX6HWzuVbY3WxBt4YpLLVVDhJ3o8dWumH",
+    "tokenPairId": "7b43ab87760b6ea89c958592ad410f9eec63f609f800c47118ac68a1e1c9bf00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "e3073a82dc4962c7b907a3493a7f61c6c7646b2a96fbdd4c3e08e8911f72b600",
+      "name": "Shio",
+      "symbol": "SHI",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SHI.png"
+    },
+    "reserve0": "515941491109969318975",
+    "reserve1": "2452012708479034",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "y9txMet83BaEWZhVkREZLVvdDeciRcAynDiVVYt2vKa7",
+    "tokenPairId": "4255dc012e3dd19ede570342b6a8ccde104671f6e4c0a1bd3ff69e56c25b2000",
+    "token0": {
+      "id": "df3008f43a7cc1d4a37eef71bf581fc4b9c3be4e2d58ed6d1df483bbb83bd200",
+      "name": "NUMBER GO UP",
+      "symbol": "NGU",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NGU.png"
+    },
+    "token1": {
+      "id": "f7a14d654ef98be45b57e1f45dd8419a5e8fb43c238d5941545a437a56073a00",
+      "name": "dogwifbat",
+      "symbol": "WIFB",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WIFB.png"
+    },
+    "reserve0": "10",
+    "reserve1": "102047",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "2Awn8exWrhoBi4VncEcZdrtvoQV9ZYvZYWEYyAxuz6WNK",
+    "tokenPairId": "f1876b2c014ec464946b2562a9e7a088732df471a8df12304c1cce29eb969200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "68527f951fe706770409910e004a2976d02009e1da940fc85b2c4e34c3e5a800",
+      "name": "Alephium Rocks",
+      "symbol": "ROCK",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ROCK.png"
+    },
+    "reserve0": "220224584692961441447",
+    "reserve1": "1308605229747",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.000016397782275972728,
+    "pair": 0.000016397782275972728,
+    "ticker": "ROCK",
+    "name": "Alephium Rocks"
+  },
+  {
+    "address": "yZegX6ZVE9Cgt4TKiGWShJMf7jk4X8rZo5CxaBB2L8D5",
+    "tokenPairId": "486ba903ea5a812ce9fc0057117fd38c97bd287d76fdb095ab00234de0b02300",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "9a7cde102e0347a7079b44f923c8a6fb9a1e07f89c1eb5b0fcd54b678ac46100",
+      "name": "SPONGOBOBOBAMA420COINTOKENINUVERSE",
+      "symbol": "SPOBAMA",
+      "decimals": 3,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SPOBAMA.png"
+    },
+    "reserve0": "138759198916949685774",
+    "reserve1": "72292335267",
+    "poolType": "V2",
+    "TVL": 173.36613440553202,
+    "liquidity": 173.36613440553202,
+    "mobulaPrice": 0.000001821481332018882,
+    "pair": 0.000001821481332018882,
+    "ticker": "SPOBAMA",
+    "name": "SPONGOBOBOBAMA420COINTOKENINUVERSE"
+  },
+  {
+    "address": "vFpZ1DF93x1xGHoXM8rsDBFjpcoSsCi5ZEuA5NG5UJGX",
+    "tokenPairId": "17474e2ebb6bd866e6a50c5b5e269b007e2450070191e0986b21e2400a0a5000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "bb440a66dcffdb75862b6ad6df14d659aa6d1ba8490f6282708aa44ebc80a100",
+      "name": "AlphPad",
+      "symbol": "APAD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APAD.png"
+    },
+    "reserve0": "87442382529339993608515",
+    "reserve1": "7253105720394910660442007",
+    "poolType": "V2",
+    "TVL": 89569.67932553284,
+    "liquidity": 89569.67932553284,
+    "mobulaPrice": 0.024471469559522674,
+    "pair": 0.024471469559522674,
+    "ticker": "APAD",
+    "name": "AlphPad"
+  },
+  {
+    "address": "xb1NU2dPvdGUpQyTEYqXm9YSPdGKzdDSoJo78UAfxCCX",
+    "tokenPairId": "39e8f26a5951acc2e4f68b4d17ff15dd3bec1c7485e45eee5ba26db7b489ed00",
+    "token0": {
+      "id": "11bf07230f5607f626773044414a196d0471d79ba9abc26f148b57b40d983a00",
+      "name": "Its 404ver",
+      "symbol": "TOP",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TOP.png"
+    },
+    "token1": {
+      "id": "e80754811030f54ccc68d027cdd47c734ecc4c5a800383ad071881d83f510800",
+      "name": "WTD Bread Token",
+      "symbol": "BREAD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BREAD.png"
+    },
+    "reserve0": "68952261421",
+    "reserve1": "51485976368097760836641",
+    "poolType": "V2",
+    "TVL": 43.17214515006796,
+    "liquidity": 43.17214515006796
+  },
+  {
+    "address": "wEWWVzMWCgkmuzBTXTSShaDqdyWn5bdxQxAYFHGuRfdZ",
+    "tokenPairId": "25cd02920cbb54669f4eab769ae95faef6c9a4e42cfaa0ccd37855910bc37f00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "bdde84659bc631c41976f796a3a166e108301b2dcbbd16acda10dac687c41e00",
+      "name": "ALPHLFG",
+      "symbol": "ALPHLFG",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPHLFG.png"
+    },
+    "reserve0": "19556265000693",
+    "reserve1": "2941039238867",
+    "poolType": "V2",
+    "TVL": 0.000024433652637397878,
+    "liquidity": 0.000024433652637397878,
+    "mobulaPrice": 6.31015881129787,
+    "pair": 6.31015881129787,
+    "ticker": "ALPHLFG",
+    "name": "ALPHLFG"
+  },
+  {
+    "address": "vGt8YVsieZ8TBL9Uf6sZ5tKf7syrLDmuNSYyLd7kQfAP",
+    "tokenPairId": "178ceea28df7e2eed00763624ba4e9bad6a471e331f9cd64d81c40afaa2a5500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "133a82344bfca617a90eccb646fc89d50243c0639053591302d3a9b04468f500",
+      "name": "BEARZ WIF GUNZ 1-800-420-69",
+      "symbol": "BEARZWIFGUNZ180042069",
+      "decimals": 1,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BEARZWIFGUNZ180042069.png"
+    },
+    "reserve0": "2936580143458804405",
+    "reserve1": "1025911",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.00003416676343801541,
+    "pair": 0.00003416676343801541,
+    "ticker": "BEARZWIFGUNZ180042069",
+    "name": "BEARZ WIF GUNZ 1-800-420-69"
+  },
+  {
+    "address": "yz9vBTqjBaKGeHFh1pXgJ3jG9H2MuhkEv1zAkwqnRJY7",
+    "tokenPairId": "4eb2a807b743616f5c5c9744f1b63d409628627ef395ebf694542d5a4adb5400",
+    "token0": {
+      "id": "5476c9dd870691468fde042ca197af4039e98150313e1867b0aabe195b8f6a00",
+      "name": "Artisan",
+      "symbol": "ART",
+      "decimals": 1,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ART.png"
+    },
+    "token1": {
+      "id": "e80754811030f54ccc68d027cdd47c734ecc4c5a800383ad071881d83f510800",
+      "name": "WTD Bread Token",
+      "symbol": "BREAD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BREAD.png"
+    },
+    "reserve0": "146524",
+    "reserve1": "12664933406981453806740",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "298RJruQU4icY1TAwf9WDPRbSDt2F2ysrximy55MJbscj",
+    "tokenPairId": "d689e34bd6564104101de2af29125596a7fa4429dc379627adf46762ec55a000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "de34422c89dfe18d9ba462870f4b26c8d7a02ab6b25855c96eb08ab1a800f300",
+      "name": "BULLZ WIF TULIPZ 1-3-3-7-420-69",
+      "symbol": "BULLZWIFTULIPZ133742069",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BULLZWIFTULIPZ133742069.png"
+    },
+    "reserve0": "388665766568454976",
+    "reserve1": "7248669398",
+    "poolType": "V2",
+    "TVL": 6.699161984953565e-11,
+    "liquidity": 6.699161984953565e-11,
+    "mobulaPrice": 0.00005088305660976434,
+    "pair": 0.00005088305660976434,
+    "ticker": "BULLZWIFTULIPZ133742069",
+    "name": "BULLZ WIF TULIPZ 1-3-3-7-420-69"
+  },
+  {
+    "address": "uJ5tT579dWZ4p7RPMWQxQ2bBjCPhd29iHTgSTscjSYD5",
+    "tokenPairId": "09001ea75d4a26e869b727875d23e252d997c3264ab613b7e3da29e68b21d200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "b26b785f79e655802bc2bdccfa18faa35e969aaec165e7d17f9640be7df80f00",
+      "name": "BERAS",
+      "symbol": "BOTTOM",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BOTTOM.png"
+    },
+    "reserve0": "1",
+    "reserve1": "245691956",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 7.676846871940102e-7,
+    "pair": 7.676846871940102e-7,
+    "ticker": "BOTTOM",
+    "name": "BERAS"
+  },
+  {
+    "address": "vKvJanFipq1mBDtjjpeYmL1MxCtBZdUH5mTzcQ1P1hfd",
+    "tokenPairId": "185421b84ba63e8cf17d610dfaab2b359f4cdc14be93705e13e7c1767822a200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "609278ae23ebe63619a57ada9d74b2126b3cfc83965426a66de0d7d59f9b1600",
+      "name": "DONT BUY MEME",
+      "symbol": "DBM",
+      "decimals": 1,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DBM.png"
+    },
+    "reserve0": "5224190",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 1.2419398354091238,
+    "liquidity": 1.2419398354091238,
+    "mobulaPrice": 2.57546792728604e-10,
+    "pair": 2.57546792728604e-10,
+    "ticker": "DBM",
+    "name": "DONT BUY MEME"
+  },
+  {
+    "address": "vMzpiFFSKMJQ1xsB2DkiDYyexooYc6Ln5HWP8ayjpEZu",
+    "tokenPairId": "18dc674c3a9453e934c569d3112eb0d6d7e782373cef5d13c70a0714dce14f00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "ec3f74643fcf9439d267c48e5b4a1c793cc0ec9619fa7528a2644b5af949c500",
+      "name": "Grumpy Cat",
+      "symbol": "GRUMPY",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GRUMPY.png"
+    },
+    "reserve0": "1846953293440533353396",
+    "reserve1": "137271757811017",
+    "poolType": "V2",
+    "TVL": 1807.5564496284596,
+    "liquidity": 1807.5564496284596,
+    "mobulaPrice": 0.12837894388009938,
+    "pair": 0.12837894388009938,
+    "ticker": "GRUMPY",
+    "name": "Grumpy Cat"
+  },
+  {
+    "address": "2AYJChPhPuVZWhocSbXyybpVFRBCgGEMEhughNmeXuTtj",
+    "tokenPairId": "eb837aa826b7199f9dbd4437fa4d2ccd244be9c6040bcbfccec331ebc9bb2700",
+    "token0": {
+      "id": "11bf07230f5607f626773044414a196d0471d79ba9abc26f148b57b40d983a00",
+      "name": "Its 404ver",
+      "symbol": "TOP",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TOP.png"
+    },
+    "token1": {
+      "id": "c1aeea313e36454f35beaf40130c9219faa40ba645aff93e16429146039f8202",
+      "name": "Wang",
+      "symbol": "WANG",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
+    },
+    "reserve0": "51643431",
+    "reserve1": "48556",
+    "poolType": "V2",
+    "TVL": 0.0771613946116376,
+    "liquidity": 0.0771613946116376
+  },
+  {
+    "address": "27PrZFivmD6imzGfRmMK1N5mjhcBawetRRo282z17dQJj",
+    "tokenPairId": "bcc6c63baab26abd978173d68ea4847def15d49465872aab905321d7bb055600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "a2468923a5d69b152ddfc87dea4e6d5b09eb4aae239e47ac2bc6ad4807811700",
+      "name": "Happy Dog",
+      "symbol": "HAPPY",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HAPPY.png"
+    },
+    "reserve0": "1382312061785684792",
+    "reserve1": "23253",
+    "poolType": "V2",
+    "TVL": 3.757933223307999,
+    "liquidity": 3.757933223307999,
+    "mobulaPrice": 564149.4529115563,
+    "pair": 564149.4529115563,
+    "ticker": "HAPPY",
+    "name": "Happy Dog"
+  },
+  {
+    "address": "24feZZ2Z1KDkiZXyhQDxmUaWzvm1BGfKumDoSttfTY6yd",
+    "tokenPairId": "943f71a293dfa2249246cd143ecf27af90ef48339916559739ab6f2403ff6e00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "44d9ff4d081c2f498e82d24425b71618738f9d69dd90def0598a3488ccde4a00",
+      "name": "TOOT THE ALPHTASTIC ELEPHANT",
+      "symbol": "TOOT",
+      "decimals": 1,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TOOT.png"
+    },
+    "reserve0": "96010122374833725",
+    "reserve1": "9991735589",
+    "poolType": "V2",
+    "TVL": 0.11995531762827001,
+    "liquidity": 0.11995531762827001,
+    "mobulaPrice": 9.118665508430909e-11,
+    "pair": 9.118665508430909e-11,
+    "ticker": "TOOT",
+    "name": "TOOT THE ALPHTASTIC ELEPHANT"
+  },
+  {
+    "address": "xc2LrSWKVQe3NVDiriephpqJ13jAPXeU3JXpk1ZmUYKR",
+    "tokenPairId": "3a2ba0827de1b4dc486718788c9cb80d913695eeae6ca3f3d8325cb324db7300",
+    "token0": {
+      "id": "df3008f43a7cc1d4a37eef71bf581fc4b9c3be4e2d58ed6d1df483bbb83bd200",
+      "name": "NUMBER GO UP",
+      "symbol": "NGU",
+      "decimals": 7,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NGU.png"
+    },
+    "token1": {
+      "id": "ec3f74643fcf9439d267c48e5b4a1c793cc0ec9619fa7528a2644b5af949c500",
+      "name": "Grumpy Cat",
+      "symbol": "GRUMPY",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GRUMPY.png"
+    },
+    "reserve0": "105",
+    "reserve1": "9609",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "278DS6WGfLK9Pxd2Tk3mMxYhj225mvhUWw9xnr4RpmDQB",
+    "tokenPairId": "b8c5162c73ea40ecbf83e603d03c2c5d719b765cfc385fda8eff063436b2c700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "bb29d3ef7ed2709741e29a76a1a201e9fdb112c2deafe7504853789117c86b00",
+      "name": "Seven Club",
+      "symbol": "777",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/777.png"
+    },
+    "reserve0": "1484216814269063584619",
+    "reserve1": "284079061402",
+    "poolType": "V2",
+    "TVL": 1462.299055381341,
+    "liquidity": 1462.299055381341,
+    "mobulaPrice": 0.00489627703157675,
+    "pair": 0.00489627703157675,
+    "ticker": "777",
+    "name": "Seven Club"
+  },
+  {
+    "address": "22YqWpr5YuuFx1nb8huR7fqJBK65fPGecPAFU9ESPJmq9",
+    "tokenPairId": "74c96391c3d3865eba8bf294e2ff5483bb060496e75835d19b69fd3b70533600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "34b49f0dd151f8ef1e7f0605ca106d86621bf4f4f6c8855214f8db53cfc7c100",
+      "name": "Alegator",
+      "symbol": "GATOR",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GATOR.png"
+    },
+    "reserve0": "12192682566375384",
+    "reserve1": "55386077637418",
+    "poolType": "V2",
+    "TVL": 0.015233571979839511,
+    "liquidity": 0.015233571979839511,
+    "mobulaPrice": 2.0890741337087313e-7,
+    "pair": 2.0890741337087313e-7,
+    "ticker": "GATOR",
+    "name": "Alegator"
+  },
+  {
+    "address": "247rZysrruj8pj2GnFyK2bqB2nU4JsUj7k2idksAp4XMy",
+    "tokenPairId": "8c1a6f4e8eb186e9ec66a063cd8e047a2d5575eda2d9b17af37e8bde37182c00",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "bb440a66dcffdb75862b6ad6df14d659aa6d1ba8490f6282708aa44ebc80a100",
+      "name": "AlphPad",
+      "symbol": "APAD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APAD.png"
+    },
+    "reserve0": "1507134222103751820849",
+    "reserve1": "194811121910339218472880",
+    "poolType": "V2",
+    "TVL": 2431.449692566892,
+    "liquidity": 2431.449692566892
+  },
+  {
+    "address": "22JCsPGQGsBQkAudUbQkZ8CF7vWVguG81WBTSmsUvUwoM",
+    "tokenPairId": "7109d2874dc09048ecb3acc97807b1026416eadcc6e97f59ec71426dc4d6a200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "e8b7cc961cb7689649234d9e7890e134c5a6619759ea0212d6457b06cbed9c00",
+      "name": "Wrapped OG Alf",
+      "symbol": "WALF",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WALF.png"
+    },
+    "reserve0": "61860511202702796490",
+    "reserve1": "2781910822439862310",
+    "poolType": "V2",
+    "TVL": 77.33485657705292,
+    "liquidity": 77.33485657705292,
+    "mobulaPrice": 21.102131282266466,
+    "pair": 21.102131282266466,
+    "ticker": "WALF",
+    "name": "Wrapped OG Alf"
+  },
+  {
+    "address": "2BAhAqoTkmYFpvfSE6ohnAKf1by4LL9HBKiqsm3hEm8Sj",
+    "tokenPairId": "f4d65bb7e57a1e5d110b8e108d9119ae1ef35bfca434ebef1d4cb7b46b0dac00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "dd1b44a7e6879318418f8b238c494606981b054c8d3e44f037b76f2395e04e00",
+      "name": "LEMUR",
+      "symbol": "LEMUR",
+      "decimals": 3,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LEMUR.png"
+    },
+    "reserve0": "47225136",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 5.900321808571239e-11,
+    "liquidity": 5.900321808571239e-11,
+    "mobulaPrice": 4.4815517116270834e-8,
+    "pair": 4.4815517116270834e-8,
+    "ticker": "LEMUR",
+    "name": "LEMUR"
+  },
+  {
+    "address": "25b5aNfdrNRjJ7ugPTkxThT51L1NSvf8igQyDHKZhweiK",
+    "tokenPairId": "a1ef82a7a550c48edd6fb8e46c3ed4f46937bea951f30fdf513fc460dba8cb00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "ba17d4a0d35eaf94540c31ce713d61f14b8b92f19f607d59d5f20c8d4042d700",
+      "name": "GIGACHENG",
+      "symbol": "CHENG",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CHENG.png"
+    },
+    "reserve0": "8591313457822425865280",
+    "reserve1": "27128532631772439",
+    "poolType": "V2",
+    "TVL": 8487.657973939098,
+    "liquidity": 8487.657973939098,
+    "mobulaPrice": 3.527883049390985e-7,
+    "pair": 3.527883049390985e-7,
+    "ticker": "CHENG",
+    "name": "GIGACHENG"
+  },
+  {
+    "address": "27FcWvg7E5e9FkPvskJ4KMVs8r6xHwGdNAu6vb5VNxazB",
+    "tokenPairId": "baaa40ac86042beeeef9ab9e9332cf913b994bcda480ccfe7aef91779611ca00",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "ba17d4a0d35eaf94540c31ce713d61f14b8b92f19f607d59d5f20c8d4042d700",
+      "name": "GIGACHENG",
+      "symbol": "CHENG",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CHENG.png"
+    },
+    "reserve0": "651956130939388132",
+    "reserve1": "4538494544182",
+    "poolType": "V2",
+    "TVL": 1.0178504777668533,
+    "liquidity": 1.0178504777668533
+  },
+  {
+    "address": "xUa9oLNVHpZTyPKuJLgPzimFGxz89QWZQ7fE6XjuPz5d",
+    "tokenPairId": "3842f2926345bc5547a30079cbbfa6df6f1b47785a47ca37492bc0aaf39eca00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "fc6601c50e9f2e9bf957967f9ae05850e90eb82d44770b4003f9dfd30e2a1d00",
+      "name": "TEST",
+      "symbol": "TEST",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TEST.png"
+    },
+    "reserve0": "1455",
+    "reserve1": "692",
+    "poolType": "V2",
+    "TVL": 2.225005737866193,
+    "liquidity": 2.225005737866193,
+    "mobulaPrice": 1.996686755309745,
+    "pair": 1.996686755309745,
+    "ticker": "TEST",
+    "name": "TEST"
+  },
+  {
+    "address": "28XY326TxvSekaAwiWDLFg2QBRfacSga8dyNJCYGUYNbq",
+    "tokenPairId": "cd9a2a6854d6be867d0eb60f90d3b1e677070a5af3fd8a91eba9d3327efc4400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "383bc735a4de6722af80546ec9eeb3cff508f2f68e97da19489ce69f3e703200",
+      "name": "Wrapped BTC (AlphBridge)",
+      "symbol": "WBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WBTC.png"
+    },
+    "reserve0": "4210696111082574843160",
+    "reserve1": "2357056",
+    "poolType": "V2",
+    "TVL": 4428.373982558611,
+    "liquidity": 4428.373982558611,
+    "mobulaPrice": 112700.55488427586,
+    "pair": 112700.55488427586,
+    "ticker": "WBTC",
+    "name": "Bitcoin"
+  },
+  {
+    "address": "23cXw23ZjRqKc7i185ZoH8vh9KT4XTumVRWpVLUecgLMd",
+    "tokenPairId": "849784a1048e262a15e4ee8c7d4f49d11ecda7c05ab889a1b261d220def2ca00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "ad5f393479088d8669874f991d5f52ffaf9c946d9703152eccc1cf70efc37200",
+      "name": "ALPHAGA",
+      "symbol": "ALPHAGA",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPHAGA.png"
+    },
+    "reserve0": "15603085762696791592246",
+    "reserve1": "6519831783534531791857915",
+    "poolType": "V2",
+    "TVL": 15701.385431750488,
+    "liquidity": 15701.385431750488,
+    "mobulaPrice": 0.002607888442212426,
+    "pair": 0.002607888442212426,
+    "ticker": "ALPHAGA",
+    "name": "ALPHAGA"
+  },
+  {
+    "address": "2961aauvprhETv6TXGQRc3zZY4FbLnqKon2a4wK6ABH9q",
+    "tokenPairId": "d5ebe55aa96b95da184a380237addb9c4ab33aadc931a8761cf3ca89c7724c00",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "722954d9067c5a5ad532746a024f2a9d7a18ed9b90e27d0a3a504962160b5600",
+      "name": "USD Coin (Ethereum via AlphBridge)",
+      "symbol": "USDCeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
+    },
+    "reserve0": "31815291734511264168450",
+    "reserve1": "23488941893",
+    "poolType": "V2",
+    "TVL": 48466.32222051123,
+    "liquidity": 48466.32222051123
+  },
+  {
+    "address": "2BiYVyioyokcH9YxeDR1Log9zmA97NqqyHowjemzvetab",
+    "tokenPairId": "fcff2411de3a83262bcb8bcdc313b18eaf7499b26857df036075c67923ece800",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "6b894505030718e45cdf7c59be1f8c6167542e43522e95303871e8280037b000",
+      "name": "TRUMP 2024",
+      "symbol": "TRUMP",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TRUMP.png"
+    },
+    "reserve0": "122127118801519662127",
+    "reserve1": "169007964715396634",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.000007221454975046026,
+    "pair": 0.000007221454975046026,
+    "ticker": "TRUMP",
+    "name": "TRUMP 2024"
+  },
+  {
+    "address": "24tBZDN8CVwxZkajBHYjzK4CKuPREMYDKWEpEtosrdWm5",
+    "tokenPairId": "97757573d49ec4ddf93f17151365bf2983957cf33809542066d613e0b895f400",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "5dfc09e384aed88f9534bb30865d8028ebb3cee60593afbbbaf679c03f40d000",
+      "name": "LFG!",
+      "symbol": "LFG",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LFG.png"
+    },
+    "reserve0": "101702613009641786649",
+    "reserve1": "57120331633",
+    "poolType": "V2",
+    "TVL": 158.7604847854877,
+    "liquidity": 158.7604847854877
+  },
+  {
+    "address": "x1yCK3UUAyvn1mJft1meoyqSurNSkrNZqQi7fA9dHSa3",
+    "tokenPairId": "31725223d93e8d3ae082a171c74d2e147ab2e59a0583d9116f1324f8d2df0900",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "7236e1b5ddbf8c56a37e02bb282913996c246a14193a57237cfd9fcf1eab5000",
+      "name": "UwU",
+      "symbol": "UWU",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/UWU.png"
+    },
+    "reserve0": "3297234017401917892",
+    "reserve1": "52777153860199",
+    "poolType": "V2",
+    "TVL": 4.119573479013273,
+    "liquidity": 4.119573479013273,
+    "mobulaPrice": 5.928693520900525e-8,
+    "pair": 5.928693520900525e-8,
+    "ticker": "UWU",
+    "name": "UwU"
+  },
+  {
+    "address": "2B4fsrv6n9kxjBYYgs8kRutyLxgrmEpnJyec2t3CAv1dZ",
+    "tokenPairId": "f34b6963bdfeffd15de89604b0ced43dd3dd08b4daeddba15c26d0faa0f9ad00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "33f62fbeebd621996860fe35504c8958f24060040ee7a02c1be9cb62154adf00",
+      "name": "TKCOIN",
+      "symbol": "TKCOIN",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TKCOIN.png"
+    },
+    "reserve0": "38512",
+    "reserve1": "1232056",
+    "poolType": "V2",
+    "TVL": 4.811700139766575e-14,
+    "liquidity": 4.811700139766575e-14
+  },
+  {
+    "address": "tv5pxizCeMUwZUZhDbPPwcUAxuEuGdzuy8v6XgvHuZxB",
+    "tokenPairId": "035d4620369600c37009158fef65cdd340e29cb819ab2dfca73d9ceafe023e00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "84e7a6754ea11002b1b06e99819699b2342f4d48f91eee98165c76a49d397400",
+      "name": "Pippa Coin",
+      "symbol": "PIPPA",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PIPPA.png"
+    },
+    "reserve0": "1662038896",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 2.0765560833456288e-9,
+    "liquidity": 2.0765560833456288e-9,
+    "mobulaPrice": 0.000015772348986267796,
+    "pair": 0.000015772348986267796,
+    "ticker": "PIPPA",
+    "name": "Pippa Coin"
+  },
+  {
+    "address": "23pfXwRD9BwJFL2QUxshDquou3EFgD6J15G4uVHzaLAcf",
+    "tokenPairId": "87b3155f146fea7f03f9eb31747e401861d81ced1b45ed576733c84906189700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "2a7c1a01644e5119c5e7aaa42690476eb971f299d99e39b885a828e5994da300",
+      "name": "Bongo Cat",
+      "symbol": "BONG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
+    },
+    "reserve0": "5705509830449557913",
+    "reserve1": "1690377698520567296",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 3.089594942673712e-8,
+    "pair": 3.089594942673712e-8,
+    "ticker": "BONG",
+    "name": "Bongo Cat"
+  },
+  {
+    "address": "29NiVdRtYstnsHTxTDAnC4YhoqNDS13tjG9kZwWk7kLTy",
+    "tokenPairId": "da337379eaa96a76ebb8c9aec60f1ed947ae65863c1afee230bf1e33ef6f7700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "6678b5c8125b9b7019a4d39d0077ad7f6304cbad86ddc6c59b906de4b1267100",
+      "name": "DragonCoin",
+      "symbol": "DRGN",
+      "decimals": 3,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DRGN.png"
+    },
+    "reserve0": "3735745855845",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 0.000004667451406497142,
+    "liquidity": 0.000004667451406497142
+  },
+  {
+    "address": "zHTkqD331QQ7F9QNzMHZQjqjweAM6ZezZ5rKcyLfyUb1",
+    "tokenPairId": "5321b3559675136f371a7239423bdef89cbbb33563b14e77dae1cf76f2a5e800",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "7430cebfc525c36b30637830696c1141f02963c06ddf010a1a33134ced2e8b00",
+      "name": "Crawly The Gnome",
+      "symbol": "CRAWLY",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CRAWLY.png"
+    },
+    "reserve0": "736101",
+    "reserve1": "2",
+    "poolType": "V2",
+    "TVL": 9.196866650868084e-13,
+    "liquidity": 9.196866650868084e-13,
+    "mobulaPrice": 0.00003492710636641055,
+    "pair": 0.00003492710636641055,
+    "ticker": "CRAWLY",
+    "name": "Crawly The Gnome"
+  },
+  {
+    "address": "27AH3m9RHBmrVokum9qzMjssRh3JSXbJQ1roZALEyfBbM",
+    "tokenPairId": "b94c55ed669183cff58fab4f862e8902ed015d6a3b9e6e07a6bc44ebf09d1700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "9365b3c817c2c287d5a78763af9620c7d37d496cb6d556790fddf5ab9d2e6c00",
+      "name": "ALPH TEKKI",
+      "symbol": "TEKKI",
+      "decimals": 1,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TEKKI.png"
+    },
+    "reserve0": "810949211",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 6.170150521720058,
+    "liquidity": 6.170150521720058,
+    "mobulaPrice": 6.143001521868434e-8,
+    "pair": 6.143001521868434e-8,
+    "ticker": "TEKKI",
+    "name": "ALPH TEKKI"
+  },
+  {
+    "address": "vxLrqHfkzXeH62CQhp7HWXWGdmeQ9hfonQEr42huVXnw",
+    "tokenPairId": "21a8ce7320526088f302aa6d1499c1a674020f3592434373698930bbe5a70600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "89e424f5b43fe72246001484423f6b06379be4eefed8b42cc380e1dc6ec0c100",
+      "name": "ELON",
+      "symbol": "ELON",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ELON.png"
+    },
+    "reserve0": "29990398807544633713",
+    "reserve1": "1568113374",
+    "poolType": "V2",
+    "TVL": 29.628560152073085,
+    "liquidity": 29.628560152073085,
+    "mobulaPrice": 0.0000019669928797805604,
+    "pair": 0.0000019669928797805604,
+    "ticker": "ELON",
+    "name": "ELON"
+  },
+  {
+    "address": "vjpTeTrWMqRTqKJdQMP1xvwTaWiANVcKkDC7Nwa86Fvo",
+    "tokenPairId": "1e7376aee8b320d7e4b7e48a3b1442dec831681a1bdd263ff3c24fea75274600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "80b0270f1edce67afd5fc1b42d370308d77011165b8c05338b0bb990d685d500",
+      "name": "BETA",
+      "symbol": "BETA",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BETA.png"
+    },
+    "reserve0": "45936",
+    "reserve1": "22",
+    "poolType": "V2",
+    "TVL": 5.739256793215554e-14,
+    "liquidity": 5.739256793215554e-14,
+    "mobulaPrice": 1.9814617312859302e-7,
+    "pair": 1.9814617312859302e-7,
+    "ticker": "BETA",
+    "name": "BETA"
+  },
+  {
+    "address": "wm5EfjkoG98Tr2GFrB1pvJLBHsfmveeQdcNurDmLTrDd",
+    "tokenPairId": "2da1705b226e74f3c6069bc4ce38aad296065e57eb0472fed765faec67227e00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "162f3606cc6bde743f10d6586197f20e89c1dd9a212a01479cc29e98e0a31d00",
+      "name": "JEET",
+      "symbol": "JEET",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JEET.png"
+    },
+    "reserve0": "1541810",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "u8bJxyMuFkvgTrwcyqVX7xdcDx44EX5MUybKe91YqDiP",
+    "tokenPairId": "06919479becbbf376ee72dbcec7cb4b0d9b9caee389c49f71fc98777b2bbb800",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "f590df65b35f52958209331c317ece5de8b2d1f946736dc1764dcab776044200",
+      "name": "Candy Crash",
+      "symbol": "CC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CC.png"
+    },
+    "reserve0": "465871395075387559",
+    "reserve1": "17463246532361",
+    "poolType": "V2",
+    "TVL": 0.5820610346898349,
+    "liquidity": 0.5820610346898349,
+    "mobulaPrice": 2.5316068076345483e-8,
+    "pair": 2.5316068076345483e-8,
+    "ticker": "CC",
+    "name": "Candy Crash"
+  },
+  {
+    "address": "ucwGc2qBBrjZQyfLwPeWX2SL7PjXP5KMTUs6TunkDGhd",
+    "tokenPairId": "0dd469225f1e9d50a182a671e3e4bce4d526f0f6917d7bd9ce267683fe5cf200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "99ffbde485e4e594667a0843d264471e6a4630339c8396608ef1032dc8b04000",
+      "name": "SHIBA SHIBBO",
+      "symbol": "SHIBBO",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SHIBBO.png"
+    },
+    "reserve0": "532954516662976901555",
+    "reserve1": "38464755792396274220977178",
+    "poolType": "V2",
+    "TVL": 526.5243405806216,
+    "liquidity": 526.5243405806216,
+    "mobulaPrice": 0.000016064251470320838,
+    "pair": 0.000016064251470320838,
+    "ticker": "SHIBBO",
+    "name": "SHIBA SHIBBO"
+  },
+  {
+    "address": "21UPYyiKGF1QqR7U9wAzV2t2nSyL2yQNqvi1KV6cHqoT5",
+    "tokenPairId": "64ca05bfb458ba12cd9cb450f6e263da80d91f92617508997e45d9935a619300",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "2df4cc8296aa5078f034eedeafec4139f23af440158204a93f76f21b74854500",
+      "name": "ANS (Open Source)",
+      "symbol": "ANSo",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ANSo.svg"
+    },
+    "reserve0": "78100470957614013",
+    "reserve1": "2000000000000005076",
+    "poolType": "V2",
+    "TVL": 0.07823395283186868,
+    "liquidity": 0.07823395283186868,
+    "mobulaPrice": 0.0368880752518957,
+    "pair": 0.0368880752518957,
+    "ticker": "ANSo",
+    "name": "Alephium Name Service"
+  },
+  {
+    "address": "zvZ36Xvmakw4h54SNw7vhYGczvRrd7y6sW846dHgJWBH",
+    "tokenPairId": "5ca2293a7154226574003e1504672b0256eda374f9cb283a57a397805f4bf600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "881a844f3e6511441b5d6fa4896d8bbf87d365f87b3b0c183cb4c4c35268cf00",
+      "name": "HarryPoter",
+      "symbol": "HP",
+      "decimals": 1,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HP.png"
+    },
+    "reserve0": "28",
+    "reserve1": "37081",
+    "poolType": "V2",
+    "TVL": 3.498327895551104e-17,
+    "liquidity": 3.498327895551104e-17
+  },
+  {
+    "address": "25v1WhExtX1N3KXCdKTgN1FDMLqpiwG724u65eX7U1ZvF",
+    "tokenPairId": "a6c8f38156aa9e7760237d90e4e2e666367ee75b4694e8e60ff95c58aa909100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "de830579a9b874ad6de9d102d48e9479a45eb5037e64615479b21476e0d8f600",
+      "name": "SingularityX",
+      "symbol": "SINX",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SINX.png"
+    },
+    "reserve0": "15538425445995036549",
+    "reserve1": "6470669414548444221",
+    "poolType": "V2",
+    "TVL": 15.350952015267964,
+    "liquidity": 15.350952015267964,
+    "mobulaPrice": 2.2788355755981415e-8,
+    "pair": 2.2788355755981415e-8,
+    "ticker": "SINX",
+    "name": "SingularityX"
+  },
+  {
+    "address": "27L5uoApzWq6gB8hNTpP9n7SjipiKcN2pprZUrovZcsFu",
+    "tokenPairId": "bbcf8cfc6261ff4a7c2b83b4c5efffd1494ed043ed98c82ff0f8ac9b9cbf4d00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "fb68e484625b53c62581f2d358a6a83eb1ad918bfb64790d90c2357ca63ceb00",
+      "name": "PEPE",
+      "symbol": "PEPE",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PEPE.png"
+    },
+    "reserve0": "91011930769523478072",
+    "reserve1": "100122678",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.000004126731069381829,
+    "pair": 0.000004126731069381829,
+    "ticker": "PEPE",
+    "name": "PEPE"
+  },
+  {
+    "address": "2A4zY4vwJgDVTWUkqFTwuRBEKqVMg8M9mxnykKcjVNhV1",
+    "tokenPairId": "e484d27faf3f68f3f18197ac2f71db5f0763c36a45d69eb6e33da3999423f200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "f7f9b116c02896e27c7a98b1eb09c39f4dc4cf517e7df72ea8ca93ad70a23100",
+      "name": "I DON'T LIKE YOUR FACE",
+      "symbol": "FACE",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/FACE.png"
+    },
+    "reserve0": "5243",
+    "reserve1": "191",
+    "poolType": "V2",
+    "TVL": 6.550618984419443e-15,
+    "liquidity": 6.550618984419443e-15,
+    "mobulaPrice": 2.604963756276738e-7,
+    "pair": 2.604963756276738e-7,
+    "ticker": "FACE",
+    "name": "I DON'T LIKE YOUR FACE"
+  },
+  {
+    "address": "uM4QJwHqFoTF2Pou8TqwhaDiHYLk4SHG65uaQG8r7KkT",
+    "tokenPairId": "09c32ed0d044db9d0ef44dcb442a5becbfc4366746211c0225fb430cca948b00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "edcd9b5c59f23d545faa6d5e91d196098f4d0a14146ace422a8b367ef3b34000",
+      "name": "ANS (alephium.domains)",
+      "symbol": "ANSd",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ANSd.png"
+    },
+    "reserve0": "13317667441071420846488",
+    "reserve1": "29018376638959457505418412",
+    "poolType": "V2",
+    "TVL": 13201.328183828617,
+    "liquidity": 13201.328183828617,
+    "mobulaPrice": 0.0005531260247345755,
+    "pair": 0.0005531260247345755,
+    "ticker": "ANSd",
+    "name": "Alephium Name Service"
+  },
+  {
+    "address": "26gpc8uGutReFH9D1VWEpaUEVkCFnQ2HdikPGmvo551mh",
+    "tokenPairId": "b243c1869fe95b2c455b72cf9d9203ab765eb14f219c93438c31f7853d8a6200",
+    "token0": {
+      "id": "bb440a66dcffdb75862b6ad6df14d659aa6d1ba8490f6282708aa44ebc80a100",
+      "name": "AlphPad",
+      "symbol": "APAD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APAD.png"
+    },
+    "token1": {
+      "id": "edcd9b5c59f23d545faa6d5e91d196098f4d0a14146ace422a8b367ef3b34000",
+      "name": "ANS (alephium.domains)",
+      "symbol": "ANSd",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ANSd.png"
+    },
+    "reserve0": "141369480609077750095675",
+    "reserve1": "3708562177183297994808950",
+    "poolType": "V2",
+    "TVL": 1794.5686898379704,
+    "liquidity": 1794.5686898379704
+  },
+  {
+    "address": "zsWL7tm2swH1b7mUF4VU4BPbKMFQ6YjLADmcCWmX9Jrb",
+    "tokenPairId": "5bda5bbec9bf6243b3b33953a6680452227b42d0d6a2cf2642589d9606f4a700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "56392bdd8541948e69b9c784d778ca07979bfdc75c2acb15381781d828557500",
+      "name": "Hoppy",
+      "symbol": "HOPPY",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HOPPY.png"
+    },
+    "reserve0": "65324114791657209105",
+    "reserve1": "1159143180",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.000006589602714961496,
+    "pair": 0.000006589602714961496,
+    "ticker": "HOPPY",
+    "name": "Hoppy"
+  },
+  {
+    "address": "27Sv4CWa1krBrqa327tmKY1mEkHt2YDnzADh5vyWKkuQ3",
+    "tokenPairId": "bd8f7920ded5b3daf023a11d38475dee1adc59c21a53e7314ad8153950887a00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "3c51b5b11063ae4f5677a071d8576854618de299983f613da843a8a6ed51c600",
+      "name": "ALPH to the MOON",
+      "symbol": "MOON",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MOON.png"
+    },
+    "reserve0": "218446",
+    "reserve1": "5",
+    "poolType": "V2",
+    "TVL": 2.7292704838269877e-13,
+    "liquidity": 2.7292704838269877e-13,
+    "mobulaPrice": 0.000004145999898012321,
+    "pair": 0.000004145999898012321,
+    "ticker": "MOON",
+    "name": "ALPH to the MOON"
+  },
+  {
+    "address": "26eUzyvGiUKMMGoR2PmaWdrT1XmHwfkGNL945cis65euM",
+    "tokenPairId": "b1aa6cf64f3b072f3b8a40c5bac8ebf032250c2c4b0f013ad3bc9fef38ec9f00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "c978e69e9ebe5b95ab0e9f0183c1c35c31ccdc7e9a3638d6b1dc62db0b8d6e00",
+      "name": "MemeGoUP",
+      "symbol": "MGU",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MGU.png"
+    },
+    "reserve0": "605620671651343969168",
+    "reserve1": "6466609",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.00009002242048227949,
+    "pair": 0.00009002242048227949,
+    "ticker": "MGU",
+    "name": "MemeGoUP"
+  },
+  {
+    "address": "zuaSh7TPSxEucyafytV2sGEhiubuKVUuBRpWJHXCbKn7",
+    "tokenPairId": "5c622bc3348e3566516808f8392760e2ad71f48a7c99d996a9aa454140a85200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "216338071fefb594d27d9b1c339caa25a5d1062f7226794994e7971b9824e100",
+      "name": "WAYANG",
+      "symbol": "WAYANG",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WAYANG.png"
+    },
+    "reserve0": "346365",
+    "reserve1": "3",
+    "poolType": "V2",
+    "TVL": 68.42351752820898,
+    "liquidity": 68.42351752820898,
+    "mobulaPrice": 0.00001100992837910978,
+    "pair": 0.00001100992837910978,
+    "ticker": "WAYANG",
+    "name": "WAYANG"
+  },
+  {
+    "address": "vzmUCcpmmnBKP3FvWzGXfoKPLAJWPaPx6p2VD19fTUtw",
+    "tokenPairId": "2247cb6063019d8e067b52e5ac131e327dc94d422e835c67f325ac2f45479c00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "520e5d8c8c98490e7aae61b37b87fcc80d60da6cebfc94b95f1335125aa26e00",
+      "name": "WAVE",
+      "symbol": "WAVE",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WAVE.png"
+    },
+    "reserve0": "122328",
+    "reserve1": "9",
+    "poolType": "V2",
+    "TVL": 1.528369481453484e-13,
+    "liquidity": 1.528369481453484e-13,
+    "mobulaPrice": 0.00012898480771857452,
+    "pair": 0.00012898480771857452,
+    "ticker": "WAVE",
+    "name": "WAVE"
+  },
+  {
+    "address": "uzJRWT6MJQUaWRpB4oX44HjKEmuticeVsQPefSMuF5hq",
+    "tokenPairId": "134d86a9912d3088d7fada8bf77a8c23b4372f38700fe5825e107c71f2a3bc00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "5a16414ee706c9c5e48e513fca082703b2e7652ecb3f56837697a1d553020a00",
+      "name": "HUG",
+      "symbol": "HUG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HUG.png"
+    },
+    "reserve0": "84785",
+    "reserve1": "13",
+    "poolType": "V2",
+    "TVL": 1.0593061808010727e-13,
+    "liquidity": 1.0593061808010727e-13,
+    "mobulaPrice": 0.00006189147984345622,
+    "pair": 0.00006189147984345622,
+    "ticker": "HUG",
+    "name": "HUG"
+  },
+  {
+    "address": "vRzYW65acVfRo9LFe7kaac9scDKCdcgbXWW9vj7CpzYo",
+    "tokenPairId": "19e2692626fa55ba80dc3568b46c49347fe7fe482a6ec86118995c99365d8400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "93db3ced5685c6e5438afcc94fc20a1bca8885be75c02f6f164da30f217c2500",
+      "name": "DOH",
+      "symbol": "DOH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOH.png"
+    },
+    "reserve0": "2487627981498985168463",
+    "reserve1": "4659165275522912883729823",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.000591111904165034,
+    "pair": 0.000591111904165034,
+    "ticker": "DOH",
+    "name": "DOH"
+  },
+  {
+    "address": "21fuLqHJXC2GdRaxPzzU4D4c39G157FpY7uFnG2eQSVkT",
+    "tokenPairId": "67bd187f42436a7689298caee0f2f98097725af859a4959ee77754a33af16100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "d1a047c957c450b8459d71138ac0d8abdf669e4f61852af73f6ac654fb9af100",
+      "name": "FROG",
+      "symbol": "FROG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/FROG.png"
+    },
+    "reserve0": "107898",
+    "reserve1": "10",
+    "poolType": "V2",
+    "TVL": 1.348080654550618e-13,
+    "liquidity": 1.348080654550618e-13,
+    "mobulaPrice": 0.00010239260434975538,
+    "pair": 0.00010239260434975538,
+    "ticker": "FROG",
+    "name": "FROG"
+  },
+  {
+    "address": "29SH9mpQVXHrZ9xRpMpnKkq8CTqaY8FyFh4e4wuA4R1eF",
+    "tokenPairId": "db1d1ea12d6d0a53020e3737c89606c64bf6a85f0fac8dc412a62019c7c8b300",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "18608da087ea4e173d20637b5dd9e93fffa37dc97e71014a98a46deefbbcec00",
+      "name": "Dogecoin",
+      "symbol": "DOGE",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOGE.png"
+    },
+    "reserve0": "174945257097666491987",
+    "reserve1": "257193931308",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "23mkzHdYdMvNzXSbZ4Y12B7ocF7TeN9ZjV9AzkvmffayV",
+    "tokenPairId": "86f4821b9d11dc70c20e32de1204d80e1b4a4ffc59ec8714148b58fb7fdc1a00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "50f19ae6fe71aad8096a4e9d90eaa4ceaccd301c9736549d3b57111a81778300",
+      "name": "CryptoGriffons",
+      "symbol": "GRFN",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GRFN.png"
+    },
+    "reserve0": "3936874897919503925232",
+    "reserve1": "94677033",
+    "poolType": "V2",
+    "TVL": 4084.4484777512425,
+    "liquidity": 4084.4484777512425,
+    "mobulaPrice": 0.0027784676604652226,
+    "pair": 0.0027784676604652226,
+    "ticker": "GRFN",
+    "name": "CryptoGriffons"
+  },
+  {
+    "address": "xF4c4yzXTqEhzNJHfU4PWK4f6RMDEHQhCDqS6mZufATh",
+    "tokenPairId": "34ccfcf0a640cc615f9758239aef99c4ff04a0024e26bd552cf11f7019dcc200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "8d97f8ab9aa1ad84188e853df4f1544131a61d03fce2b9f9054cbc368c31f400",
+      "name": "Candy",
+      "symbol": "CANDY",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CANDY.png"
+    },
+    "reserve0": "47440213625928050017",
+    "reserve1": "8343627272676897933897",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.005458468770014943,
+    "pair": 0.005458468770014943,
+    "ticker": "CANDY",
+    "name": "Candy"
+  },
+  {
+    "address": "uDFKBHGjDcuxnXNGfLHohU4ToWWzYqXjGk46QbbFWPZ1",
+    "tokenPairId": "07c2dfc49235e068b8d18d7a519f64b8dfff10f1ad47521efcc009ba7f02d200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "c4f0066f85ab8a57a547f6b0b32f06472a5eb0dd0a9467968990af74946d5100",
+      "name": "Blackjack",
+      "symbol": "BJ",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BJ.png"
+    },
+    "reserve0": "404",
+    "reserve1": "2481",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "28ueKMcSYwyg63EJo8PoiphkZJ4TLPf618Ghmz865Wowd",
+    "tokenPairId": "d3440bd0bee4ee10f4c1f92df756eb3143628874dd0ba7782fd90749f8639200",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "f1d3d24ef3325827a8bb9c29911f61baee4f146d28ab37d16e5d379434cea600",
+      "name": "FIVE",
+      "symbol": "FIVE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/FIVE.png"
+    },
+    "reserve0": "1918",
+    "reserve1": "523",
+    "poolType": "V2",
+    "TVL": 4.917375235233783e-15,
+    "liquidity": 4.917375235233783e-15
+  },
+  {
+    "address": "yL3bPrJEtnPVBt5aS6veh8jhbakrtnTAgnhB6kz2FAMM",
+    "tokenPairId": "44ef6f66c57ccbff69f02815644ed894fd5d4b168f538dcf04fce2c5f5375e00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "f1d3d24ef3325827a8bb9c29911f61baee4f146d28ab37d16e5d379434cea600",
+      "name": "FIVE",
+      "symbol": "FIVE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/FIVE.png"
+    },
+    "reserve0": "4325",
+    "reserve1": "235",
+    "poolType": "V2",
+    "TVL": 5.403667195806616e-15,
+    "liquidity": 5.403667195806616e-15,
+    "mobulaPrice": 17.465195214420085,
+    "pair": 17.465195214420085,
+    "ticker": "FIVE",
+    "name": "FIVE"
+  },
+  {
+    "address": "297yCVECSNTLjBZkAijZspxg1TwGSZqjWdZJcehCwEYDd",
+    "tokenPairId": "d66c5d8614c466b4585881c5f54e11135f4dd48e5d217e971334a53226090900",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "8907cab001af8ff1057e22f69533606cd3e207a0d879a9006527a31a7d670b00",
+      "name": "dogwifhat",
+      "symbol": "DOGWIFHAT",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOGWIFHAT.png"
+    },
+    "reserve0": "73932872509441646954",
+    "reserve1": "396547602",
+    "poolType": "V2",
+    "TVL": 107.40117847389155,
+    "liquidity": 107.40117847389155,
+    "mobulaPrice": 1.8290630735113106e-7,
+    "pair": 1.8290630735113106e-7,
+    "ticker": "DOGWIFHAT",
+    "name": "dogwifhat"
+  },
+  {
+    "address": "232WLow5U3vnQEfAkNUKamongYymEcVE4dE5eNkN1GKpT",
+    "tokenPairId": "7bdff914b9f1616534f7ab64d0e9e7c9e7574bda222397248a6c1c9826596000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "25d74e048ae06c4888a8b5e1522201a208c93b1d44677eaecf36b20124129900",
+      "name": "69",
+      "symbol": "69",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/69.png"
+    },
+    "reserve0": "2181",
+    "reserve1": "461",
+    "poolType": "V2",
+    "TVL": 2.7249475500703422e-15,
+    "liquidity": 2.7249475500703422e-15,
+    "mobulaPrice": 4.489623627561496,
+    "pair": 4.489623627561496,
+    "ticker": "69",
+    "name": "69"
+  },
+  {
+    "address": "29Dw1HghoieGLPKXtGACfm5XzzxyhdEcUVZWxRv2sBau5",
+    "tokenPairId": "d7f35ed5dd1f89a7739cb33d16a32ba52e0973c093484c62425a913330988600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "1bf2158a307e11dc3cb12a44a5c0255a01c16a73df402332c9330848268d3a00",
+      "name": "HAPPY420",
+      "symbol": "HAPPY420",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HAPPY420.png"
+    },
+    "reserve0": "75692",
+    "reserve1": "14",
+    "poolType": "V2",
+    "TVL": 9.456979823930506e-14,
+    "liquidity": 9.456979823930506e-14,
+    "mobulaPrice": 5.130706122211774e-13,
+    "pair": 5.130706122211774e-13,
+    "ticker": "HAPPY420",
+    "name": "HAPPY420"
+  },
+  {
+    "address": "vGvCCC2wDGh4RAYfMbiGoXzWFP75rq6Gc3aqUKEZyqsD",
+    "tokenPairId": "178f43c545b65aa1a4a8c49848db506aafe813c0577ad75e43d5d15210957c00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "3b679c6393160a4be222ac3f76c73fbbb5cfac07e62aeaa7eb501dbab5c6a300",
+      "name": "KAMASUTRA",
+      "symbol": "KAMA",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/KAMA.png"
+    },
+    "reserve0": "3460614665",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 4.32370172082955e-9,
+    "liquidity": 4.32370172082955e-9,
+    "mobulaPrice": 0.000032840400025978824,
+    "pair": 0.000032840400025978824,
+    "ticker": "KAMA",
+    "name": "KAMASUTRA"
+  },
+  {
+    "address": "uz1UPT5ZKgGxJJ57tvv8kdSwaXiGPJhJKSGeQMBTfcDD",
+    "tokenPairId": "133a5c35c376ed16a789369ba2ce4874a5bedbe2d1e93f59dbdfb00ecdbe7a00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "dae0bce81368f8ed974090fd063a669bc22ec00076aa97b7f335391af231a200",
+      "name": "Wojak on Alph",
+      "symbol": "WOJAK",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WOJAK.png"
+    },
+    "reserve0": "3000000000000000001",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 3.74820845951904,
+    "liquidity": 3.74820845951904,
+    "mobulaPrice": 2846927.774836107,
+    "pair": 2846927.774836107,
+    "ticker": "WOJAK",
+    "name": "Wojak on Alph"
+  },
+  {
+    "address": "21HBSLiikKM71tPsY9YGitoFmUd3jHyz31You8NxHzmHh",
+    "tokenPairId": "61eaef8ab017208cc434a63484a17ac73c90bd38d2850ecd415a5e5944875800",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "57233d9cddd3023278db9babb6ed059399bc405c447da7ecf4256db8c3063500",
+      "name": "POOOH",
+      "symbol": "POOOH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/POOOH.png"
+    },
+    "reserve0": "28907922245907142114",
+    "reserve1": "328763956119659121",
+    "poolType": "V2",
+    "TVL": 36.1176395697426,
+    "liquidity": 36.1176395697426,
+    "mobulaPrice": 83.44260902364206,
+    "pair": 83.44260902364206,
+    "ticker": "POOOH",
+    "name": "POOOH"
+  },
+  {
+    "address": "27rzKVAFDVPCp1xk2Gcb6Mev33zcyCkuvu3G1m6r33CU7",
+    "tokenPairId": "c3ba3bc0bb916388bfb0502fe24f141e52cc05a888babd3cae2b631e9010d400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "122d0fdfe07429b84427c3be39a01a28d979deee80b7d848fb299dcd6f760100",
+      "name": "NOTHING",
+      "symbol": "NOT",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NOT.png"
+    },
+    "reserve0": "12747987659",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 1.592737172843604e-8,
+    "liquidity": 1.592737172843604e-8,
+    "mobulaPrice": 0.000001209753337989167,
+    "pair": 0.000001209753337989167,
+    "ticker": "NOT",
+    "name": "NOTHING"
+  },
+  {
+    "address": "zELWg27uNEsZV7vcChSXdJWeuNXnpUQ75TiaDJKg1yAf",
+    "tokenPairId": "5254c4644d0b17df242293d0962278511535b1a2e45394dbdfd51c98bb342000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "dee94e403a91ba1964fece605dc5145961ca5d978929e842e409e811357d0b00",
+      "name": "BANANA",
+      "symbol": "BANANA",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BANANA.png"
+    },
+    "reserve0": "196173206",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 2.4509935675339044e-10,
+    "liquidity": 2.4509935675339044e-10,
+    "mobulaPrice": 1.861636496133484e-10,
+    "pair": 1.861636496133484e-10,
+    "ticker": "BANANA",
+    "name": "BANANA"
+  },
+  {
+    "address": "243R1a7YoQzVuU3tVw9soZtwbs9rzgKgdfjBCex9fN7QB",
+    "tokenPairId": "8af7364ef09c97bb90f4538dd3763601eafabe99d3d2e881d8fd468ccace3a00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "d633131779aa9b02ea7fe187c1e542d7fb1bbde113a6330e929697183347c800",
+      "name": "0xbiigbang.alph",
+      "symbol": "0XBIIG",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/0XBIIG.png"
+    },
+    "reserve0": "22009633255571545170",
+    "reserve1": "20055726726088647728",
+    "poolType": "V2",
+    "TVL": 27.49889785314829,
+    "liquidity": 27.49889785314829,
+    "mobulaPrice": 1.0414288328552508,
+    "pair": 1.0414288328552508,
+    "ticker": "0XBIIG",
+    "name": "0xbiigbang.alph"
+  },
+  {
+    "address": "23H3972rPm2Knv16B7mg3EnVWYQfNFkY689MzYHYPDuod",
+    "tokenPairId": "7f98ed8c2c2d25db04ef26f34bedb8c8aa23f4b4c7ca978786a97e844ec8e000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "da9be0b21e10aa45e960c94a15aa51feb0f336617ae29541e555613af9b27300",
+      "name": "Pingu",
+      "symbol": "PINGU",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PINGU.png"
+    },
+    "reserve0": "37861",
+    "reserve1": "27",
+    "poolType": "V2",
+    "TVL": 4.7303640161950126e-14,
+    "liquidity": 4.7303640161950126e-14,
+    "mobulaPrice": 1.3307102775687632e-11,
+    "pair": 1.3307102775687632e-11,
+    "ticker": "PINGU",
+    "name": "Pingu"
+  },
+  {
+    "address": "29xFkSFwGcDKehw9zc4qgzwx4TEtcCH47wsoigAPJ6gd5",
+    "tokenPairId": "e2caf550701358fd1b4a978a03a7194c4a31bee283df5ca9335a593dc28a4400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "3d0682dacac0af251c8090e7241fc0087d85b7cca818c2b991d754e89cf98b00",
+      "name": "SOUL",
+      "symbol": "SOUL",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SOUL.png"
+    },
+    "reserve0": "164602",
+    "reserve1": "7",
+    "poolType": "V2",
+    "TVL": 2.0565420295125102e-13,
+    "liquidity": 2.0565420295125102e-13,
+    "mobulaPrice": 0.00022314762171122515,
+    "pair": 0.00022314762171122515,
+    "ticker": "SOUL",
+    "name": "SOUL"
+  },
+  {
+    "address": "26LiaEbULZHepVD56LP1BxpDY7YvRmeT5aMZo1hMm3dV9",
+    "tokenPairId": "ad1d5187fa12b825a571b5560661bfc27d85f1bec24f3589cd47c0326546a300",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "8b977e199340c1f74e050c7a2d2dc7b71c96f78d96d9aa28fcafe1475b690500",
+      "name": "Angry Frog",
+      "symbol": "ANGRY",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ANGRY.png"
+    },
+    "reserve0": "22008296",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 2.749722708226635e-11,
+    "liquidity": 2.749722708226635e-11,
+    "mobulaPrice": 0.00002088534305307146,
+    "pair": 0.00002088534305307146,
+    "ticker": "ANGRY",
+    "name": "Angry Frog"
+  },
+  {
+    "address": "28KFkCjUuu3kdyonvkP4iiEJrL998g15acAcLCcbvcU9V",
+    "tokenPairId": "ca74c6dfac2bccf71d0ca48bea0b5cdbe082f33823b5b4408b5fea2d035b0700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "02f8a4ff414e6ba6230ce7eef2dcb73907b8ee50e88f67bc3a3a1792abfe2a00",
+      "name": "twenty-one",
+      "symbol": "TWENTYONE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TWENTYONE.png"
+    },
+    "reserve0": "2939",
+    "reserve1": "341",
+    "poolType": "V2",
+    "TVL": 3.67199488750882e-15,
+    "liquidity": 3.67199488750882e-15,
+    "mobulaPrice": 8.179003646376653,
+    "pair": 8.179003646376653,
+    "ticker": "TWENTYONE",
+    "name": "twenty-one"
+  },
+  {
+    "address": "29ZMJdnVYjSGqr3CqbHwNiAwSkVq7c6XYMKYk8R7HmbAF",
+    "tokenPairId": "dcece18145b697c057afef7c4e5ff9b4a18a5e9cac89815b0ee64d7a606bfb00",
+    "token0": {
+      "id": "8d97f8ab9aa1ad84188e853df4f1544131a61d03fce2b9f9054cbc368c31f400",
+      "name": "Candy",
+      "symbol": "CANDY",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CANDY.png"
+    },
+    "token1": {
+      "id": "da9be0b21e10aa45e960c94a15aa51feb0f336617ae29541e555613af9b27300",
+      "name": "Pingu",
+      "symbol": "PINGU",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PINGU.png"
+    },
+    "reserve0": "14422342278566676247",
+    "reserve1": "70817441646477470",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "vHZWBAEaqzoMqCF4p1M2gNCf6JKToi5MYzUQkBzykyQK",
+    "tokenPairId": "17b97389f3bd8e756b1a7ab88b4d35441f35bc6474e9c9cff72994df8b818900",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "aae97382bf0b6a105e7f11327e02eb73ae425b2ac46da78a4fe0f42c8fcf8e00",
+      "name": "DUCKIE",
+      "symbol": "DUCK",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DUCK.png"
+    },
+    "reserve0": "26486942",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 3.3092860023730056e-11,
+    "liquidity": 3.3092860023730056e-11,
+    "mobulaPrice": 2.513547028342434e-7,
+    "pair": 2.513547028342434e-7,
+    "ticker": "DUCK",
+    "name": "DUCKIE"
+  },
+  {
+    "address": "29SVQo4NMXWQWaECb8MsUarvQranFaNxgtBoQ9A36nrdV",
+    "tokenPairId": "db2afb1e43188a8a16f41695e89b805785c3e98c464840a0a9758ac0c3515100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "8b96fa9225058358c673daeab4e51930ab095e4638b7f8f9db8496bef60ffc00",
+      "name": "DELPHINA",
+      "symbol": "DELPHINA",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DELPHINA.png"
+    },
+    "reserve0": "111400000000000000",
+    "reserve1": "11909787844143",
+    "poolType": "V2",
+    "TVL": 0.13918347413014034,
+    "liquidity": 0.13918347413014034,
+    "mobulaPrice": 0.0000887638969076205,
+    "pair": 0.0000887638969076205,
+    "ticker": "DELPHINA",
+    "name": "DELPHINA"
+  },
+  {
+    "address": "tvRTcW5jVum1vKfM6oJqmujgGqu9J6fELfw6htt7Mmaw",
+    "tokenPairId": "037378c89fd7c1cd1b5097f2b29eaae847d8daf8babb3d0e4b57f0ef2d7e5600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "924b1d641a4bd7cad4db26c154e2d7972a9b1f692dd304a2d63c7f1748c9f300",
+      "name": "APE",
+      "symbol": "APE",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APE.png"
+    },
+    "reserve0": "65440566481795742061",
+    "reserve1": "161507408",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 4.828676467139131e-7,
+    "pair": 4.828676467139131e-7,
+    "ticker": "APE",
+    "name": "APE"
+  },
+  {
+    "address": "xm4DeiK49cKYJP9mWFSn47gTctGTCWTWQwuyBgZpAiAT",
+    "tokenPairId": "3c7bf9ab8e1e5b2c9a2c6307311eddaa0a39412a243c464773c11920765edf00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "1f050d54200df57b8ee6734a4c0e58cf645eb01ea89ef5a833eb230e6e9bda00",
+      "name": "TRADE",
+      "symbol": "TRADE",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TRADE.png"
+    },
+    "reserve0": "259104990474763519",
+    "reserve1": "46887399043784",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 5.2441466792418996e-15,
+    "pair": 5.2441466792418996e-15,
+    "ticker": "TRADE",
+    "name": "TRADE"
+  },
+  {
+    "address": "zJQfdqU8LuAnG8HeWBQKU3BhQFghxN2G5i3TVhVQdjj5",
+    "tokenPairId": "535fc9b5889fc47e1905b77723c644781a3fa42691a045144018bc96a328eb00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "4b05972dee373110bbfb3f2141b64954294755006198414931b161805b99e200",
+      "name": "Alephium Flash",
+      "symbol": "FLASH",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/FLASH.png"
+    },
+    "reserve0": "539411232782888525",
+    "reserve1": "858880566610267",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 5.959947092252025e-8,
+    "pair": 5.959947092252025e-8,
+    "ticker": "FLASH",
+    "name": "Alephium Flash"
+  },
+  {
+    "address": "29L3Lx7K31pt8zipMjYysDiSkHHfbnjmUEwVgoMTmwW7Z",
+    "tokenPairId": "d98405d929e0a588f6fb7a1e95ddbe2d5cbc08c0cc81819de4a31301da45c300",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "9c9da9375f291bee8738e481b0386f8c2c6b0779365d935dc3502e762ac4fb00",
+      "name": "dontbuy",
+      "symbol": "DONT",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DONT.png"
+    },
+    "reserve0": "588201365816409735836",
+    "reserve1": "2617154047733598",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0022891294735495472,
+    "pair": 0.0022891294735495472,
+    "ticker": "DONT",
+    "name": "dontbuy"
+  },
+  {
+    "address": "279mF4d3BE5hRjU8i9RFMdexJkrrinYoMpUR1oWZbCwdh",
+    "tokenPairId": "b92aa28668abd545c34f125b15078be66c2a3279ae4388e011d37f75aed18a00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "7bb148bbcb04bad4700563a22e25c3b12712327ec647792b163c87669933a700",
+      "name": "AlephiumSolana",
+      "symbol": "ALPHSOL",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPHSOL.png"
+    },
+    "reserve0": "73363508948624232",
+    "reserve1": "1383028967792",
+    "poolType": "V2",
+    "TVL": 0.09166057495374472,
+    "liquidity": 0.09166057495374472,
+    "mobulaPrice": 0.0005033893387851947,
+    "pair": 0.0005033893387851947,
+    "ticker": "ALPHSOL",
+    "name": "AlephiumSolana"
+  },
+  {
+    "address": "2BhM7dqKEwpMKMAvPgxaf8m7WKAkboiKezmL73XofAzNs",
+    "tokenPairId": "fcb0afd09869b83d03439d6a50f40ee063790a1ccb879415d3fe6cec7f0b9d00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "eb220949deae1e755cf06b944e700c4662f790a7b2a7656da4755cfa73f30700",
+      "name": "Bernard",
+      "symbol": "BERN",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BERN.png"
+    },
+    "reserve0": "988489",
+    "reserve1": "17",
+    "poolType": "V2",
+    "TVL": 1.2350209439805056e-12,
+    "liquidity": 1.2350209439805056e-12,
+    "mobulaPrice": 0.000005517954488666604,
+    "pair": 0.000005517954488666604,
+    "ticker": "BERN",
+    "name": "Bernard"
+  },
+  {
+    "address": "21D6iiRafBUVWXGtLMhogXz78scX7Z1ZdFztR5sLoTstT",
+    "tokenPairId": "60df4736180d3d531dda52f779c695fd980f67f5ea84ab74921eb168c8a19500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "5e87d8440456d721df5ab4bfb9003ed3ca7882f90b8ba6447b8262c456b37300",
+      "name": "ALPHa BULL",
+      "symbol": "BULL",
+      "decimals": 3,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BULL.png"
+    },
+    "reserve0": "8345277380258245456",
+    "reserve1": "60765387",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.00013032859184878117,
+    "pair": 0.00013032859184878117,
+    "ticker": "BULL",
+    "name": "ALPHa BULL"
+  },
+  {
+    "address": "25tJ1533WfJrsHovn1UmYnc9uZZggBP26zSHY9LcNmCCf",
+    "tokenPairId": "a6586f1b8f2da7c0f7802db2cc065cfea85df42d3a156065d4347ae549a0bf00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "c84cbfaae99c012f3cc1baf37faf6f7e6b5a7e9510afc2813127ea8e85002400",
+      "name": "BOOM",
+      "symbol": "BOOM",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BOOM.png"
+    },
+    "reserve0": "3276",
+    "reserve1": "306",
+    "poolType": "V2",
+    "TVL": 4.0930436377947915e-15,
+    "liquidity": 4.0930436377947915e-15,
+    "mobulaPrice": 10.159624608238655,
+    "pair": 10.159624608238655,
+    "ticker": "BOOM",
+    "name": "BOOM"
+  },
+  {
+    "address": "26VscGRXg5gpGL9LBE5YxsZA2hhFVFe5ouVhh2aHFQkb9",
+    "tokenPairId": "af75c2febede127f7a5e4d131e18989492825f767506853516325f13fb0b0800",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "a99163814096cc7aed3a6f6f0c869a01beb2bb30f249ebdb7f8607ceb1fe7200",
+      "name": "Luka Magic 77",
+      "symbol": "LD77",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LD77.png"
+    },
+    "reserve0": "967947969745795691469",
+    "reserve1": "30994311",
+    "poolType": "V2",
+    "TVL": 848.4338705400207,
+    "liquidity": 848.4338705400207,
+    "mobulaPrice": 0.06355787873410534,
+    "pair": 0.06355787873410534,
+    "ticker": "LD77",
+    "name": "Luka Magic 77"
+  },
+  {
+    "address": "23M2s9kwFrh26ouQbWsUa8NHipM3EBCZvBhyNfFLXJinb",
+    "tokenPairId": "809ef0adf3ba895ac2b564167c4f43744750810b9fd53f2bb327e02773299000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "8933767d71a11de0d1c93a4a4d33b0396634d29961049ac8d0101e15fe0e4e00",
+      "name": "Dogs on Alph",
+      "symbol": "DOGS",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOGS.png"
+    },
+    "reserve0": "415154156",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 5.186947731745624e-10,
+    "liquidity": 5.186947731745624e-10,
+    "mobulaPrice": 3.93971299185014e-10,
+    "pair": 3.93971299185014e-10,
+    "ticker": "DOGS",
+    "name": "Dogs on Alph"
+  },
+  {
+    "address": "wJeLkHUtridus7PCixhG39WcsMLLBXiauim1MxMv4mpb",
+    "tokenPairId": "26dc3052b83bbc20e7d6c806480af794af025fec6dabdce9164bda6fab3e5600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "f9a626d0465d183e0145e35bdc2836c0d98c37f1af7dd28878584e3e9d123f00",
+      "name": "MEMEX",
+      "symbol": "MEMEX",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MEMEX.png"
+    },
+    "reserve0": "125364340113455723",
+    "reserve1": "32",
+    "poolType": "V2",
+    "TVL": 0.15663056004509232,
+    "liquidity": 0.15663056004509232,
+    "mobulaPrice": 37177418.941978894,
+    "pair": 37177418.941978894,
+    "ticker": "MEMEX",
+    "name": "MEMEX"
+  },
+  {
+    "address": "22Hp3ok6wPERZvaxeBWteBbFbWH7pYSsB6DJMusm7HnHm",
+    "tokenPairId": "70f004f57617f3df090c403d86322f452f85895a7c2a3eb75750747347c61c00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "edabe8fa7c61061419dc238c7947518d27df9f0494fe845ffc34cea4e414f600",
+      "name": "SNOWY",
+      "symbol": "SNOWY",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SNOWY.png"
+    },
+    "reserve0": "99877703",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 1.2478748376731007e-10,
+    "liquidity": 1.2478748376731007e-10,
+    "mobulaPrice": 9.478153558584382e-7,
+    "pair": 9.478153558584382e-7,
+    "ticker": "SNOWY",
+    "name": "SNOWY"
+  },
+  {
+    "address": "wqbgwy2Psw9w7LYHKnnfLsibhreuA5rXMu73gBxWQQJb",
+    "tokenPairId": "2eca321005964434c3f8b1b1e6b29b1ff155b089e53e613d8915cbd08b16d200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "cbdb77a40f1b4785382f41c4aa9dccbd5914496776c4721d5e1bf085b64f3e00",
+      "name": "DOGGIESALPH",
+      "symbol": "DOGGIES",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOGGIES.png"
+    },
+    "reserve0": "25",
+    "reserve1": "41627",
+    "poolType": "V2",
+    "TVL": 212.12784320921332,
+    "liquidity": 212.12784320921332,
+    "mobulaPrice": 0.0005616027194964996,
+    "pair": 0.0005616027194964996,
+    "ticker": "DOGGIES",
+    "name": "DOGGIESALPH"
+  },
+  {
+    "address": "28EN75xKTXFbDPnCJDzJP3QQMAUQLdtE98dLQf15ibhJf",
+    "tokenPairId": "c934106b8aeb42193aa3fd7bd0daccb573092259375ff5c951dcf3a997533500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "400934ce887d8f98d667b7529642ea657a05b3de035d3e60735a1cc11440cf00",
+      "name": "ALEPHIUM WUKONG",
+      "symbol": "WUKONG",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WUKONG.png"
+    },
+    "reserve0": "7564624472706392632",
+    "reserve1": "9467855",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 8.468666411627433e-7,
+    "pair": 8.468666411627433e-7,
+    "ticker": "WUKONG",
+    "name": "ALEPHIUM WUKONG"
+  },
+  {
+    "address": "259n7yHLhJUwqYFDg9FdDzDhtaZvkDwUjSaJt7WKnWtJb",
+    "tokenPairId": "9b7440e2730458af5332de262dce2af6f22c379465705487869bbdf4fbb1b700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "05a830ddab06bb9266e8c4fab28da2c7fdd1e0544e2fd9d282873ed9cece2e00",
+      "name": "AlephiumBear",
+      "symbol": "BEAR",
+      "decimals": 1,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BEAR.png"
+    },
+    "reserve0": "70763747718",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 26.28488148684485,
+    "liquidity": 26.28488148684485,
+    "mobulaPrice": 0.00000293957703602773,
+    "pair": 0.00000293957703602773,
+    "ticker": "BEAR",
+    "name": "AlephiumBear"
+  },
+  {
+    "address": "27uyhCTSnTK6m2RQbdf9QCdkeDw2Md8SH9HgNbejDVUt7",
+    "tokenPairId": "c47e44b64941b977f9da96b116086137ba27cf7bd124ef45e9fe4ac14d788b00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "24e1e0b1fc67d87052c7b1e448312401dab0255f92d6b5242656b8231ccaa900",
+      "name": "TURBO",
+      "symbol": "TURBO",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TURBO.png"
+    },
+    "reserve0": "43146831374263026837",
+    "reserve1": "21932253",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0000022702313645952195,
+    "pair": 0.0000022702313645952195,
+    "ticker": "TURBO",
+    "name": "TURBO"
+  },
+  {
+    "address": "24GUsGc7wYaKwDYV71Pk3qMQgnsN1fog7zKr9giLAyGgX",
+    "tokenPairId": "8e501fa643a579bd23a71eaa4a5e1424808b1d70da37a939f10e51e858a4c300",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "685d167791a07c1932b33fb64206faddf5c133783aaed49a76c6fe182d1a9600",
+      "name": "Book of Degen",
+      "symbol": "DEGEN",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DEGEN.png"
+    },
+    "reserve0": "98736640657100565141",
+    "reserve1": "2160863316723",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 4.846801677177961e-7,
+    "pair": 4.846801677177961e-7,
+    "ticker": "DEGEN",
+    "name": "Book of Degen"
+  },
+  {
+    "address": "xuxZNQDQpG7HqJ7sP4erdmAGc6wxXAUEqPLMC2TkAk4o",
+    "tokenPairId": "3ec3cd80f60244cc01826a435ba9768833af26e6fe803819806b8a314cb62900",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "755ba7fb419c415f1f6b3c84b10aebc9666d670efd183acf211dcf85d3f9a800",
+      "name": "WEN",
+      "symbol": "WEN",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WEN.png"
+    },
+    "reserve0": "15298759306179823",
+    "reserve1": "49440729278551",
+    "poolType": "V2",
+    "TVL": 0.01911431301718962,
+    "liquidity": 0.01911431301718962,
+    "mobulaPrice": 2.936476559903217e-10,
+    "pair": 2.936476559903217e-10,
+    "ticker": "WEN",
+    "name": "WEN"
+  },
+  {
+    "address": "25g99SQfm3Y8aobkaUEKDxYkg89uLwjBxxRm4c5yyi46B",
+    "tokenPairId": "a33b737c543c21d9f971c62a487219f2e8c7ed8c4b3847a72ba392863e82bb00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "166a41f14087b459ce112a2009d54237707b36a577dac64babe33e5a95c31d00",
+      "name": "AlephiumApes",
+      "symbol": "APES",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APES.png"
+    },
+    "reserve0": "27379",
+    "reserve1": "37",
+    "poolType": "V2",
+    "TVL": 68.41413909447256,
+    "liquidity": 68.41413909447256,
+    "mobulaPrice": 0.0000070488804324861585,
+    "pair": 0.0000070488804324861585,
+    "ticker": "APES",
+    "name": "AlephiumApes"
+  },
+  {
+    "address": "239UK5tTNxPNuFyhhb5rnBheTgqu8dxXKX8hA5osV12du",
+    "tokenPairId": "7da8be5caf2c46a020e788380ac2a5e0b6b5a4d1d4918fc1da0765ef99088b00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "bcaf8101eded1f64a9456c7a64d12ec653404c860f5adb0f849c096663edf400",
+      "name": "Cats AI",
+      "symbol": "CATS",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CATS.png"
+    },
+    "reserve0": "507996822084638527",
+    "reserve1": "4822151423614",
+    "poolType": "V2",
+    "TVL": 0.6346926619821436,
+    "liquidity": 0.6346926619821436,
+    "mobulaPrice": 9.997130155356705e-8,
+    "pair": 9.997130155356705e-8,
+    "ticker": "CATS",
+    "name": "Cats AI"
+  },
+  {
+    "address": "v42t7E2dvg9sEeSnmBtcgp6NwfsiaaLUxyT2jzq4MvJb",
+    "tokenPairId": "144246cc93af05c55001004ea9b909a474266b2d3b505d9626b17dbb616ca700",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "6cc3cd7a703daa2367342a0c6c1c90ca7f69c9b42e28de3a80c322512b205200",
+      "name": "The ARK",
+      "symbol": "ARK",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ARK.png"
+    },
+    "reserve0": "2070839393529235348511",
+    "reserve1": "75685959380824690",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0002766206751230004,
+    "pair": 0.0002766206751230004,
+    "ticker": "ARK",
+    "name": "The ARK"
+  },
+  {
+    "address": "vwUntMZodan8HcyzrUwQosKZxzHfebd4Zj3dWTPv4VM1",
+    "tokenPairId": "217031bea6515e6a334d9566ca465484efa88b6ad41d92f43fc9c32c1ca83600",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "2a7c1a01644e5119c5e7aaa42690476eb971f299d99e39b885a828e5994da300",
+      "name": "Bongo Cat",
+      "symbol": "BONG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
+    },
+    "reserve0": "1419532189594103860",
+    "reserve1": "709408303568341375",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "27trK4Fq99WPDcJ8fM2C4um84sZwtPwBPMHUst9dxdEhD",
+    "tokenPairId": "c434574da1e01bb21ed455aa6bc4632d0f46b7256d87f36b31c1ab3821149400",
+    "token0": {
+      "id": "2a7c1a01644e5119c5e7aaa42690476eb971f299d99e39b885a828e5994da300",
+      "name": "Bongo Cat",
+      "symbol": "BONG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
+    },
+    "token1": {
+      "id": "68527f951fe706770409910e004a2976d02009e1da940fc85b2c4e34c3e5a800",
+      "name": "Alephium Rocks",
+      "symbol": "ROCK",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ROCK.png"
+    },
+    "reserve0": "535551840162328936",
+    "reserve1": "9851872589",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "yhpXygGs2nz59Z1XuFRaGV5qjB5FoyP9uLREjG5K8qu1",
+    "tokenPairId": "4a83727c08852470ddfacebd1835b0ddcb870e6278ccdcbb0c32b5eed602bb00",
+    "token0": {
+      "id": "2a7c1a01644e5119c5e7aaa42690476eb971f299d99e39b885a828e5994da300",
+      "name": "Bongo Cat",
+      "symbol": "BONG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
+    },
+    "token1": {
+      "id": "6adb8983488fb726f94518c185f4a24de236c72cc2ff32889be4612e9c9d3100",
+      "name": "ALPEPE",
+      "symbol": "ALPEPE",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPEPE.png"
+    },
+    "reserve0": "399797",
+    "reserve1": "3",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "21GsAs1qAn3G6tUkTdyRSXdTLzjakc1XWsFDgY3uPTMw5",
+    "tokenPairId": "61d64803e74206fcb14e3bf20c8288421ade21d9dd47ac3a27418269062c4800",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "6adb8983488fb726f94518c185f4a24de236c72cc2ff32889be4612e9c9d3100",
+      "name": "ALPEPE",
+      "symbol": "ALPEPE",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPEPE.png"
+    },
+    "reserve0": "352579",
+    "reserve1": "3",
+    "poolType": "V2",
+    "TVL": 4.697024864335824,
+    "liquidity": 4.697024864335824
+  },
+  {
+    "address": "xMrAd4HDcVTSvm9tBr5kT9UkmS1Lgj9DL8f8cj4bPnQ7",
+    "tokenPairId": "3689fd3af401d18f6e8c2483d542cc882578637e7c767342b792ad86b8a4be00",
+    "token0": {
+      "id": "2a7c1a01644e5119c5e7aaa42690476eb971f299d99e39b885a828e5994da300",
+      "name": "Bongo Cat",
+      "symbol": "BONG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
+    },
+    "token1": {
+      "id": "b26b785f79e655802bc2bdccfa18faa35e969aaec165e7d17f9640be7df80f00",
+      "name": "BERAS",
+      "symbol": "BOTTOM",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BOTTOM.png"
+    },
+    "reserve0": "1599238",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "24r3CFtCQoYY3ro3YUJjC59yuwLHiSkjEBet5VdU7rhx3",
+    "tokenPairId": "96e8d7cf35c59201850b7cde7482ac796d103803d81d935ba4d321de267c1f00",
+    "token0": {
+      "id": "2a7c1a01644e5119c5e7aaa42690476eb971f299d99e39b885a828e5994da300",
+      "name": "Bongo Cat",
+      "symbol": "BONG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
+    },
+    "token1": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "reserve0": "1591985312204349416",
+    "reserve1": "4275428",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "28aALGCe66LpWj4Au2fHHChdDReAT8FgrgjatbyRdAfgj",
+    "tokenPairId": "ce465e66db36b8f0d111deeca36738ae766a7ce2aaa90dac85c846a1f8a16500",
+    "token0": {
+      "id": "2a7c1a01644e5119c5e7aaa42690476eb971f299d99e39b885a828e5994da300",
+      "name": "Bongo Cat",
+      "symbol": "BONG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
+    },
+    "token1": {
+      "id": "722954d9067c5a5ad532746a024f2a9d7a18ed9b90e27d0a3a504962160b5600",
+      "name": "USD Coin (Ethereum via AlphBridge)",
+      "symbol": "USDCeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
+    },
+    "reserve0": "1501855173025366872",
+    "reserve1": "4529529",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "zyHyus8gzsQrSWWkAxugKS877a8vxP52TMTM8AUFkVyh",
+    "tokenPairId": "5d55e17f6af6cb74a6d83190d7534101f6e8584398698d9478d3c227cefd0a00",
+    "token0": {
+      "id": "2a7c1a01644e5119c5e7aaa42690476eb971f299d99e39b885a828e5994da300",
+      "name": "Bongo Cat",
+      "symbol": "BONG",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
+    },
+    "token1": {
+      "id": "e80754811030f54ccc68d027cdd47c734ecc4c5a800383ad071881d83f510800",
+      "name": "WTD Bread Token",
+      "symbol": "BREAD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BREAD.png"
+    },
+    "reserve0": "751342541849439202",
+    "reserve1": "2673108148737739464473",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "xt3qJQbCAK76K3vXShLvn8X6qHnSC1FoDQVSRCo2JPMh",
+    "tokenPairId": "3e469af00404bdb2689170d23a3bde59e18570e220bdf8fa41739f1b318a8000",
+    "token0": {
+      "id": "68527f951fe706770409910e004a2976d02009e1da940fc85b2c4e34c3e5a800",
+      "name": "Alephium Rocks",
+      "symbol": "ROCK",
+      "decimals": 5,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ROCK.png"
+    },
+    "token1": {
+      "id": "e80754811030f54ccc68d027cdd47c734ecc4c5a800383ad071881d83f510800",
+      "name": "WTD Bread Token",
+      "symbol": "BREAD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BREAD.png"
+    },
+    "reserve0": "1",
+    "reserve1": "357909320",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "xHpemDTpSYhSFmuMp2dAo9sadyBoTTC9TTV7pwEVDpRu",
+    "tokenPairId": "3581f400beccb42c0b938af1ba4fe916fd49c03c64551615c107f4b1d1f3e500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "a9e6b252707d632d57275fd00d7ba8e5585b4b35bc7ff2bf9ec440a66d5efb00",
+      "name": "JustBuyTheCoin",
+      "symbol": "JBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JBTC.png"
+    },
+    "reserve0": "503275602236911455948",
+    "reserve1": "626537974555205065",
+    "poolType": "V2",
+    "TVL": 497.20350670313223,
+    "liquidity": 497.20350670313223
+  },
+  {
+    "address": "26FoGyHtatXZPks5xEXWwXUDHE8jaDvnHPCf8q5a1GwGB",
+    "tokenPairId": "abdabb3cd47f36c748c1e3a8b22fc4fe3463980ddf4127dceb0754887ac84b00",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "a9e6b252707d632d57275fd00d7ba8e5585b4b35bc7ff2bf9ec440a66d5efb00",
+      "name": "JustBuyTheCoin",
+      "symbol": "JBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JBTC.png"
+    },
+    "reserve0": "24181055728288703400",
+    "reserve1": "49912395132715753",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "27B6m1isJbQ28WkrFzDrmPwRZSoiXrwwKXJhBPNSbtirj",
+    "tokenPairId": "b982486cfe3877263fc802f119ec5e2cc166e17c29827838c37648871825cd00",
+    "token0": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "token1": {
+      "id": "a9e6b252707d632d57275fd00d7ba8e5585b4b35bc7ff2bf9ec440a66d5efb00",
+      "name": "JustBuyTheCoin",
+      "symbol": "JBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JBTC.png"
+    },
+    "reserve0": "58482288",
+    "reserve1": "154493945216613489",
+    "poolType": "V2",
+    "TVL": 116.964576,
+    "liquidity": 116.964576,
+    "mobulaPrice": 6.020703218675915e-8,
+    "pair": 6.020703218675915e-8,
+    "ticker": "JBTC",
+    "name": "JustBuyTheCoin"
+  },
+  {
+    "address": "25vZ4KCQSnvgnNpNdCWYUnthg6FFkjDErNj3WFvc6e8X1",
+    "tokenPairId": "a6ec9e9308e7d48b9b45d4068af455c8a020a6b6fdfb359b3e2c3a9315ac1000",
+    "token0": {
+      "id": "722954d9067c5a5ad532746a024f2a9d7a18ed9b90e27d0a3a504962160b5600",
+      "name": "USD Coin (Ethereum via AlphBridge)",
+      "symbol": "USDCeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
+    },
+    "token1": {
+      "id": "a9e6b252707d632d57275fd00d7ba8e5585b4b35bc7ff2bf9ec440a66d5efb00",
+      "name": "JustBuyTheCoin",
+      "symbol": "JBTC",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JBTC.png"
+    },
+    "reserve0": "51053398",
+    "reserve1": "132706622189977922",
+    "poolType": "V2",
+    "TVL": 102.106796,
+    "liquidity": 102.106796
+  },
+  {
+    "address": "vuXRDptcwpDALCmPjdxWe2Ugsk95aPwPdQ4rcL2VGidV",
+    "tokenPairId": "20f000a18c54005f084608ebaab9f521407224e915fa4d277adafd0a2db7d000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "98f8f31b3acb578fea0d31a2f834e95dc4e594dee53b57f55994d6cb75b58f00",
+      "name": "Pokeman on Alph",
+      "symbol": "POKEMAN",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/POKEMAN.png"
+    },
+    "reserve0": "5061664084605427",
+    "reserve1": "53679400109",
+    "poolType": "V2",
+    "TVL": 0.006324057380387254,
+    "liquidity": 0.006324057380387254,
+    "mobulaPrice": 8.948306699958522e-10,
+    "pair": 8.948306699958522e-10,
+    "ticker": "POKEMAN",
+    "name": "Pokeman on Alph"
+  },
+  {
+    "address": "2Bq42FZAxMgD7CkZg4Dra8Pivb1TZnqpJqsg5ehVpxvmD",
+    "tokenPairId": "feaa019e8a19403cb23bddf77ceeaa62ee8a633ae4ee531f4badd6f2b10e5500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "73ffdde0d09bd833312605c5ebf69b28fc4a47bbaef8fc2263890ac203fa1800",
+      "name": "0",
+      "symbol": "0",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/0.png"
+    },
+    "reserve0": "29111998273138",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "29vPQKWzpdrHwRJUZMDUy4SwoKTs3fYpbtKGLUf7dVr8f",
+    "tokenPairId": "e250733a25339054937dae6ba5ffd7385b89ca0fbd8cf66810cfd48f0a5bfc00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "eb62a9d372a7d3bcfac6ee97605fd9c53a2c6ae83feddc2dfa5fa5f2d3e47400",
+      "name": "GOOD BOI",
+      "symbol": "BOI",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BOI.png"
+    },
+    "reserve0": "6512049244384297090",
+    "reserve1": "2016346087935",
+    "poolType": "V2",
+    "TVL": 8.136172688868598,
+    "liquidity": 8.136172688868598,
+    "mobulaPrice": 3.064839906183106e-8,
+    "pair": 3.064839906183106e-8,
+    "ticker": "BOI",
+    "name": "GOOD BOI"
+  },
+  {
+    "address": "2AYYX1R5eE1gHKHDCTdhsrxcy9CdBUy6GjcaaMuJhQnE3",
+    "tokenPairId": "eb93aa7b5dccec08abd5552a4c39ea3c591c0df7558d2b05867b622e4cc18400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "08bba34d2012d8f83a175e0b5527c4aef8cf476f417da06ac9c108b6e4b4dd00",
+      "name": "COOQ Alephium",
+      "symbol": "COOQ",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/COOQ.png"
+    },
+    "reserve0": "174735",
+    "reserve1": "6",
+    "poolType": "V2",
+    "TVL": 2.1831440172468652e-13,
+    "liquidity": 2.1831440172468652e-13,
+    "mobulaPrice": 2.7636551374221506e-8,
+    "pair": 2.7636551374221506e-8,
+    "ticker": "COOQ",
+    "name": "COOQ Alephium"
+  },
+  {
+    "address": "277yfgveKfgvRfAbGFdXSjKyiWWaHeMeiZYWSLoZsTvs9",
+    "tokenPairId": "b8b585929980db6edd8803eb69642e00fa54839980fcc54ba918857a1cbacb00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "d64d8c00f83b8dd6e87dea4fb5760e0419e0ca1a90070758eb03a1c28c9c0300",
+      "name": "STONK",
+      "symbol": "STONK",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/STONK.png"
+    },
+    "reserve0": "128573909",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "2BXTPm5BhuezqQefwPRFMJ99V3BgfbLGZkMXn28fX9e3y",
+    "tokenPairId": "fa27fa2da51de91c1777a07ad76c2d19288fc299fda0a1707d69668175feed00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "9583c452482f5afb7f5a459605349b517cc2ee6885ad3344e72c7cff64fd6b00",
+      "name": "SWAPA",
+      "symbol": "SWAPA",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SWAPA.png"
+    },
+    "reserve0": "1241408815",
+    "reserve1": "1879286262273",
+    "poolType": "V2",
+    "TVL": 1.5510196740348357e-9,
+    "liquidity": 1.5510196740348357e-9
+  },
+  {
+    "address": "241V6oLADpNWh6Muev58T8vhCFJNgzFmbxsKJLETpG88f",
+    "tokenPairId": "8a78acdd89321016caaef582cf9881208c23fb84c27fcf1acfe025ed50f05c00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "c75f34ee6972b760e99feff8f79e607ce82b874bd8663b4c00594c54060fd800",
+      "name": "HIPPO",
+      "symbol": "HIPPO",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HIPPO.png"
+    },
+    "reserve0": "92747820947621874266",
+    "reserve1": "64630628047",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.000024362431230991316,
+    "pair": 0.000024362431230991316,
+    "ticker": "HIPPO",
+    "name": "HIPPO"
+  },
+  {
+    "address": "29ieTzvxt8HLVLA15gLynm7N6B8jqVYMHx6vEC7vT3J3R",
+    "tokenPairId": "df4e833f3720a1d462bea467ead06dc63fda9cd9ed10099d48de514cf1ff3600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "41158ce697223f207f7f4173f50dd43a038d6517e1f7e0a570bd8d5963e61200",
+      "name": "ALPA",
+      "symbol": "ALPA",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPA.png"
+    },
+    "reserve0": "821063966209476254",
+    "reserve1": "3877309493",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 2.1172098787299708e-8,
+    "pair": 2.1172098787299708e-8,
+    "ticker": "ALPA",
+    "name": "ALPA"
+  },
+  {
+    "address": "2BYrbK8GwkUtNiAzKo7BHbZyMg3tZWs45Xj8Q5gnCRoKd",
+    "tokenPairId": "fa83ca1a9b05bab5f5cee21ac6281576eccc20638f9cab789b5f488dbcc3b400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "71701415463ab05b2d27994203e713317173b98bb3a4d63e397221acdd82ae00",
+      "name": "Book of Alph Memes",
+      "symbol": "BOAM",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BOAM.png"
+    },
+    "reserve0": "21282050288213416770",
+    "reserve1": "9521700618769359611757683743",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 4.05593791452732e-9,
+    "pair": 4.05593791452732e-9,
+    "ticker": "BOAM",
+    "name": "Book of Alph Memes"
+  },
+  {
+    "address": "24d6eZXXVFVzSCddwBzsajTfFVz3yLVcN76wDJhLhakJK",
+    "tokenPairId": "9398328888af23c6a406eb88c0071ba383f3f0e9df76317c5462e54e244fe600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "1a895ae70ae689cf858225016e173c0eeef53ffcfd0ae6716d93a11d12673700",
+      "name": "POOP PIXEL",
+      "symbol": "POOP",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/POOP.png"
+    },
+    "reserve0": "543877",
+    "reserve1": "2",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  },
+  {
+    "address": "tmjPzc7ZjMz9YMs6FYgsUemjrRdsT1bvak6pU7YcFj2X",
+    "tokenPairId": "013986d22c971ba0f25206a0841c713c92f971cdc0bde1a2652b122e7a211400",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "e07eb63588f67b5aa3fd59d01f8558046d33de90f33f2a474a74780468386e00",
+      "name": "Dare",
+      "symbol": "DARE",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DARE.png"
+    },
+    "reserve0": "6130384935499159750",
+    "reserve1": "339671607264218740797",
+    "poolType": "V2",
+    "TVL": 7.659320225115344,
+    "liquidity": 7.659320225115344,
+    "mobulaPrice": 0.017127094493685987,
+    "pair": 0.017127094493685987,
+    "ticker": "DARE",
+    "name": "Dare"
+  },
+  {
+    "address": "26Hf8canDS5ZQhQhdcjCW4zNCVNabZMuJ2aV66EbuqRgB",
+    "tokenPairId": "ac54af3932b795b1369bf7aae08002edbc56613236878462f418f882c6471100",
+    "token0": {
+      "id": "9583c452482f5afb7f5a459605349b517cc2ee6885ad3344e72c7cff64fd6b00",
+      "name": "SWAPA",
+      "symbol": "SWAPA",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SWAPA.png"
+    },
+    "token1": {
+      "id": "a99163814096cc7aed3a6f6f0c869a01beb2bb30f249ebdb7f8607ceb1fe7200",
+      "name": "Luka Magic 77",
+      "symbol": "LD77",
+      "decimals": 4,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LD77.png"
+    },
+    "reserve0": "1000820418521128",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 0.000009955843472944825,
+    "liquidity": 0.000009955843472944825
+  },
+  {
+    "address": "21Mhv755Qbs5M5vRxshbNyXgueaYXU5gvW49nLqx9EXZZ",
+    "tokenPairId": "6313b8a8aa25400d9cba02aa6406857c98df12936c9cbf54ddf5a13bc160c800",
+    "token0": {
+      "id": "1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800",
+      "name": "AYIN",
+      "symbol": "AYIN",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
+    },
+    "token1": {
+      "id": "9583c452482f5afb7f5a459605349b517cc2ee6885ad3344e72c7cff64fd6b00",
+      "name": "SWAPA",
+      "symbol": "SWAPA",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SWAPA.png"
+    },
+    "reserve0": "208",
+    "reserve1": "4831",
+    "poolType": "V2",
+    "TVL": 5.332711412558014e-16,
+    "liquidity": 5.332711412558014e-16
+  },
+  {
+    "address": "21wypvMRhtiUAeXURDQGyybSBLcwsr6bacEW7XNaiGg4F",
+    "tokenPairId": "6bdb7581dd9244a49a3702f60cd2e0cb1df2bffd66c41fc68260536d0b2cdd00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "7189bb8a1c8cc1b513f54aae765ce48e0bd12593d4f36ab5dfe69734ed89dd00",
+      "name": "POPCAT",
+      "symbol": "POPCAT",
+      "decimals": 0,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/POPCAT.png"
+    },
+    "reserve0": "286463651120385138410",
+    "reserve1": "689129427",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 4.49399416327561e-7,
+    "pair": 4.49399416327561e-7,
+    "ticker": "POPCAT",
+    "name": "POPCAT"
+  },
+  {
+    "address": "zDV8DZqtJ3C5ukhKRu9oQHaEtSYhDt1PcLBDXJTip8tF",
+    "tokenPairId": "521cecc63d6d19ac429a1f81b0c5db3156ad77bb23234d32aab7287273ca1800",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "1bd0e357b5ab392f6a2bcc23c94b79c9a766c76bbc51ffdd99ee084f8b139600",
+      "name": "FIRE of GRFN",
+      "symbol": "FIRE",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/FIRE.png"
+    },
+    "reserve0": "122412144090402859029",
+    "reserve1": "71165238",
+    "poolType": "V2",
+    "TVL": 120.93522353660401,
+    "liquidity": 120.93522353660401,
+    "mobulaPrice": 0.00027848572934980405,
+    "pair": 0.00027848572934980405,
+    "ticker": "FIRE",
+    "name": "FIRE of GRFN"
+  },
+  {
+    "address": "27PGzcE8u1tXZbu3ehUUiwBvViCqnXEkBAtNwhEKNARsM",
+    "tokenPairId": "bca0d31ed60f8f6b143cb1a626483c66e4d7b3092a952fb27209bb9677966b00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "48b8c4bc5d036c59baca66268c14b08c3a1fe45f7284d5b094a420a0561ebe00",
+      "name": "DOGESWAPA",
+      "symbol": "DOGESWAPA",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOGESWAPA.png"
+    },
+    "reserve0": "5063",
+    "reserve1": "263",
+    "poolType": "V2",
+    "TVL": 18.915514266490206,
+    "liquidity": 18.915514266490206,
+    "mobulaPrice": 1.8322965073662983e-7,
+    "pair": 1.8322965073662983e-7,
+    "ticker": "DOGESWAPA",
+    "name": "DOGESWAPA"
+  },
+  {
+    "address": "25fCxPSbvagdwp6bjHZew5zUCFaGfYk4VFzTqjHJnqBH9",
+    "tokenPairId": "a2fe2d7c743ce0b81ac4a5d8d4bad2f5247e39df31cb3041bd183027c24def00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "4efaf744d8d9089e44d72f27a0c2ba5463f4fd62cbe8b9c3b94ecdaf2bb71e00",
+      "name": "GOAT",
+      "symbol": "GOAT",
+      "decimals": 8,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GOAT.png"
+    },
+    "reserve0": "37033838637116198572",
+    "reserve1": "11668228655579147",
+    "poolType": "V2",
+    "TVL": 46.27018242270067,
+    "liquidity": 46.27018242270067,
+    "mobulaPrice": 3.0119585682039855e-7,
+    "pair": 3.0119585682039855e-7,
+    "ticker": "GOAT",
+    "name": "GOAT"
+  },
+  {
+    "address": "2BRmNkQFdTK9BL2j1Aydm2mqZG4WdsB7Aq9XshwKutXSf",
+    "tokenPairId": "f8b2d34a11001d08d91e51f34859cfd2d22dfa453b4ae8a1766d0ace88ca3600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "832bd3d6b2f6cfb4e83cde65fa962a0000291c6900b7563d2a842efb676b8800",
+      "name": "ICE of GRFN",
+      "symbol": "ICE",
+      "decimals": 2,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ICE.png"
+    },
+    "reserve0": "41546161056791600956",
+    "reserve1": "1950097",
+    "poolType": "V2",
+    "TVL": 51.90789077786893,
+    "liquidity": 51.90789077786893,
+    "mobulaPrice": 0.002021761308119446,
+    "pair": 0.002021761308119446,
+    "ticker": "ICE",
+    "name": "ICE of GRFN"
+  },
+  {
+    "address": "23wapbv2TgxURVG9DJ97sYA44h69YhVn32uo13XfQ7Hr7",
+    "tokenPairId": "8978d20b530bde3583f783c9ba2ab80ee72c0cf0706a88cd6c22a77dce5db100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "c59bf85bbef49601b0b7ad23811f194293040f6a2b7ed8ed52e7420005c34d00",
+      "name": "Synchronization",
+      "symbol": "SYNC",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SYNC.png"
+    },
+    "reserve0": "91073478599062493604",
+    "reserve1": "1747316827766278932315236",
+    "poolType": "V2",
+    "TVL": 113.78746097427742,
+    "liquidity": 113.78746097427742,
+    "mobulaPrice": 0.00004946243132221352,
+    "pair": 0.00004946243132221352,
+    "ticker": "SYNC",
+    "name": "Synchronization"
+  },
+  {
+    "address": "24zoe6PsjgzN9aYVjxKVUJuLe1fVYSdw1Fz1iaTEShKM1",
+    "tokenPairId": "9927be7e4c808efbd9b1c57e34be7d5cb81c6f47530bbe0bec117685b38e4100",
+    "token0": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "token1": {
+      "id": "9583c452482f5afb7f5a459605349b517cc2ee6885ad3344e72c7cff64fd6b00",
+      "name": "SWAPA",
+      "symbol": "SWAPA",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SWAPA.png"
+    },
+    "reserve0": "1",
+    "reserve1": "2105990757",
+    "poolType": "V2",
+    "TVL": 7.903867594299353,
+    "liquidity": 7.903867594299353,
+    "mobulaPrice": 0.2261820100818002,
+    "pair": 0.2261820100818002,
+    "ticker": "SWAPA",
+    "name": "SWAPA"
+  },
+  {
+    "address": "y5goDKPFH7WzatnkYhND4dNdyoXduxSRG3CE1DHK8RZh",
+    "tokenPairId": "4141ca19e31e2a0614636194a37bbc8f3fa2138f9083a4a8f07ef2a4d4b55500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "cad22f7c98f13fe249c25199c61190a9fb4341f8af9b1c17fcff4cd4b2c3d200",
+      "name": "Elexium",
+      "symbol": "EX",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/EX.png"
+    },
+    "reserve0": "22984975306154632128",
+    "reserve1": "71875648448689491319",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.47605004134105827,
+    "pair": 0.47605004134105827,
+    "ticker": "EX",
+    "name": "Elexium"
+  },
+  {
+    "address": "25V9GcQYos4nM8hYp6gr3UsAt5oSTnWdfajzd1aPRdvib",
+    "tokenPairId": "a06a33b8f16a5bb9bb65aab89cfba9a93aa8e05cbe0eff792d8cf815f0c73100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "aee1a1d09864da0708cf7d7a5c50839c4ed9e72fe3004b3465cb3042689e2f00",
+      "name": "PNUT",
+      "symbol": "PNUT",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PNUT.png"
+    },
+    "reserve0": "118250962985909569496",
+    "reserve1": "262932643293275593",
+    "poolType": "V2",
+    "TVL": 147.74308660335305,
+    "liquidity": 147.74308660335305,
+    "mobulaPrice": 0.000004267911187051305,
+    "pair": 0.000004267911187051305,
+    "ticker": "PNUT",
+    "name": "PNUT"
+  },
+  {
+    "address": "zWHjKocf4tPqkGMznzyw7o2XYtBWz5vC7iB4YUAPfJib",
+    "tokenPairId": "566aea2519515f5880afb0cdb4a293b304f4eeb8f60e2643306ccb981675a600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "b067767804137fa913fe30a26a7c5f397faba36aaa7b9650327ae4e6e9305d00",
+      "name": "Sexy Pepe",
+      "symbol": "EXY",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/EXY.png"
+    },
+    "reserve0": "5874061384562179232",
+    "reserve1": "29441034154884496435616",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.0002037143012543764,
+    "pair": 0.0002037143012543764,
+    "ticker": "EXY",
+    "name": "Sexy Pepe"
+  },
+  {
+    "address": "2BiqazJt5BHkCqquMxaXarAvAoEKV8GfkfEEdLisrZf83",
+    "tokenPairId": "fd1275e55904db4f8126dd01757ab4de7df65cd45fb8829c85b22dc714f46500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "160685b0942ccf2ad0c001b9f0e0349b70a85e255e6710fede723604b6f35b00",
+      "name": "Nutty the smoking squirrel",
+      "symbol": "NUTTY",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NUTTY.png"
+    },
+    "reserve0": "916758714775778876",
+    "reserve1": "2239609798469156038",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.2736091074613595,
+    "pair": 0.2736091074613595,
+    "ticker": "NUTTY",
+    "name": "Nutty the smoking squirrel"
+  },
+  {
+    "address": "zQYtFLtsmLppAQwPwfZLVo2AGkKoPP5PBVDoyYkFEsGB",
+    "tokenPairId": "54f29074d7ea3b66549659ad5d5420bc92230b75d565639d78231db665b53500",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "bcb548631e52e79fd617e0e62180d6d79ad259652093590a874acbeb8b65ac00",
+      "name": "RalphBuilder",
+      "symbol": "BUILD",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BUILD.png"
+    },
+    "reserve0": "2233360849226225940",
+    "reserve1": "27184646950852626446",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.07796333281292656,
+    "pair": 0.07796333281292656,
+    "ticker": "BUILD",
+    "name": "RalphBuilder"
+  },
+  {
+    "address": "23gGsyhq6dqWvakct7owEwz9QfXggaTSj416XKkpQQ4eB",
+    "tokenPairId": "858cd24d5bacf233394cd3d46e834ab8a889b9c7c46ed3b5b2fdda200be17000",
+    "token0": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "token1": {
+      "id": "7ff5e72636f640eb2c28056df3b6879e4c86933505abebf566518ad396335700",
+      "name": "Tether USD (BSC via AlphBridge)",
+      "symbol": "USDTbsc",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTbsc.png"
+    },
+    "reserve0": "246968369",
+    "reserve1": "253349296419308794648",
+    "poolType": "V2",
+    "TVL": 493.936738,
+    "liquidity": 493.936738
+  },
+  {
+    "address": "zy4BVzQSae6SJBdCc4Kg4zrn7z2VGQUFHxny4FqjJH35",
+    "tokenPairId": "5d4646e3d5d7eaf21b1b4448164e3a40654cd21cbf1d7a588c4c2145ddb75f00",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "7ff5e72636f640eb2c28056df3b6879e4c86933505abebf566518ad396335700",
+      "name": "Tether USD (BSC via AlphBridge)",
+      "symbol": "USDTbsc",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTbsc.png"
+    },
+    "reserve0": "797",
+    "reserve1": "1257",
+    "poolType": "V2",
+    "TVL": 23.469195861262975,
+    "liquidity": 23.469195861262975
+  },
+  {
+    "address": "27z35jQddjKbqFdQfz2ibfxHtxP1Z9d9Pv6iSuPLhxndD",
+    "tokenPairId": "c5886c4ca58d9156e8785ed4c6c30d4d51e1a8a18160dc98253b93384aa42600",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "9b3070a93fd5127d8c39561870432fdbc79f598ca8dbf2a3398fc100dfd45f00",
+      "name": "AlphBanX",
+      "symbol": "ABX",
+      "decimals": 9,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ABX.png"
+    },
+    "reserve0": "12573223",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0,
+    "mobulaPrice": 0.1889185901805965,
+    "pair": 0.1889185901805965,
+    "ticker": "ABX",
+    "name": "AlphBanX"
+  },
+  {
+    "address": "y5Wr5egH4LhTA8G6zUnK4U19cCEKE6ztUAma2GyHBRX5",
+    "tokenPairId": "413689cfedb5fd37c57d77ba926578e3acd45749b2e6fd77c41d92c77ad4c100",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "730cd53131847cff0e96343dca544a5fc2417c06c47393d52d6fabf86c977100",
+      "name": "COPE",
+      "symbol": "COPE",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/COPE.png"
+    },
+    "reserve0": "2178257705070416025917",
+    "reserve1": "700133013435023688",
+    "poolType": "V2",
+    "TVL": 2176.856519210688,
+    "liquidity": 2176.856519210688,
+    "mobulaPrice": 0.00003727387465900546,
+    "pair": 0.00003727387465900546,
+    "ticker": "COPE",
+    "name": "COPE"
+  },
+  {
+    "address": "295ChsobyFGx1NNj8cGWycWo6UHoo651Jnkc29SUc9TWw",
+    "tokenPairId": "d5b6e51ddb034ba9703700a6e34e32c1e52259d56817f6e29001222059040200",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "c135dd39636aac613f5cecc13a31815d1688155381a05a8970cdb09fa6316a00",
+      "name": "AlephiumXMAS",
+      "symbol": "XMAS",
+      "decimals": 10,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/XMAS.png"
+    },
+    "reserve0": "126100",
+    "reserve1": "8",
+    "poolType": "V2",
+    "TVL": 1.374343101823648,
+    "liquidity": 1.374343101823648
+  },
+  {
+    "address": "29Yfn8VGjzWNSb7hD5b4wgyqtYPjWqNBmiuQHGHnwHUy5",
+    "tokenPairId": "dcc030518b6303687664290fdda1a08e0340ddde244ac57d48dec9ebb8a96000",
+    "token0": {
+      "id": "0000000000000000000000000000000000000000000000000000000000000000",
+      "name": "Alephium",
+      "symbol": "ALPH",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png"
+    },
+    "token1": {
+      "id": "c96426f749d6f0c970c53ddb554c1c7c12521dd2360d903e78baa57baaa3ff00",
+      "name": "Alph Frens",
+      "symbol": "FRENS",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/FRENS.png"
+    },
+    "reserve0": "2177233",
+    "reserve1": "1",
+    "poolType": "V2",
+    "TVL": 2.7202410496480063e-12,
+    "liquidity": 2.7202410496480063e-12,
+    "mobulaPrice": 0.0000020661416999965806,
+    "pair": 0.0000020661416999965806,
+    "ticker": "FRENS",
+    "name": "Alph Frens"
+  },
+  {
+    "address": "27C75V9K5o9CkkGTMDQZ3x2eP82xnacraEqTYXA35Xuw5",
+    "tokenPairId": "b9c4394e0a758961ca37e1745690136a555541b92f604371db82eff75aa31600",
+    "token0": {
+      "id": "556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00",
+      "name": "Tether USD (Ethereum via AlphBridge)",
+      "symbol": "USDTeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
+    },
+    "token1": {
+      "id": "722954d9067c5a5ad532746a024f2a9d7a18ed9b90e27d0a3a504962160b5600",
+      "name": "USD Coin (Ethereum via AlphBridge)",
+      "symbol": "USDCeth",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
+    },
+    "reserve0": "4163552",
+    "reserve1": "4162354",
+    "poolType": "V2",
+    "TVL": 0,
+    "liquidity": 0
+  }
+]
