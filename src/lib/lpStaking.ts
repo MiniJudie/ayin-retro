@@ -36,9 +36,8 @@ export async function getLpTokenIdFromStakingContract(
     : Staking.at(stakingAddress)
   const res = await instance.view.getTokenId({})
   // When there is a single return value, the SDK sets returns = that value (not an array), so res.returns is the hex string.
-  const raw = Array.isArray((res as { returns?: unknown }).returns)
-    ? (res as { returns: string[] }).returns[0]
-    : (res as { returns?: string }).returns
+  const returns = (res as { returns?: unknown }).returns
+  const raw = Array.isArray(returns) ? returns[0] : returns
   const str = typeof raw === 'string' ? raw : raw != null ? String(raw) : ''
   const normalized = normalizeTokenId(str)
   if (normalized.length !== 64 || !/^[0-9a-f]+$/.test(normalized)) {
@@ -60,14 +59,12 @@ export async function getEarnedReward(
     const accountRes = await instance.view.getStakingAccount({
       args: { staker: userAddress as `@${string}` },
     })
-    const raw = Array.isArray((accountRes as { returns?: unknown }).returns)
-      ? (accountRes as { returns: unknown[] }).returns[0]
-      : (accountRes as { returns?: unknown }).returns
+    const accountReturns = (accountRes as { returns?: unknown }).returns
+    const raw = Array.isArray(accountReturns) ? accountReturns[0] : accountReturns
     if (raw == null) return 0n
     const earnedRes = await instance.view.earned({ args: { acc: raw as string } })
-    const earnedRaw = Array.isArray((earnedRes as { returns?: unknown }).returns)
-      ? (earnedRes as { returns: unknown[] }).returns[0]
-      : (earnedRes as { returns?: unknown }).returns
+    const earnedReturns = (earnedRes as { returns?: unknown }).returns
+    const earnedRaw = Array.isArray(earnedReturns) ? earnedReturns[0] : earnedReturns
     return typeof earnedRaw === 'bigint' ? earnedRaw : BigInt(earnedRaw ?? 0)
   } catch {
     return 0n
@@ -162,7 +159,7 @@ export async function getStakedBalance(
     })
     const returns = (accountRes as { returns?: unknown }).returns
     const isArray = Array.isArray(returns)
-    const raw = isArray ? (accountRes as { returns: unknown[] }).returns[0] : returns
+    const raw = isArray ? returns[0] : returns
     console.log(`${label}: getStakingAccount returns isArray=${isArray} raw type=${typeof raw}`, raw != null && typeof raw === 'object' ? { keys: Object.keys(raw as object) } : raw)
     let result = parseStakedAmountFromRaw(raw, label)
     // When the return is a 64-char hex (staking account contract id), parsing yields 0n; fetch amount from that contract.
