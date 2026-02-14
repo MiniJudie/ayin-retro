@@ -131,7 +131,7 @@ export default function PoolsPage() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
       <Header />
-      <main className="pt-28 pb-12 px-4">
+      <main className="pt-[12.5rem] pb-12 px-4 md:pt-28">
         <div className="mx-auto w-full max-w-[1600px]">
           <div className="mb-8">
             <h1 className="text-2xl font-bold text-white">All Pools</h1>

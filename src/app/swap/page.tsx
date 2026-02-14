@@ -266,7 +266,7 @@ function SwapContent() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
       <Header />
-      <main className="pt-28 pb-12 px-4">
+      <main className="pt-[12.5rem] pb-12 px-4 md:pt-28">
         <div className="mx-auto max-w-lg space-y-6">
           <div className="rounded-xl border border-orange-500/40 bg-orange-950/30 px-4 py-3 text-sm text-orange-200/90 space-y-3">
             <p>This swap tool should not be used as a primary tool. It is here to allow users to swap old tokens that may not be available elsewhere. </p>
@@ -403,7 +403,7 @@ export default function SwapPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen bg-[var(--background)] pt-28 flex items-center justify-center text-[var(--muted)]">
+        <div className="min-h-screen bg-[var(--background)] pt-[12.5rem] flex items-center justify-center text-[var(--muted)] md:pt-28">
           Loading…
         </div>
       }

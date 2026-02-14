@@ -288,7 +288,7 @@ export default function PoolManagePage() {
     return (
       <div className="min-h-screen bg-[var(--background)]">
         <Header />
-        <main className="pt-28 pb-12 px-4">
+        <main className="pt-[12.5rem] pb-12 px-4 md:pt-28">
           <div className="mx-auto max-w-2xl text-center text-[var(--muted)]">Loading pool…</div>
         </main>
       </div>
@@ -299,7 +299,7 @@ export default function PoolManagePage() {
     return (
       <div className="min-h-screen bg-[var(--background)]">
         <Header />
-        <main className="pt-28 pb-12 px-4">
+        <main className="pt-[12.5rem] pb-12 px-4 md:pt-28">
           <div className="mx-auto max-w-2xl rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center">
             <p className="text-red-400">{error ?? 'Pool not found'}</p>
             <Link href="/" className="mt-4 inline-block text-[var(--accent)] hover:underline">
@@ -314,7 +314,7 @@ export default function PoolManagePage() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
       <Header />
-      <main className="pt-28 pb-12 px-4">
+      <main className="pt-[12.5rem] pb-12 px-4 md:pt-28">
         <div className="mx-auto w-full max-w-2xl">
           <Link href="/" className="mb-6 inline-flex items-center gap-1 text-sm text-[var(--muted)] hover:text-white">
             ← Back to Pools
