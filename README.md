@@ -22,6 +22,21 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Matomo Analytics
+
+The app integrates [Matomo](https://matomo.org/) via [@socialgouv/matomo-next](https://github.com/SocialGouv/matomo-next). Analytics is **optional** and disabled unless configured.
+
+**Enable Matomo:** copy `.env.example` to `.env.local` and set:
+
+- `NEXT_PUBLIC_MATOMO_URL` — your Matomo instance URL (e.g. `https://matomo.example.com`)
+- `NEXT_PUBLIC_MATOMO_SITE_ID` — your Matomo site ID
+
+**What is tracked:**
+
+- **Page views** — automatic on route change
+- **Custom events** — swap (token pair + amounts), pool management (add/remove liquidity, pool name, amounts), staking (xAyin mint/burn, Pounder deposit/withdraw, LP stake/unstake with pool name and amount)
+- **User ID** — when a wallet is connected, the wallet address is set as the Matomo user ID for session attribution; it is reset on disconnect
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
