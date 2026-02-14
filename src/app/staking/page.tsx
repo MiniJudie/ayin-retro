@@ -719,7 +719,7 @@ export default function StakingPage() {
                 <div className="min-w-0 font-mono text-sm">
                   <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Balance</div>
                   <div className="mt-1">
-                    <span className="text-[var(--muted)]">Deposit token: </span>
+                    <span className="text-[var(--muted)]">ALPHAYIN : </span>
                     <span className={singleStakingDepositBalance > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
                       {formatTokenAmount(singleStakingDepositBalance, DECIMALS)}
                     </span>
