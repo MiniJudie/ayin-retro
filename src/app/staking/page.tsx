@@ -410,6 +410,7 @@ export default function StakingPage() {
       SINGLE_STAKING_KEY,
       () => executeClaimRewards(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, false),
       () => {
+        sendEvent({ category: 'stake', action: 'claim', name: 'Single ALPHAYIN' })
         if (account?.address) {
           getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleEarned)
         }
