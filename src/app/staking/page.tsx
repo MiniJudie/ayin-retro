@@ -7,6 +7,7 @@ import { Header } from '@/components/Header'
 import {
   AYIN_TOKEN_ID,
   XAYIN_TOKEN_ID,
+  XAYIN_LIQUID_STAKING_ADDRESS,
   ALPHAYIN_TOKEN_ID,
   POUNDER_VAULT_ADDRESS,
   STAKING_POOLS_DEPLOYMENT,
@@ -17,6 +18,7 @@ import { useWalletBalance } from '@/contexts/WalletBalanceContext'
 import { getLpBalance, formatLpAmount } from '@/lib/poolUtils'
 import { executePounderDeposit, executePounderWithdraw } from '@/lib/vault'
 import { executeMintXAyin, executeBurnXAyin } from '@/lib/xayin'
+import { sendEvent } from '@socialgouv/matomo-next'
 import {
   executeStakeLp,
   executeUnstakeLp,
@@ -28,6 +30,12 @@ import {
 import type { PoolInfo } from '@/lib/types'
 
 const DECIMALS = 18
+
+const TOKEN_LOGOS = {
+  ayin: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png',
+  xayin: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/XAYIN.png',
+  alph: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPH.png',
+} as const
 
 function formatTokenAmount(amount: bigint, decimals: number): string {
   const s = amount.toString()
@@ -46,6 +54,23 @@ function parseTokenAmount(value: string, decimals: number): bigint | null {
   return BigInt(combined)
 }
 
+/** Get token balance held by an address (e.g. contract). */
+async function getAddressTokenBalance(address: string, tokenIdHex: string): Promise<bigint> {
+  const provider = web3.getCurrentNodeProvider()
+  if (!provider) return 0n
+  try {
+    const b = await provider.addresses.getAddressesAddressBalance(address)
+    const normalizedId = tokenIdHex.toLowerCase().replace(/^0x/, '')
+    for (const t of b.tokenBalances ?? []) {
+      const id = (t.id ?? '').trim().toLowerCase().replace(/^0x/, '')
+      if (id === normalizedId) return BigInt(t.amount ?? 0)
+    }
+  } catch {
+    // ignore
+  }
+  return 0n
+}
+
 export default function StakingPage() {
   const { account, signer } = useWallet()
   const { balances, refreshBalances } = useWalletBalance()
@@ -62,10 +87,28 @@ export default function StakingPage() {
   const [error, setError] = useState<string | null>(null)
   const [successTxId, setSuccessTxId] = useState<string | null>(null)
   const [refreshingStaking, setRefreshingStaking] = useState(false)
+  const [xAyinContractAyin, setXAyinContractAyin] = useState<bigint | null>(null)
+  const [pounderContractAlphayin, setPounderContractAlphayin] = useState<bigint | null>(null)
+  const [pounderContractAyin, setPounderContractAyin] = useState<bigint | null>(null)
 
   useEffect(() => {
     web3.setCurrentNodeProvider(NODE_URL)
   }, [])
+
+  const fetchContractBalances = useCallback(async () => {
+    const [xayinAyin, pounderAlphayin, pounderAyin] = await Promise.all([
+      getAddressTokenBalance(XAYIN_LIQUID_STAKING_ADDRESS, AYIN_TOKEN_ID),
+      getAddressTokenBalance(POUNDER_VAULT_ADDRESS, ALPHAYIN_TOKEN_ID),
+      getAddressTokenBalance(POUNDER_VAULT_ADDRESS, AYIN_TOKEN_ID),
+    ])
+    setXAyinContractAyin(xayinAyin)
+    setPounderContractAlphayin(pounderAlphayin)
+    setPounderContractAyin(pounderAyin)
+  }, [])
+
+  useEffect(() => {
+    fetchContractBalances()
+  }, [fetchContractBalances])
 
   const refetchStakingPoolsAndPositions = useCallback(async () => {
     setRefreshingStaking(true)
@@ -88,10 +131,11 @@ export default function StakingPage() {
         )
       }
       refreshBalances()
+      fetchContractBalances()
     } finally {
       setRefreshingStaking(false)
     }
-  }, [account?.address, refreshBalances])
+  }, [account?.address, refreshBalances, fetchContractBalances])
 
   useEffect(() => {
     if (!account?.address) {
@@ -168,8 +212,12 @@ export default function StakingPage() {
       setError('Enter a valid amount')
       return
     }
-    run('xayin', () => executeMintXAyin(signer!, amount), () => setMintAmount(''))
-  }, [mintAmount, run, signer])
+    run('xayin', () => executeMintXAyin(signer!, amount), () => {
+      sendEvent({ category: 'xAyin', action: 'mint', name: mintAmount })
+      setMintAmount('')
+      fetchContractBalances()
+    })
+  }, [mintAmount, run, signer, fetchContractBalances])
 
   const handleBurn = useCallback(() => {
     const amount = parseTokenAmount(burnAmount, DECIMALS)
@@ -177,8 +225,12 @@ export default function StakingPage() {
       setError('Enter a valid amount')
       return
     }
-    run('xayin', () => executeBurnXAyin(signer!, amount), () => setBurnAmount(''))
-  }, [burnAmount, run, signer])
+    run('xayin', () => executeBurnXAyin(signer!, amount), () => {
+      sendEvent({ category: 'xAyin', action: 'burn', name: burnAmount })
+      setBurnAmount('')
+      fetchContractBalances()
+    })
+  }, [burnAmount, run, signer, fetchContractBalances])
 
   const alphaAyinTokenIdForTx =
     balances?.tokens.has(ALPHAYIN_TOKEN_ID)
@@ -196,9 +248,13 @@ export default function StakingPage() {
     run(
       'pounder',
       () => executePounderDeposit(signer!, account!.address, amount, alphaAyinTokenIdForTx),
-      () => setDepositAmount('')
+      () => {
+        sendEvent({ category: 'pounder', action: 'deposit', name: depositAmount })
+        setDepositAmount('')
+        fetchContractBalances()
+      }
     )
-  }, [depositAmount, run, signer, account, alphaAyinTokenIdForTx])
+  }, [depositAmount, run, signer, account, alphaAyinTokenIdForTx, fetchContractBalances])
 
   const handleWithdraw = useCallback(() => {
     const shares = parseTokenAmount(withdrawAmount, DECIMALS)
@@ -206,8 +262,12 @@ export default function StakingPage() {
       setError('Enter valid shares')
       return
     }
-    run('pounder', () => executePounderWithdraw(signer!, shares), () => setWithdrawAmount(''))
-  }, [withdrawAmount, run, signer])
+    run('pounder', () => executePounderWithdraw(signer!, shares), () => {
+      sendEvent({ category: 'pounder', action: 'withdraw', name: withdrawAmount })
+      setWithdrawAmount('')
+      fetchContractBalances()
+    })
+  }, [withdrawAmount, run, signer, fetchContractBalances])
 
   const handleStake = useCallback(
     (entry: (typeof STAKING_POOLS_DEPLOYMENT)[0]) => {
@@ -226,6 +286,7 @@ export default function StakingPage() {
             isStakingV4(entry.key)
           ),
         () => {
+          sendEvent({ category: 'stake', action: 'stake', name: entry.label, value: stakeAmounts[entry.key] ?? '' })
           setStakeAmounts((p) => ({ ...p, [entry.key]: '' }))
           if (account?.address) {
             getEarnedReward(entry.stakingAddress, account.address, isStakingV4(entry.key)).then((earned) =>
@@ -252,6 +313,7 @@ export default function StakingPage() {
         entry.key,
         () => executeUnstakeLp(signer!, entry.stakingAddress, amount, isStakingV4(entry.key)),
         () => {
+          sendEvent({ category: 'stake', action: 'unstake', name: entry.label, value: unstakeAmounts[entry.key] ?? '' })
           setUnstakeAmounts((p) => ({ ...p, [entry.key]: '' }))
           if (account?.address) {
             getEarnedReward(entry.stakingAddress, account.address, isStakingV4(entry.key)).then((earned) =>
@@ -330,32 +392,44 @@ export default function StakingPage() {
     <div className="min-h-screen bg-[var(--background)]">
       <Header />
       <main className="pt-28 pb-12 px-4">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-5xl w-full min-w-0">
           <h1 className="text-2xl font-bold text-white">Staking</h1>
           <p className="mt-1 text-sm text-[var(--muted)]">
             xAyin, Pounder vault, and LP pool staking.
           </p>
 
-          {!account?.address && (
-            <div className="mt-6 rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-6 text-center text-[var(--muted)]">
-              Connect your wallet to view balances and stake.
+          {error && account?.address && (
+            <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm text-red-400">
+              {error}
             </div>
           )}
 
-          {account?.address && (
-            <>
-              {error && (
-                <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm text-red-400">
-                  {error}
+          {/* xAyin section — separate card, 3 equal columns: Balance | Mint | Burn */}
+          <section className="mt-6 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--card-border)] px-4 py-3">
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <img src={TOKEN_LOGOS.xayin} alt="" className="h-6 w-6 rounded-full shrink-0" />
+                  <h2 className="text-sm font-semibold text-white">xAyin</h2>
                 </div>
-              )}
-
-              {/* xAyin section — separate card, 3 equal columns: Balance | Mint | Burn */}
-              <section className="mt-6 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
-                <h2 className="border-b border-[var(--card-border)] px-4 py-3 text-sm font-semibold text-white">
-                  xAyin
-                </h2>
-                <div className="grid grid-cols-3 gap-4 px-4 py-3" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+                <span className="text-xs text-[var(--muted)]">
+                  AYIN in contract:{' '}
+                  <span className="font-mono text-white">
+                    {xAyinContractAyin !== null ? formatTokenAmount(xAyinContractAyin, DECIMALS) : '—'}
+                  </span>
+                </span>
+              </div>
+              <a
+                href={`${EXPLORER_URL}/addresses/${XAYIN_LIQUID_STAKING_ADDRESS}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-[var(--muted)] hover:text-white transition shrink-0"
+              >
+                Contract
+              </a>
+            </div>
+            {account?.address ? (
+              <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 px-4 py-3">
                   <div className="min-w-0 font-mono text-sm">
                     <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Balance</div>
                     <div className="mt-1">
@@ -377,7 +451,7 @@ export default function StakingPage() {
                       <input
                         type="text"
                         inputMode="decimal"
-                        placeholder="Amount"
+                        placeholder="0.0"
                         value={mintAmount}
                         onChange={(e) => setMintAmount(e.target.value)}
                         className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)]"
@@ -405,7 +479,7 @@ export default function StakingPage() {
                       <input
                         type="text"
                         inputMode="decimal"
-                        placeholder="Amount"
+                        placeholder="0.0"
                         value={burnAmount}
                         onChange={(e) => setBurnAmount(e.target.value)}
                         className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)]"
@@ -428,14 +502,45 @@ export default function StakingPage() {
                     </div>
                   </div>
                 </div>
-              </section>
+            ) : (
+              <div className="px-4 py-6 text-center text-sm text-[var(--muted)]">
+                Connect your wallet to view balances and mint or burn xAyin.
+              </div>
+            )}
+          </section>
 
-              {/* Pounder section — separate card, 3 equal columns: Balance | Deposit | Withdraw */}
-              <section className="mt-4 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
-                <h2 className="border-b border-[var(--card-border)] px-4 py-3 text-sm font-semibold text-white">
-                  Pounder
-                </h2>
-                <div className="grid grid-cols-3 gap-4 px-4 py-3" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+          {/* Pounder section — separate card, 3 equal columns: Balance | Deposit | Withdraw */}
+          <section className="mt-4 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--card-border)] px-4 py-3">
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <img src={TOKEN_LOGOS.alph} alt="" className="h-6 w-6 rounded-full shrink-0" />
+                  <img src={TOKEN_LOGOS.ayin} alt="" className="-ml-2 h-6 w-6 rounded-full ring-2 ring-[var(--card)] shrink-0" />
+                  <h2 className="text-sm font-semibold text-white">Pounder</h2>
+                </div>
+                <span className="text-xs text-[var(--muted)]">
+                  ALPHAYIN:{' '}
+                  <span className="font-mono text-white">
+                    {pounderContractAlphayin !== null ? formatTokenAmount(pounderContractAlphayin, DECIMALS) : '—'}
+                  </span>
+                  {' · '}
+                  AYIN:{' '}
+                  <span className="font-mono text-white">
+                    {pounderContractAyin !== null ? formatTokenAmount(pounderContractAyin, DECIMALS) : '—'}
+                  </span>
+                </span>
+              </div>
+              <a
+                href={`${EXPLORER_URL}/addresses/${POUNDER_VAULT_ADDRESS}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-[var(--muted)] hover:text-white transition shrink-0"
+              >
+                Contract
+              </a>
+            </div>
+            {account?.address ? (
+              <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 px-4 py-3">
                   <div className="min-w-0 font-mono text-sm">
                     <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Balance</div>
                     <div className="mt-1">
@@ -457,7 +562,7 @@ export default function StakingPage() {
                       <input
                         type="text"
                         inputMode="decimal"
-                        placeholder="ALPHAYIN amount"
+                        placeholder="0.0"
                         value={depositAmount}
                         onChange={(e) => setDepositAmount(e.target.value)}
                         className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)]"
@@ -485,7 +590,7 @@ export default function StakingPage() {
                       <input
                         type="text"
                         inputMode="decimal"
-                        placeholder="Shares amount"
+                        placeholder="0.0"
                         value={withdrawAmount}
                         onChange={(e) => setWithdrawAmount(e.target.value)}
                         className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)]"
@@ -508,16 +613,28 @@ export default function StakingPage() {
                     </div>
                   </div>
                 </div>
-              </section>
-            </>
-          )}
+            ) : (
+              <div className="px-4 py-6 text-center text-sm text-[var(--muted)]">
+                Connect your wallet to deposit ALPHAYIN or withdraw from Pounder.
+              </div>
+            )}
+          </section>
 
           {/* Pool staking — always visible; placeholders when wallet not connected */}
           <section className="mt-6 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
-            <div className="flex items-center justify-between border-b border-[var(--card-border)] px-4 py-3">
-              <h2 className="text-sm font-semibold text-white">
-                Pool staking
-              </h2>
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--card-border)] px-4 py-3">
+              <div className="flex items-center gap-2">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/10" aria-hidden>
+                  <svg className="h-3.5 w-3.5 text-[var(--muted)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="9" cy="12" r="3" />
+                    <circle cx="15" cy="12" r="3" />
+                    <path d="M9 12h6" />
+                  </svg>
+                </span>
+                <h2 className="text-sm font-semibold text-white">
+                  Pool staking
+                </h2>
+              </div>
               {account?.address && (
                 <button
                   type="button"
@@ -536,109 +653,232 @@ export default function StakingPage() {
                 </button>
               )}
             </div>
-            <div
-              className="grid gap-x-4 border-b border-[var(--card-border)] px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--muted)]"
-              style={{ gridTemplateColumns: '1fr 1fr 1fr' }}
-            >
-              <div>Balance</div>
-              <div>Stake</div>
-              <div>Unstake</div>
+
+            {/* Desktop: 3-column grid (≥1280px) */}
+            <div className="hidden xl:block">
+              <div
+                className="grid gap-x-4 border-b border-[var(--card-border)] px-4 py-3 text-left text-xs font-medium uppercase tracking-wider text-[var(--muted)]"
+                style={{ gridTemplateColumns: '1fr 1fr 1fr' }}
+              >
+                <div>Balance</div>
+                <div>Stake</div>
+                <div>Unstake</div>
+              </div>
+              {sortedPoolEntries.map((entry) => {
+                const poolAddr = poolAddressByStakingKey(entry.tokenA, entry.tokenB)
+                const lpBalance =
+                  account?.address && poolAddr && balances
+                    ? getLpBalance(balances, poolAddr) ?? BigInt(0)
+                    : BigInt(0)
+                const staked = account?.address ? (stakedByKey[entry.key] ?? BigInt(0)) : BigInt(0)
+                const isPending = pending === entry.key
+                const connected = !!account?.address
+                return (
+                  <div
+                    key={entry.key}
+                    className="grid gap-x-4 border-b border-[var(--card-border)] px-4 py-3 last:border-b-0"
+                    style={{ gridTemplateColumns: '1fr 1fr 1fr' }}
+                  >
+                    <div className="min-w-0 font-mono text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium text-white">{entry.label}</span>
+                        <a
+                          href={`${EXPLORER_URL}/addresses/${entry.stakingAddress}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-[var(--muted)] hover:text-white transition shrink-0"
+                          title="Staking contract"
+                        >
+                          Contract
+                        </a>
+                      </div>
+                      <div className="mt-1">
+                        <span className="text-[var(--muted)]">LP: </span>
+                        <span className={lpBalance > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
+                          {connected && poolAddr ? formatLpAmount(lpBalance) : '—'}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-[var(--muted)]">Staked: </span>
+                        <span className={staked > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
+                          {connected ? formatLpAmount(staked) : '—'}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex min-w-0 flex-col gap-2">
+                      <div className="flex flex-nowrap items-center gap-2">
+                        <input
+                          type="text"
+                          inputMode="decimal"
+                          placeholder="0.0"
+                          value={stakeAmounts[entry.key] ?? ''}
+                          onChange={(e) =>
+                            setStakeAmounts((p) => ({ ...p, [entry.key]: e.target.value }))
+                          }
+                          disabled={!connected}
+                          className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)] disabled:opacity-60"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleStakeMax(entry)}
+                          disabled={!connected || lpBalance === BigInt(0)}
+                          className="shrink-0 rounded border border-[var(--card-border)] px-2 py-1.5 text-xs text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
+                        >
+                          Max
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleStake(entry)}
+                          disabled={!connected || !!pending || !poolAddr}
+                          className="shrink-0 rounded border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 disabled:opacity-50"
+                        >
+                          {isPending ? '…' : 'Stake'}
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex min-w-0 flex-col gap-2">
+                      <div className="flex flex-nowrap items-center gap-2">
+                        <input
+                          type="text"
+                          inputMode="decimal"
+                          placeholder="0.0"
+                          value={unstakeAmounts[entry.key] ?? ''}
+                          onChange={(e) =>
+                            setUnstakeAmounts((p) => ({ ...p, [entry.key]: e.target.value }))
+                          }
+                          disabled={!connected}
+                          className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)] disabled:opacity-60"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleUnstakeMax(entry)}
+                          disabled={!connected || staked === BigInt(0)}
+                          className="shrink-0 rounded border border-[var(--card-border)] px-2 py-1.5 text-xs text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
+                        >
+                          Max
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleUnstake(entry)}
+                          disabled={!connected || !!pending}
+                          className="shrink-0 rounded bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-50"
+                        >
+                          {isPending ? '…' : 'Unstake'}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
-            {sortedPoolEntries.map((entry) => {
-              const poolAddr = poolAddressByStakingKey(entry.tokenA, entry.tokenB)
-              const lpBalance =
-                account?.address && poolAddr && balances
-                  ? getLpBalance(balances, poolAddr) ?? BigInt(0)
-                  : BigInt(0)
-              const staked = account?.address ? (stakedByKey[entry.key] ?? BigInt(0)) : BigInt(0)
-              const isPending = pending === entry.key
-              const connected = !!account?.address
-              return (
-                <div
-                  key={entry.key}
-                  className="grid gap-x-4 border-b border-[var(--card-border)] px-4 py-3 last:border-b-0"
-                  style={{ gridTemplateColumns: '1fr 1fr 1fr' }}
-                >
-                  <div className="min-w-0 font-mono text-sm">
-                    <div className="font-medium text-white">{entry.label}</div>
-                    <div className="mt-1">
-                      <span className="text-[var(--muted)]">LP: </span>
-                      <span className={lpBalance > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
-                        {connected && poolAddr ? formatLpAmount(lpBalance) : '—'}
-                      </span>
+
+            {/* Mobile/tablet: one card per pool (<1280px) */}
+            <div className="xl:hidden divide-y divide-[var(--card-border)]">
+              {sortedPoolEntries.map((entry) => {
+                const poolAddr = poolAddressByStakingKey(entry.tokenA, entry.tokenB)
+                const lpBalance =
+                  account?.address && poolAddr && balances
+                    ? getLpBalance(balances, poolAddr) ?? BigInt(0)
+                    : BigInt(0)
+                const staked = account?.address ? (stakedByKey[entry.key] ?? BigInt(0)) : BigInt(0)
+                const isPending = pending === entry.key
+                const connected = !!account?.address
+                return (
+                  <div key={entry.key} className="p-4 space-y-4">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className="font-medium text-white">{entry.label}</span>
+                      <a
+                        href={`${EXPLORER_URL}/addresses/${entry.stakingAddress}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-[var(--muted)] hover:text-white transition shrink-0"
+                        title="Staking contract"
+                      >
+                        Contract
+                      </a>
                     </div>
-                    <div>
-                      <span className="text-[var(--muted)]">Staked: </span>
-                      <span className={staked > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
-                        {connected ? formatLpAmount(staked) : '—'}
-                      </span>
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm font-mono">
+                      <div className="flex justify-between gap-2">
+                        <span className="text-[var(--muted)]">LP</span>
+                        <span className={lpBalance > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
+                          {connected && poolAddr ? formatLpAmount(lpBalance) : '—'}
+                        </span>
+                      </div>
+                      <div className="flex justify-between gap-2">
+                        <span className="text-[var(--muted)]">Staked</span>
+                        <span className={staked > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
+                          {connected ? formatLpAmount(staked) : '—'}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Stake</div>
+                      <div className="flex flex-nowrap items-center gap-2">
+                        <input
+                          type="text"
+                          inputMode="decimal"
+                          placeholder="0.0"
+                          value={stakeAmounts[entry.key] ?? ''}
+                          onChange={(e) =>
+                            setStakeAmounts((p) => ({ ...p, [entry.key]: e.target.value }))
+                          }
+                          disabled={!connected}
+                          className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)] disabled:opacity-60"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleStakeMax(entry)}
+                          disabled={!connected || lpBalance === BigInt(0)}
+                          className="shrink-0 rounded border border-[var(--card-border)] px-2 py-1.5 text-xs text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
+                        >
+                          Max
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleStake(entry)}
+                          disabled={!connected || !!pending || !poolAddr}
+                          className="shrink-0 rounded border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 disabled:opacity-50"
+                        >
+                          {isPending ? '…' : 'Stake'}
+                        </button>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Unstake</div>
+                      <div className="flex flex-nowrap items-center gap-2">
+                        <input
+                          type="text"
+                          inputMode="decimal"
+                          placeholder="0.0"
+                          value={unstakeAmounts[entry.key] ?? ''}
+                          onChange={(e) =>
+                            setUnstakeAmounts((p) => ({ ...p, [entry.key]: e.target.value }))
+                          }
+                          disabled={!connected}
+                          className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)] disabled:opacity-60"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleUnstakeMax(entry)}
+                          disabled={!connected || staked === BigInt(0)}
+                          className="shrink-0 rounded border border-[var(--card-border)] px-2 py-1.5 text-xs text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
+                        >
+                          Max
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => handleUnstake(entry)}
+                          disabled={!connected || !!pending}
+                          className="shrink-0 rounded bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-50"
+                        >
+                          {isPending ? '…' : 'Unstake'}
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex min-w-0 flex-col gap-2">
-                    <div className="flex flex-nowrap items-center gap-2">
-                      <input
-                        type="text"
-                        inputMode="decimal"
-                        placeholder="Amount"
-                        value={stakeAmounts[entry.key] ?? ''}
-                        onChange={(e) =>
-                          setStakeAmounts((p) => ({ ...p, [entry.key]: e.target.value }))
-                        }
-                        disabled={!connected}
-                        className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)] disabled:opacity-60"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => handleStakeMax(entry)}
-                        disabled={!connected || lpBalance === BigInt(0)}
-                        className="shrink-0 rounded border border-[var(--card-border)] px-2 py-1.5 text-xs text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
-                      >
-                        Max
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => handleStake(entry)}
-                        disabled={!connected || !!pending || !poolAddr}
-                        className="shrink-0 rounded border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 disabled:opacity-50"
-                      >
-                        {isPending ? '…' : 'Stake'}
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex min-w-0 flex-col gap-2">
-                    <div className="flex flex-nowrap items-center gap-2">
-                      <input
-                        type="text"
-                        inputMode="decimal"
-                        placeholder="Amount"
-                        value={unstakeAmounts[entry.key] ?? ''}
-                        onChange={(e) =>
-                          setUnstakeAmounts((p) => ({ ...p, [entry.key]: e.target.value }))
-                        }
-                        disabled={!connected}
-                        className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)] disabled:opacity-60"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => handleUnstakeMax(entry)}
-                        disabled={!connected || staked === BigInt(0)}
-                        className="shrink-0 rounded border border-[var(--card-border)] px-2 py-1.5 text-xs text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
-                      >
-                        Max
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => handleUnstake(entry)}
-                        disabled={!connected || !!pending}
-                        className="shrink-0 rounded bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-50"
-                      >
-                        {isPending ? '…' : 'Unstake'}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </section>
         </div>
       </main>

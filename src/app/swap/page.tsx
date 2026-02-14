@@ -7,6 +7,7 @@ import { web3 } from '@alephium/web3'
 import { Header } from '@/components/Header'
 import { TokenInput } from '@/components/TokenInput'
 import { TokenSelect } from '@/components/TokenSelect'
+import { sendEvent } from '@socialgouv/matomo-next'
 import { getAmountOut, executeSwap } from '@/lib/swap'
 import type { PairState } from '@/lib/swap'
 import { getPoolState } from '@/lib/poolState'
@@ -206,6 +207,11 @@ function SwapContent() {
         amountInBig,
         minOut
       )
+      sendEvent({
+        category: 'swap',
+        action: `${tokenIn.symbol}->${tokenOut.symbol}`,
+        name: `${amountIn} -> ${amountOutStr}`,
+      })
       setTxId(id)
       setAmountIn('')
     } catch (e) {

@@ -8,6 +8,7 @@ import { web3 } from '@alephium/web3'
 import { Header } from '@/components/Header'
 import type { PoolInfo } from '@/lib/types'
 import { getPoolState } from '@/lib/poolState'
+import { sendEvent } from '@socialgouv/matomo-next'
 import {
   getLiquidityMinted,
   getAmountsForLiquidity,
@@ -214,6 +215,13 @@ export default function PoolManagePage() {
         addAmount0Big!,
         addAmount1Big!
       )
+      const poolName = `${pool.token0.symbol}/${pool.token1.symbol}`
+      sendEvent({
+        category: 'manage-lp',
+        action: 'add',
+        name: poolName,
+        value: `${addAmount0} ${pool.token0.symbol}, ${addAmount1} ${pool.token1.symbol}`,
+      })
       setLastTxId(txId)
       setLastTxAction('add')
       setAddAmount0('')
@@ -251,6 +259,13 @@ export default function PoolManagePage() {
     setRemovePending(true)
     try {
       const { txId } = await executeRemoveLiquidity(pool.address, signer, account.address, removeAmountBig!)
+      const poolName = `${pool.token0.symbol}/${pool.token1.symbol}`
+      sendEvent({
+        category: 'manage-lp',
+        action: 'remove',
+        name: poolName,
+        value: removeAmount,
+      })
       setLastTxId(txId)
       setLastTxAction('remove')
       setRemoveAmount('')

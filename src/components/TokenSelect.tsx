@@ -3,6 +3,13 @@
 import { useRef, useEffect } from 'react'
 import type { TokenInfo } from '@/lib/types'
 
+function formatBalanceDisplay(val: string | undefined): string {
+  if (val == null || val.trim() === '') return '-'
+  const n = parseFloat(val.replace(/,/g, ''))
+  if (isNaN(n) || n === 0) return '-'
+  return val
+}
+
 export function TokenSelect({
   tokens,
   balancesFormatted,
@@ -68,11 +75,9 @@ export function TokenSelect({
                   <div className="truncate text-xs text-[var(--muted)]">{t.name}</div>
                 </div>
               </div>
-              {balancesFormatted?.has(t.id) && (
-                <div className="shrink-0 text-right text-sm text-[var(--muted)]">
-                  {balancesFormatted.get(t.id)}
-                </div>
-              )}
+              <div className="shrink-0 text-right text-sm text-[var(--muted)] tabular-nums">
+                {formatBalanceDisplay(balancesFormatted?.get(t.id))}
+              </div>
             </button>
           ))}
         </div>

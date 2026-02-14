@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Providers } from '@/components/Providers'
 import { Footer } from '@/components/Footer'
+import { MatomoAnalytics } from '@/components/MatomoAnalytics'
 import './globals.css'
 
 const geistSans = Geist({
@@ -35,6 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}>
+        <Suspense fallback={null}>
+          <MatomoAnalytics />
+        </Suspense>
         <Providers>
           <div className="flex min-h-screen flex-col">
             {children}

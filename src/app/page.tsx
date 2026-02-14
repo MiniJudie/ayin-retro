@@ -41,6 +41,7 @@ export default function PoolsPage() {
   const [loading, setLoading] = useState(true)
   const [reservesLoading, setReservesLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [visibleCount, setVisibleCount] = useState(99)
 
   useEffect(() => {
     web3.setCurrentNodeProvider(NODE_URL)
@@ -53,6 +54,7 @@ export default function PoolsPage() {
       .then((list: PoolInfo[]) => {
         setPools(list)
         setError(null)
+        setVisibleCount(99)
       })
       .catch((e) => {
         setError(e instanceof Error ? e.message : 'Failed to load pools')
@@ -118,7 +120,13 @@ export default function PoolsPage() {
     })
   }, [minOneAlphPools, balances])
 
-  const gridCols = 'minmax(140px,1fr) minmax(48px,0.35fr) minmax(100px,0.8fr) minmax(100px,0.8fr) minmax(100px,1fr) minmax(100px,1fr) minmax(100px,0.8fr) minmax(160px,auto)'
+  const displayedPools = useMemo(
+    () => sortedPools.slice(0, visibleCount),
+    [sortedPools, visibleCount]
+  )
+  const hasMorePools = sortedPools.length > visibleCount
+
+  const gridCols = 'minmax(36px,0.12fr) minmax(140px,1fr) minmax(48px,0.35fr) minmax(100px,0.8fr) minmax(100px,0.8fr) minmax(100px,1fr) minmax(100px,1fr) minmax(100px,0.8fr) minmax(160px,auto)'
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
@@ -151,7 +159,7 @@ export default function PoolsPage() {
           )}
 
           {!loading && sortedPools.length > 0 && (
-            <div className="overflow-hidden rounded-2xl border border-[var(--card-border)] bg-[var(--card)]">
+            <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card)]">
               <div className="flex items-center justify-end border-b border-[var(--card-border)] px-4 py-2">
                 <button
                   type="button"
@@ -179,25 +187,32 @@ export default function PoolsPage() {
                   {reservesLoading ? 'Refreshing…' : 'Refresh'}
                 </button>
               </div>
-              <div
-                className="grid w-full gap-0 border-b border-[var(--card-border)] text-left text-xs font-medium uppercase tracking-wider text-[var(--muted)]"
-                style={{ gridTemplateColumns: gridCols }}
-              >
-                <div className="px-4 py-4">Pool</div>
-                <div className="px-4 py-4 text-center">Version</div>
-                <div className="px-4 py-4 text-right">Reserve 0</div>
-                <div className="px-4 py-4">Token 0</div>
-                <div className="px-4 py-4 text-right">Reserve 1</div>
-                <div className="px-4 py-4">Token 1</div>
-                <div className="px-4 py-4 text-right">LP balance</div>
-                <div className="px-4 py-4">Actions</div>
-              </div>
-              {sortedPools.map((pool) => (
+
+              {/* Desktop: grid table (≥1280px) */}
+              <div className="hidden xl:block overflow-hidden">
+                <div
+                  className="grid w-full gap-0 border-b border-[var(--card-border)] text-left text-xs font-medium uppercase tracking-wider text-[var(--muted)]"
+                  style={{ gridTemplateColumns: gridCols }}
+                >
+                  <div className="px-2 py-4 text-right">#</div>
+                  <div className="px-4 py-4">Pool</div>
+                  <div className="px-4 py-4 text-center">Version</div>
+                  <div className="px-4 py-4 text-right">Reserve 0</div>
+                  <div className="px-4 py-4">Token 0</div>
+                  <div className="px-4 py-4 text-right">Reserve 1</div>
+                  <div className="px-4 py-4">Token 1</div>
+                  <div className="px-4 py-4 text-right">LP balance</div>
+                  <div className="px-4 py-4">Actions</div>
+                </div>
+                {displayedPools.map((pool, index) => (
                 <div
                   key={pool.address}
                   className="grid w-full gap-0 border-b border-[var(--card-border)] last:border-b-0 transition-colors hover:bg-white/[0.02]"
                   style={{ gridTemplateColumns: gridCols }}
                 >
+                  <div className="px-2 py-4 text-right font-mono text-sm text-[var(--muted)]">
+                    {index + 1}
+                  </div>
                   <div className="flex items-center gap-2 px-4 py-4">
                     {pool.token0.logoURI && (
                       <img
@@ -257,13 +272,13 @@ export default function PoolsPage() {
                   <div className="flex items-center gap-2 px-4 py-4">
                     <Link
                       href={`/pools/${pool.address}`}
-                      className="inline-flex items-center rounded-lg border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
+                      className="inline-flex items-center justify-center rounded-lg bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[var(--accent-hover)]"
                     >
                       Manage
                     </Link>
                     <Link
                       href={`/swap?tokenIn=${pool.token0.id}&tokenOut=${pool.token1.id}`}
-                      className="inline-flex items-center rounded-lg bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[var(--accent-hover)]"
+                      className="inline-flex items-center justify-center rounded-lg border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
                     >
                       Swap
                     </Link>
@@ -271,13 +286,113 @@ export default function PoolsPage() {
                       href={`${EXPLORER_URL}/addresses/${pool.address}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-lg border border-[var(--card-border)] px-3 py-1.5 text-sm text-[var(--muted)] transition-colors hover:bg-white/5 hover:text-white"
+                      className="inline-flex items-center justify-center rounded-lg border border-[var(--card-border)] px-3 py-1.5 text-sm text-[var(--muted)] transition-colors hover:bg-white/5 hover:text-white"
                     >
                       Contract
                     </a>
                   </div>
                 </div>
               ))}
+                {hasMorePools && (
+                  <div className="flex justify-center border-t border-[var(--card-border)] px-4 py-4">
+                    <button
+                      type="button"
+                      onClick={() => setVisibleCount((c) => Math.min(c + 99, sortedPools.length))}
+                      className="rounded-xl border border-[var(--card-border)] px-6 py-2.5 text-sm font-medium text-[var(--muted)] transition-colors hover:bg-white/5 hover:text-white"
+                    >
+                      Load more
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile/tablet: stacked cards (<1280px) */}
+              <div className="xl:hidden divide-y divide-[var(--card-border)]">
+                {displayedPools.map((pool, index) => {
+                  const lp = balances ? getLpBalance(balances, pool.address) : null
+                  const hasPosition = lp !== null && lp > BigInt(0)
+                  const lpStr = lp !== null ? formatLpAmount(lp) : '—'
+                  return (
+                    <div
+                      key={pool.address}
+                      className="p-4 space-y-3"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-mono text-xs text-[var(--muted)]">{index + 1}</span>
+                        <div className="flex items-center gap-2 min-w-0 flex-1 justify-start">
+                          {pool.token0.logoURI && (
+                            <img src={pool.token0.logoURI} alt="" className="h-6 w-6 rounded-full shrink-0" />
+                          )}
+                          {pool.token1.logoURI && (
+                            <img src={pool.token1.logoURI} alt="" className="-ml-2 h-6 w-6 rounded-full ring-2 ring-[var(--card)] shrink-0" />
+                          )}
+                          <span className="font-medium text-white truncate">
+                            {pool.token0.symbol} / {pool.token1.symbol}
+                          </span>
+                        </div>
+                        <span className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-xs text-[var(--muted)] shrink-0" title={pool.poolType === 'V2' ? 'AyinTokenV2' : 'AyinToken'}>
+                          {pool.poolType ?? 'V1'}
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+                        <div className="flex justify-between gap-2">
+                          <span className="text-[var(--muted)]">Reserve 0</span>
+                          <span className="font-mono text-white truncate">{reservesLoading ? '…' : formatReserve(pool.reserve0, pool.token0.decimals)}</span>
+                        </div>
+                        <div className="flex justify-between gap-2">
+                          <span className="text-[var(--muted)]">Token 0</span>
+                          <span className="text-white truncate">{pool.token0.symbol}</span>
+                        </div>
+                        <div className="flex justify-between gap-2">
+                          <span className="text-[var(--muted)]">Reserve 1</span>
+                          <span className="font-mono text-white truncate">{reservesLoading ? '…' : formatReserve(pool.reserve1, pool.token1.decimals)}</span>
+                        </div>
+                        <div className="flex justify-between gap-2">
+                          <span className="text-[var(--muted)]">Token 1</span>
+                          <span className="text-white truncate">{pool.token1.symbol}</span>
+                        </div>
+                        <div className="col-span-2 flex justify-between gap-2">
+                          <span className="text-[var(--muted)]">LP balance</span>
+                          <span className={`font-mono ${hasPosition ? 'font-semibold text-[var(--accent)]' : 'text-[var(--muted)]'}`}>{lpStr}</span>
+                        </div>
+                      </div>
+                      <div className="flex gap-2 pt-1">
+                        <Link
+                          href={`/pools/${pool.address}`}
+                          className="flex-1 min-w-0 inline-flex items-center justify-center rounded-lg bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[var(--accent-hover)]"
+                        >
+                          Manage
+                        </Link>
+                        <Link
+                          href={`/swap?tokenIn=${pool.token0.id}&tokenOut=${pool.token1.id}`}
+                          className="flex-1 min-w-0 inline-flex items-center justify-center rounded-lg border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-white/5"
+                        >
+                          Swap
+                        </Link>
+                        <a
+                          href={`${EXPLORER_URL}/addresses/${pool.address}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 min-w-0 inline-flex items-center justify-center rounded-lg border border-[var(--card-border)] px-3 py-1.5 text-sm text-[var(--muted)] transition-colors hover:bg-white/5 hover:text-white"
+                        >
+                          Contract
+                        </a>
+                      </div>
+                    </div>
+                  )
+                })}
+                {hasMorePools && (
+                  <div className="flex justify-center px-4 py-4">
+                    <button
+                      type="button"
+                      onClick={() => setVisibleCount((c) => Math.min(c + 99, sortedPools.length))}
+                      className="rounded-xl border border-[var(--card-border)] px-6 py-2.5 text-sm font-medium text-[var(--muted)] transition-colors hover:bg-white/5 hover:text-white"
+                    >
+                      Load more
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           )}
 
