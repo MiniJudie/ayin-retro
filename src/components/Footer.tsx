@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { sendEvent } from '@socialgouv/matomo-next'
 import { DonateModal } from '@/components/DonateModal'
 
 const GITHUB_URL = 'https://github.com/MiniJudie/ayin-retro'
@@ -42,7 +43,10 @@ export function Footer() {
           <span className="hidden sm:inline" aria-hidden>·</span>
           <button
             type="button"
-            onClick={() => setDonateOpen(true)}
+            onClick={() => {
+              sendEvent({ category: 'donate', action: 'open' })
+              setDonateOpen(true)
+            }}
             className="inline-flex items-center gap-1.5 font-medium text-white hover:underline"
           >
             Donate

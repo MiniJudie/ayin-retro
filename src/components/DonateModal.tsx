@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useWallet } from '@alephium/web3-react'
+import { sendEvent } from '@socialgouv/matomo-next'
 import { useWalletBalance } from '@/contexts/WalletBalanceContext'
 import { executeDonate } from '@/lib/donate'
 import { DONATION_ADDRESS, EXPLORER_URL, ALPH_TOKEN_ID, NODE_URL } from '@/lib/config'
@@ -98,6 +99,12 @@ export function DonateModal({ onClose }: { onClose: () => void }) {
         isAlph ? null : selectedId,
         amountBig
       )
+      sendEvent({
+        category: 'donate',
+        action: 'send',
+        name: selectedToken.symbol,
+        value: amount,
+      })
       setTxId(id)
       setAmount('')
     } catch (e) {
@@ -105,7 +112,7 @@ export function DonateModal({ onClose }: { onClose: () => void }) {
     } finally {
       setPending(false)
     }
-  }, [canDonate, account?.address, signer, amountBig, isAlph, selectedId])
+  }, [canDonate, account?.address, signer, amountBig, isAlph, selectedId, selectedToken.symbol, amount])
 
   const assetsWithBalance = useMemo(() => {
     if (!balances) return [ALPH_PLACEHOLDER]
@@ -180,7 +187,13 @@ export function DonateModal({ onClose }: { onClose: () => void }) {
           </button>
         </div>
         <p className="mb-3 text-xs text-[var(--muted)]">
-          Send any token from your wallet to support Ayin Retro. Recipient: <span className="font-mono break-all">{DONATION_ADDRESS}</span>
+          <p>Send any token from your wallet to support Ayin Retro.</p>
+          <div>
+           Recipient:{' '}
+             <span className="mt-1 inline-block px-2 py-1.5 font-mono text-xs text-white break-all">
+              {DONATION_ADDRESS}
+            </span>
+          </div>
         </p>
         <div className="space-y-3">
           <div>
