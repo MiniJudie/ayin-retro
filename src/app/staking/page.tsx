@@ -10,6 +10,8 @@ import {
   XAYIN_LIQUID_STAKING_ADDRESS,
   ALPHAYIN_TOKEN_ID,
   POUNDER_VAULT_ADDRESS,
+  SINGLE_ALPHAYIN_STAKE_ADDRESS,
+  SINGLE_ALPHAYIN_STAKE_DEPOSIT_TOKEN,
   STAKING_POOLS_DEPLOYMENT,
   EXPLORER_URL,
   NODE_URL,
@@ -90,6 +92,9 @@ export default function StakingPage() {
   const [xAyinContractAyin, setXAyinContractAyin] = useState<bigint | null>(null)
   const [pounderContractAlphayin, setPounderContractAlphayin] = useState<bigint | null>(null)
   const [pounderContractAyin, setPounderContractAyin] = useState<bigint | null>(null)
+  const [singleStaked, setSingleStaked] = useState<bigint>(0n)
+  const [singleEarned, setSingleEarned] = useState<bigint>(0n)
+  const SINGLE_STAKING_KEY = 'single_alphayin'
 
   useEffect(() => {
     web3.setCurrentNodeProvider(NODE_URL)
@@ -119,16 +124,18 @@ export default function StakingPage() {
       setPools(list)
       if (account?.address) {
         const addr = account.address
-        await Promise.all(
-          STAKING_POOLS_DEPLOYMENT.flatMap((entry) => [
+        await Promise.all([
+          ...STAKING_POOLS_DEPLOYMENT.flatMap((entry) => [
             getEarnedReward(entry.stakingAddress, addr, isStakingV4(entry.key)).then((earned) =>
               setRewardsByKey((prev) => (prev[entry.key] === earned ? prev : { ...prev, [entry.key]: earned }))
             ),
             getStakedBalance(entry.stakingAddress, addr, isStakingV4(entry.key)).then((staked) =>
               setStakedByKey((prev) => (prev[entry.key] === staked ? prev : { ...prev, [entry.key]: staked }))
             ),
-          ])
-        )
+          ]),
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, false).then(setSingleEarned),
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, false).then(setSingleStaked),
+        ])
       }
       refreshBalances()
       fetchContractBalances()
@@ -141,6 +148,8 @@ export default function StakingPage() {
     if (!account?.address) {
       setRewardsByKey({})
       setStakedByKey({})
+      setSingleEarned(0n)
+      setSingleStaked(0n)
       return
     }
     const addr = account.address
@@ -152,6 +161,8 @@ export default function StakingPage() {
         setStakedByKey((prev) => (prev[entry.key] === staked ? prev : { ...prev, [entry.key]: staked }))
       )
     })
+    getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, false).then(setSingleEarned)
+    getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, false).then(setSingleStaked)
   }, [account?.address])
 
   useEffect(() => {
@@ -168,6 +179,14 @@ export default function StakingPage() {
     () => binToHex(tokenIdFromAddress(POUNDER_VAULT_ADDRESS)),
     []
   )
+  const singleStakingDepositTokenId = useMemo(
+    () => binToHex(tokenIdFromAddress(SINGLE_ALPHAYIN_STAKE_DEPOSIT_TOKEN)),
+    []
+  )
+  const singleStakingDepositBalance =
+    balances?.tokens.get(singleStakingDepositTokenId) ??
+    balances?.tokens.get('0x' + singleStakingDepositTokenId) ??
+    BigInt(0)
   const valphAyinBalance =
     balances?.tokens.get(valphAyinTokenId) ??
     balances?.tokens.get('0x' + valphAyinTokenId) ??
@@ -346,6 +365,58 @@ export default function StakingPage() {
     [run, signer, account?.address]
   )
 
+  const handleSingleStake = useCallback(() => {
+    const amount = parseTokenAmount(stakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS)
+    if (!amount || amount <= BigInt(0)) {
+      setError('Enter stake amount')
+      return
+    }
+    run(
+      SINGLE_STAKING_KEY,
+      () => executeStakeLp(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, false),
+      () => {
+        sendEvent({ category: 'stake', action: 'stake', name: 'Single ALPHAYIN', value: stakeAmounts[SINGLE_STAKING_KEY] ?? '' })
+        setStakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
+        if (account?.address) {
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleEarned)
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleStaked)
+        }
+      }
+    )
+  }, [stakeAmounts, run, signer, account?.address])
+
+  const handleSingleUnstake = useCallback(() => {
+    const amount = parseTokenAmount(unstakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS)
+    if (!amount || amount <= BigInt(0)) {
+      setError('Enter unstake amount')
+      return
+    }
+    run(
+      SINGLE_STAKING_KEY,
+      () => executeUnstakeLp(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, false),
+      () => {
+        sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN', value: unstakeAmounts[SINGLE_STAKING_KEY] ?? '' })
+        setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
+        if (account?.address) {
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleEarned)
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleStaked)
+        }
+      }
+    )
+  }, [unstakeAmounts, run, signer, account?.address])
+
+  const handleSingleClaim = useCallback(() => {
+    run(
+      SINGLE_STAKING_KEY,
+      () => executeClaimRewards(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, false),
+      () => {
+        if (account?.address) {
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleEarned)
+        }
+      }
+    )
+  }, [run, signer, account?.address])
+
   const handleStakeMax = useCallback(
     (entry: (typeof STAKING_POOLS_DEPLOYMENT)[0]) => {
       const poolAddr = poolAddressByStakingKey(entry.tokenA, entry.tokenB)
@@ -395,7 +466,7 @@ export default function StakingPage() {
         <div className="mx-auto max-w-5xl w-full min-w-0">
           <h1 className="text-2xl font-bold text-white">Staking</h1>
           <p className="mt-1 text-sm text-[var(--muted)]">
-            xAyin, Pounder vault, and LP pool staking.
+            xAyin, Pounder vault, single ALPHAYIN staking, and LP pool staking.
           </p>
 
           {error && account?.address && (
@@ -616,6 +687,133 @@ export default function StakingPage() {
             ) : (
               <div className="px-4 py-6 text-center text-sm text-[var(--muted)]">
                 Connect your wallet to deposit ALPHAYIN or withdraw from Pounder.
+              </div>
+            )}
+          </section>
+
+          {/* Single staking — stake ALPHAYIN, earn AYIN (lib/Staking ABI) */}
+          <section className="mt-4 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--card-border)] px-4 py-3">
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-2">
+                  <img src={TOKEN_LOGOS.alph} alt="" className="h-6 w-6 rounded-full shrink-0" />
+                  <img src={TOKEN_LOGOS.ayin} alt="" className="-ml-2 h-6 w-6 rounded-full ring-2 ring-[var(--card)] shrink-0" />
+                  <h2 className="text-sm font-semibold text-white">Single LP staking</h2>
+                </div>
+                <span className="text-xs text-[var(--muted)]">
+                  Stake ALPHAYIN, earn AYIN
+                </span>
+              </div>
+              <a
+                href={`${EXPLORER_URL}/addresses/${SINGLE_ALPHAYIN_STAKE_ADDRESS}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-[var(--muted)] hover:text-white transition shrink-0"
+              >
+                Contract
+              </a>
+            </div>
+            {account?.address ? (
+              <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 px-4 py-3">
+                <div className="min-w-0 font-mono text-sm">
+                  <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Balance</div>
+                  <div className="mt-1">
+                    <span className="text-[var(--muted)]">Deposit token: </span>
+                    <span className={singleStakingDepositBalance > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
+                      {formatTokenAmount(singleStakingDepositBalance, DECIMALS)}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[var(--muted)]">Staked: </span>
+                    <span className={singleStaked > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
+                      {formatTokenAmount(singleStaked, DECIMALS)}
+                    </span>
+                  </div>
+                  <div>
+                    <span className="text-[var(--muted)]">Earned (AYIN): </span>
+                    <span className={singleEarned > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
+                      {formatTokenAmount(singleEarned, DECIMALS)}
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleSingleClaim}
+                    disabled={!!pending || singleEarned === BigInt(0)}
+                    className="mt-2 rounded border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 disabled:opacity-50"
+                  >
+                    {pending === SINGLE_STAKING_KEY ? '…' : 'Claim'}
+                  </button>
+                </div>
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Stake</div>
+                  <div className="flex flex-nowrap items-center gap-2">
+                    <input
+                      type="text"
+                      inputMode="decimal"
+                      placeholder="0.0"
+                      value={stakeAmounts[SINGLE_STAKING_KEY] ?? ''}
+                      onChange={(e) =>
+                        setStakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: e.target.value }))
+                      }
+                      className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)]"
+                    />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setStakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: formatTokenAmount(singleStakingDepositBalance, DECIMALS) }))
+                      }
+                      disabled={singleStakingDepositBalance === BigInt(0)}
+                      className="shrink-0 rounded border border-[var(--card-border)] px-2 py-1.5 text-xs text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
+                    >
+                      Max
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleSingleStake}
+                      disabled={!!pending}
+                      className="shrink-0 rounded border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 disabled:opacity-50"
+                    >
+                      {pending === SINGLE_STAKING_KEY ? '…' : 'Stake'}
+                    </button>
+                  </div>
+                </div>
+                <div className="flex min-w-0 flex-col gap-2">
+                  <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Unstake</div>
+                  <div className="flex flex-nowrap items-center gap-2">
+                    <input
+                      type="text"
+                      inputMode="decimal"
+                      placeholder="0.0"
+                      value={unstakeAmounts[SINGLE_STAKING_KEY] ?? ''}
+                      onChange={(e) =>
+                        setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: e.target.value }))
+                      }
+                      className="min-w-0 flex-1 rounded border border-[var(--card-border)] bg-[var(--input-bg)] px-2 py-1.5 font-mono text-sm text-white placeholder:text-[var(--muted)]"
+                    />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: formatTokenAmount(singleStaked, DECIMALS) }))
+                      }
+                      disabled={singleStaked === BigInt(0)}
+                      className="shrink-0 rounded border border-[var(--card-border)] px-2 py-1.5 text-xs text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
+                    >
+                      Max
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleSingleUnstake}
+                      disabled={!!pending}
+                      className="shrink-0 rounded bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-50"
+                    >
+                      {pending === SINGLE_STAKING_KEY ? '…' : 'Unstake'}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="px-4 py-6 text-center text-sm text-[var(--muted)]">
+                Connect your wallet to stake ALPHAYIN and earn AYIN.
               </div>
             )}
           </section>

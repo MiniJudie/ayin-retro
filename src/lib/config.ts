@@ -29,6 +29,10 @@ export const POUNDER_VAULT_ADDRESS = '26gS9VNF7HJmHrV5SCppHGmsyCZKY65uAf3WdN3a6K
 /** ALPHAYIN token id (ALPH/AYIN pool pair token); used for Pounder deposit/withdraw. */
 export const ALPHAYIN_TOKEN_ID = 'a7ca90b2af892713ed95f23b37a6db00c0650c16bad1ccc601443e9020f89f00'
 
+
+export const SINGLE_ALPHAYIN_STAKE_ADDRESS = 'tuuAwnJNwxew6chSHV74CW9Er18EE925Ss2fQMmZbWtF'; 
+export const SINGLE_ALPHAYIN_STAKE_DEPOSIT_TOKEN = "25ywM8iGxKpZWuGA5z6DXKGcZCXtPBmnbQyJEsjvjjWTy"; // alph-ayin
+
 /**
  * Staking contract address by pool pair key (token1_token0 lowercase, e.g. alf_alph).
  * Matches deployement.json pounding section (alfAlphStaking, usdtAlphStaking, etc.).
@@ -64,6 +68,7 @@ export const STAKING_POOLS_DEPLOYMENT: Array<{
   stakingAddress: string
   label: string
 }> = [
+  
   { key: 'alf_alph', tokenA: '66da610efb5129c062e88e5fd65fe810f31efd1597021b2edf887a4360fa0800', tokenB: ALPH_TOKEN_ID, stakingAddress: STAKING_BY_PAIR.alf_alph!, label: 'ALF / ALPH' },
   { key: 'usdt_alph', tokenA: '556d9582463fe44fbd108aedc9f409f69086dc78d994b88ea6c9e65f8bf98e00', tokenB: ALPH_TOKEN_ID, stakingAddress: STAKING_BY_PAIR.usdt_alph!, label: 'USDT / ALPH' },
   { key: 'ngu_alph', tokenA: 'df3008f43a7cc1d4a37eef71bf581fc4b9c3be4e2d58ed6d1df483bbb83bd200', tokenB: ALPH_TOKEN_ID, stakingAddress: STAKING_BY_PAIR.ngu_alph!, label: 'NGU / ALPH' },
