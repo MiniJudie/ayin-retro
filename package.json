@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update-pool-reserves": "node scripts/update-pool-reserves.js"
   },
   "dependencies": {
     "@alephium/web3": "^2.0.8",

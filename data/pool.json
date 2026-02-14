@@ -16,8 +16,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png"
     },
-    "reserve0": "552601024740807885811832",
-    "reserve1": "348356056541538989534747",
+    "reserve0": "118967396958535211444018",
+    "reserve1": "655046465335083951128312",
     "poolType": "V2",
     "TVL": 544455.7118925516,
     "liquidity": 544455.7118925516,
@@ -43,8 +43,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TAIL.png"
     },
-    "reserve0": "37294539775712631906",
-    "reserve1": "36278",
+    "reserve0": "37226845577466835638",
+    "reserve1": "36357",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -66,8 +66,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PACA.png"
     },
-    "reserve0": "1112010625682424493895",
-    "reserve1": "2781860",
+    "reserve0": "653258468683756325920",
+    "reserve1": "2715782",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -93,8 +93,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PACA.png"
     },
-    "reserve0": "2921490806590298849",
-    "reserve1": "15302",
+    "reserve0": "5481905168889143484",
+    "reserve1": "7111",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -143,8 +143,8 @@
       "decimals": 9,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALF.png"
     },
-    "reserve0": "1796239309683422437088",
-    "reserve1": "16894887979383",
+    "reserve0": "1857315637185590390554",
+    "reserve1": "16402609393241",
     "poolType": "V2",
     "TVL": 1784.497806109693,
     "liquidity": 1784.497806109693,
@@ -170,8 +170,8 @@
       "decimals": 9,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/VLAD.png"
     },
-    "reserve0": "6056020245257422851",
-    "reserve1": "6045886730278",
+    "reserve0": "4150109430317292156",
+    "reserve1": "4141251215753",
     "poolType": "V2",
     "TVL": 7.566408771430814,
     "liquidity": 7.566408771430814,
@@ -197,8 +197,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JKL.png"
     },
-    "reserve0": "19444761955891183398",
-    "reserve1": "72407274395384465801937",
+    "reserve0": "4998184748937430274",
+    "reserve1": "23928151540129469830991",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -247,8 +247,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
     },
-    "reserve0": "334977043968931038122811",
-    "reserve1": "155628109053",
+    "reserve0": "146958337859650928160131",
+    "reserve1": "11402658505",
     "poolType": "V2",
     "TVL": 328586.9735732605,
     "liquidity": 328586.9735732605,
@@ -274,8 +274,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
     },
-    "reserve0": "36684572636664060265542",
-    "reserve1": "26909056985",
+    "reserve0": "69632742681980292028495",
+    "reserve1": "1000137090",
     "poolType": "V2",
     "TVL": 55798.94594986581,
     "liquidity": 55798.94594986581
@@ -297,8 +297,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WETH.png"
     },
-    "reserve0": "10898913542430474125929",
-    "reserve1": "2337614342975382544",
+    "reserve0": "26221931818410222653308",
+    "reserve1": "979649245139563319",
     "poolType": "V2",
     "TVL": 12550.873175855912,
     "liquidity": 12550.873175855912,
@@ -324,8 +324,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
     },
-    "reserve0": "127202601",
-    "reserve1": "1",
+    "reserve0": "110128",
+    "reserve1": "1169",
     "poolType": "V2",
     "TVL": 201.80822153811613,
     "liquidity": 201.80822153811613
@@ -347,8 +347,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
     },
-    "reserve0": "143631273087640315315634",
-    "reserve1": "66539238588",
+    "reserve0": "17205994564548688297900",
+    "reserve1": "1319191806",
     "poolType": "V2",
     "TVL": 163581.98451777507,
     "liquidity": 163581.98451777507,
@@ -397,8 +397,8 @@
       "decimals": 7,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NGU.png"
     },
-    "reserve0": "2451669832220824250202",
-    "reserve1": "32408373888481",
+    "reserve0": "2110084247095716149511",
+    "reserve1": "35296615523882",
     "poolType": "V2",
     "TVL": 2422.0900684249464,
     "liquidity": 2422.0900684249464
@@ -466,8 +466,8 @@
       "decimals": 7,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NGU.png"
     },
-    "reserve0": "16662448",
-    "reserve1": "397313892119",
+    "reserve0": "5473976",
+    "reserve1": "1214550463228",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -493,8 +493,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/XAYIN.png"
     },
-    "reserve0": "40699903836975637709",
-    "reserve1": "13582052826002367551",
+    "reserve0": "14024153986748359862",
+    "reserve1": "40053877565957540058",
     "poolType": "V2",
     "TVL": 40.208853400166646,
     "liquidity": 40.208853400166646,
@@ -543,8 +543,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SUCC.png"
     },
-    "reserve0": "17190906492426974033",
-    "reserve1": "69989286184287798",
+    "reserve0": "12720235299996647106",
+    "reserve1": "94667140098391198",
     "poolType": "V2",
     "TVL": 16.983495630326125,
     "liquidity": 16.983495630326125,
@@ -593,8 +593,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MIX.png"
     },
-    "reserve0": "4971717399906478011891",
-    "reserve1": "296981653304282",
+    "reserve0": "2423594",
+    "reserve1": "1",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -620,8 +620,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/XAYIN.png"
     },
-    "reserve0": "1939917506830008235",
-    "reserve1": "927835024499032378",
+    "reserve0": "2365291728349976132",
+    "reserve1": "764835921806081059",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -643,8 +643,8 @@
       "decimals": 5,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
     },
-    "reserve0": "6025224825070742556",
-    "reserve1": "1012310632",
+    "reserve0": "6010158164839624435",
+    "reserve1": "1014525939",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -666,8 +666,8 @@
       "decimals": 5,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SHIN.png"
     },
-    "reserve0": "32891133958695888124",
-    "reserve1": "131012936641",
+    "reserve0": "29804447675882404012",
+    "reserve1": "87996824206",
     "poolType": "V2",
     "TVL": 32.78801418983149,
     "liquidity": 32.78801418983149,
@@ -693,8 +693,8 @@
       "decimals": 7,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LOVE.png"
     },
-    "reserve0": "61507020496740783",
-    "reserve1": "4779095343532609652385",
+    "reserve0": "66252039954348955",
+    "reserve1": "4437865147706252196453",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -716,8 +716,8 @@
       "decimals": 5,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
     },
-    "reserve0": "9162329737388436560595",
-    "reserve1": "6325790976",
+    "reserve0": "4967850803530511441377",
+    "reserve1": "11703234723",
     "poolType": "V2",
     "TVL": 9094.44511734079,
     "liquidity": 9094.44511734079,
@@ -766,8 +766,8 @@
       "decimals": 5,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
     },
-    "reserve0": "68449898553530306089",
-    "reserve1": "78620550",
+    "reserve0": "105428398073594889681",
+    "reserve1": "51111452",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -812,8 +812,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SQRL.png"
     },
-    "reserve0": "1245863257128323655421",
-    "reserve1": "434821451085",
+    "reserve0": "45874177596338217243",
+    "reserve1": "89674921014",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -835,8 +835,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NUTS.png"
     },
-    "reserve0": "236987343770877964527",
-    "reserve1": "368747172016448301",
+    "reserve0": "198594268428867045876",
+    "reserve1": "440250231150040699",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -862,8 +862,8 @@
       "decimals": 9,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MIRA.png"
     },
-    "reserve0": "126519442112398815",
-    "reserve1": "12228032293792",
+    "reserve0": "4598523607622748",
+    "reserve1": "337441922056603",
     "poolType": "V2",
     "TVL": 0.3159645405456124,
     "liquidity": 0.3159645405456124
@@ -885,8 +885,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/COFFEE.png"
     },
-    "reserve0": "821033475642097723532",
-    "reserve1": "863289586391",
+    "reserve0": "31047677",
+    "reserve1": "1",
     "poolType": "V2",
     "TVL": 1025.80153965001,
     "liquidity": 1025.80153965001,
@@ -912,8 +912,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SQRL.png"
     },
-    "reserve0": "667739",
-    "reserve1": "160414796",
+    "reserve0": "123973",
+    "reserve1": "866979983",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -966,8 +966,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/Noodz.png"
     },
-    "reserve0": "5188363795353539430796",
-    "reserve1": "32192077885",
+    "reserve0": "4921795037783996032773",
+    "reserve1": "33940924393",
     "poolType": "V2",
     "TVL": 5125.765409758068,
     "liquidity": 5125.765409758068,
@@ -993,8 +993,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DRAGON.png"
     },
-    "reserve0": "320928877804286425421",
-    "reserve1": "82939042735494",
+    "reserve0": "307866479899140142844",
+    "reserve1": "86468741366846",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -1074,8 +1074,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GOLD.png"
     },
-    "reserve0": "429229708109539948750",
-    "reserve1": "78136635285",
+    "reserve0": "166347289565968097905",
+    "reserve1": "70380043867",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -1151,8 +1151,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SQRL.png"
     },
-    "reserve0": "675851346652614",
-    "reserve1": "1223109440",
+    "reserve0": "163528597582050",
+    "reserve1": "5072222162",
     "poolType": "V2",
     "TVL": 4.148988050385469,
     "liquidity": 4.148988050385469
@@ -1174,8 +1174,8 @@
       "decimals": 5,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WANG.png"
     },
-    "reserve0": "5898898",
-    "reserve1": "9288554",
+    "reserve0": "1501163",
+    "reserve1": "36668658",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -1197,8 +1197,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPEPE.png"
     },
-    "reserve0": "33690991038363093824",
-    "reserve1": "128658214446751",
+    "reserve0": "37689991038363093824",
+    "reserve1": "115043883321492",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -1224,8 +1224,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WIFB.png"
     },
-    "reserve0": "29878598031528436598",
-    "reserve1": "37393781697405878",
+    "reserve0": "2433818382025805704",
+    "reserve1": "41498519691560281",
     "poolType": "V2",
     "TVL": 29.518108270339056,
     "liquidity": 29.518108270339056,
@@ -1305,8 +1305,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MINE.png"
     },
-    "reserve0": "349707092352300047261",
-    "reserve1": "14809",
+    "reserve0": "369707092352300047261",
+    "reserve1": "14012",
     "poolType": "V2",
     "TVL": 436.9250273028991,
     "liquidity": 436.9250273028991,
@@ -1359,8 +1359,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TOP.png"
     },
-    "reserve0": "6302608456436605161836",
-    "reserve1": "9527524462131",
+    "reserve0": "2402866547666187173844",
+    "reserve1": "9787827470432",
     "poolType": "V2",
     "TVL": 6097.508272011564,
     "liquidity": 6097.508272011564,
@@ -1409,8 +1409,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LFG.png"
     },
-    "reserve0": "2350256222434286607476",
-    "reserve1": "807915697656",
+    "reserve0": "1517064011606604227902",
+    "reserve1": "950745867190",
     "poolType": "V2",
     "TVL": 2321.9000290298395,
     "liquidity": 2321.9000290298395,
@@ -1436,8 +1436,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BREAD.png"
     },
-    "reserve0": "5980466292222913752005",
-    "reserve1": "7756845892410292691266206",
+    "reserve0": "5115169836399312104452",
+    "reserve1": "9113111144070567466130006",
     "poolType": "V2",
     "TVL": 5971.344758590802,
     "liquidity": 5971.344758590802,
@@ -1486,8 +1486,8 @@
       "decimals": 1,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ART.png"
     },
-    "reserve0": "396254965229766126012",
-    "reserve1": "5689769",
+    "reserve0": "389594372233013560826",
+    "reserve1": "5787337",
     "poolType": "V2",
     "TVL": 391.47407010337406,
     "liquidity": 391.47407010337406,
@@ -1513,8 +1513,8 @@
       "decimals": 9,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SHI.png"
     },
-    "reserve0": "515941491109969318975",
-    "reserve1": "2452012708479034",
+    "reserve0": "387649151675269449478",
+    "reserve1": "3163134247109578",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -1559,8 +1559,8 @@
       "decimals": 5,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ROCK.png"
     },
-    "reserve0": "220224584692961441447",
-    "reserve1": "1308605229747",
+    "reserve0": "595555929868670338",
+    "reserve1": "3538876487",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -1586,8 +1586,8 @@
       "decimals": 3,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SPOBAMA.png"
     },
-    "reserve0": "138759198916949685774",
-    "reserve1": "72292335267",
+    "reserve0": "136665583517155089258",
+    "reserve1": "72592635574",
     "poolType": "V2",
     "TVL": 173.36613440553202,
     "liquidity": 173.36613440553202,
@@ -1613,8 +1613,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APAD.png"
     },
-    "reserve0": "87442382529339993608515",
-    "reserve1": "7253105720394910660442007",
+    "reserve0": "34544079295548571664524",
+    "reserve1": "7858513673356518302801121",
     "poolType": "V2",
     "TVL": 89569.67932553284,
     "liquidity": 89569.67932553284,
@@ -1640,8 +1640,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BREAD.png"
     },
-    "reserve0": "68952261421",
-    "reserve1": "51485976368097760836641",
+    "reserve0": "99673717607",
+    "reserve1": "35653867726693702511448",
     "poolType": "V2",
     "TVL": 43.17214515006796,
     "liquidity": 43.17214515006796
@@ -1690,8 +1690,8 @@
       "decimals": 1,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BEARZWIFGUNZ180042069.png"
     },
-    "reserve0": "2936580143458804405",
-    "reserve1": "1025911",
+    "reserve0": "1452562490986543376",
+    "reserve1": "2106022",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -1821,8 +1821,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GRUMPY.png"
     },
-    "reserve0": "1846953293440533353396",
-    "reserve1": "137271757811017",
+    "reserve0": "1139981893946815389200",
+    "reserve1": "169882299502880",
     "poolType": "V2",
     "TVL": 1807.5564496284596,
     "liquidity": 1807.5564496284596,
@@ -1948,8 +1948,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/777.png"
     },
-    "reserve0": "1484216814269063584619",
-    "reserve1": "284079061402",
+    "reserve0": "1593551394766604990669",
+    "reserve1": "276649063717",
     "poolType": "V2",
     "TVL": 1462.299055381341,
     "liquidity": 1462.299055381341,
@@ -2002,8 +2002,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APAD.png"
     },
-    "reserve0": "1507134222103751820849",
-    "reserve1": "194811121910339218472880",
+    "reserve0": "2522420762826529636829",
+    "reserve1": "117562143771529019364946",
     "poolType": "V2",
     "TVL": 2431.449692566892,
     "liquidity": 2431.449692566892
@@ -2025,8 +2025,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WALF.png"
     },
-    "reserve0": "61860511202702796490",
-    "reserve1": "2781910822439862310",
+    "reserve0": "71859511202702796490",
+    "reserve1": "2395817756901742275",
     "poolType": "V2",
     "TVL": 77.33485657705292,
     "liquidity": 77.33485657705292,
@@ -2079,8 +2079,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CHENG.png"
     },
-    "reserve0": "8591313457822425865280",
-    "reserve1": "27128532631772439",
+    "reserve0": "7968415175866705057985",
+    "reserve1": "28705911239499872",
     "poolType": "V2",
     "TVL": 8487.657973939098,
     "liquidity": 8487.657973939098,
@@ -2106,8 +2106,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CHENG.png"
     },
-    "reserve0": "651956130939388132",
-    "reserve1": "4538494544182",
+    "reserve0": "6024224804201679811",
+    "reserve1": "492484380143",
     "poolType": "V2",
     "TVL": 1.0178504777668533,
     "liquidity": 1.0178504777668533
@@ -2156,8 +2156,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/WBTC.png"
     },
-    "reserve0": "4210696111082574843160",
-    "reserve1": "2357056",
+    "reserve0": "9126485127297067508005",
+    "reserve1": "1052039",
     "poolType": "V2",
     "TVL": 4428.373982558611,
     "liquidity": 4428.373982558611,
@@ -2183,8 +2183,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPHAGA.png"
     },
-    "reserve0": "15603085762696791592246",
-    "reserve1": "6519831783534531791857915",
+    "reserve0": "7834975704388740445229",
+    "reserve1": "13010789497390259682584650",
     "poolType": "V2",
     "TVL": 15701.385431750488,
     "liquidity": 15701.385431750488,
@@ -2210,8 +2210,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
     },
-    "reserve0": "31815291734511264168450",
-    "reserve1": "23488941893",
+    "reserve0": "22916274669662554055939",
+    "reserve1": "323759266",
     "poolType": "V2",
     "TVL": 48466.32222051123,
     "liquidity": 48466.32222051123
@@ -2233,8 +2233,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TRUMP.png"
     },
-    "reserve0": "122127118801519662127",
-    "reserve1": "169007964715396634",
+    "reserve0": "104491470798348459195",
+    "reserve1": "164858894672054003",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -2260,8 +2260,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LFG.png"
     },
-    "reserve0": "101702613009641786649",
-    "reserve1": "57120331633",
+    "reserve0": "212478781466025933886",
+    "reserve1": "27369595535",
     "poolType": "V2",
     "TVL": 158.7604847854877,
     "liquidity": 158.7604847854877
@@ -2283,8 +2283,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/UWU.png"
     },
-    "reserve0": "3297234017401917892",
-    "reserve1": "52777153860199",
+    "reserve0": "1648483295681496958",
+    "reserve1": "26386436653565",
     "poolType": "V2",
     "TVL": 4.119573479013273,
     "liquidity": 4.119573479013273,
@@ -2333,8 +2333,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PIPPA.png"
     },
-    "reserve0": "1662038896",
-    "reserve1": "1",
+    "reserve0": "47",
+    "reserve1": "35827441",
     "poolType": "V2",
     "TVL": 2.0765560833456288e-9,
     "liquidity": 2.0765560833456288e-9,
@@ -2360,8 +2360,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
     },
-    "reserve0": "5705509830449557913",
-    "reserve1": "1690377698520567296",
+    "reserve0": "9918235525178349475",
+    "reserve1": "974507318174175338",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -2464,8 +2464,8 @@
       "decimals": 2,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ELON.png"
     },
-    "reserve0": "29990398807544633713",
-    "reserve1": "1568113374",
+    "reserve0": "18224613057186953280",
+    "reserve1": "2586594209",
     "poolType": "V2",
     "TVL": 29.628560152073085,
     "liquidity": 29.628560152073085,
@@ -2568,8 +2568,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SHIBBO.png"
     },
-    "reserve0": "532954516662976901555",
-    "reserve1": "38464755792396274220977178",
+    "reserve0": "4847978772577843442",
+    "reserve1": "469464358038599548536108",
     "poolType": "V2",
     "TVL": 526.5243405806216,
     "liquidity": 526.5243405806216,
@@ -2595,8 +2595,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ANSo.svg"
     },
-    "reserve0": "78100470957614013",
-    "reserve1": "2000000000000005076",
+    "reserve0": "134",
+    "reserve1": "7625",
     "poolType": "V2",
     "TVL": 0.07823395283186868,
     "liquidity": 0.07823395283186868,
@@ -2672,8 +2672,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PEPE.png"
     },
-    "reserve0": "91011930769523478072",
-    "reserve1": "100122678",
+    "reserve0": "78330968391394913258",
+    "reserve1": "116382760",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -2726,8 +2726,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ANSd.png"
     },
-    "reserve0": "13317667441071420846488",
-    "reserve1": "29018376638959457505418412",
+    "reserve0": "960982252268777576406",
+    "reserve1": "10770819702833405337341930",
     "poolType": "V2",
     "TVL": 13201.328183828617,
     "liquidity": 13201.328183828617,
@@ -2753,8 +2753,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ANSd.png"
     },
-    "reserve0": "141369480609077750095675",
-    "reserve1": "3708562177183297994808950",
+    "reserve0": "811465188031166780306",
+    "reserve1": "60380266255222247865566",
     "poolType": "V2",
     "TVL": 1794.5686898379704,
     "liquidity": 1794.5686898379704
@@ -2776,8 +2776,8 @@
       "decimals": 2,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HOPPY.png"
     },
-    "reserve0": "65324114791657209105",
-    "reserve1": "1159143180",
+    "reserve0": "39591874581644293120",
+    "reserve1": "1914782904",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -2830,8 +2830,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/MGU.png"
     },
-    "reserve0": "605620671651343969168",
-    "reserve1": "6466609",
+    "reserve0": "598647449875178451692",
+    "reserve1": "6542161",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -2938,8 +2938,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOH.png"
     },
-    "reserve0": "2487627981498985168463",
-    "reserve1": "4659165275522912883729823",
+    "reserve0": "98734710590625835505",
+    "reserve1": "213760708319130095585378",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -2992,8 +2992,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOGE.png"
     },
-    "reserve0": "174945257097666491987",
-    "reserve1": "257193931308",
+    "reserve0": "70260928601977738124",
+    "reserve1": "642638292167",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -3015,8 +3015,8 @@
       "decimals": 2,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GRFN.png"
     },
-    "reserve0": "3936874897919503925232",
-    "reserve1": "94677033",
+    "reserve0": "1696260571900422404233",
+    "reserve1": "219813684",
     "poolType": "V2",
     "TVL": 4084.4484777512425,
     "liquidity": 4084.4484777512425,
@@ -3042,8 +3042,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CANDY.png"
     },
-    "reserve0": "47440213625928050017",
-    "reserve1": "8343627272676897933897",
+    "reserve0": "43074134587239266009",
+    "reserve1": "9191933747385004363142",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -3142,8 +3142,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DOGWIFHAT.png"
     },
-    "reserve0": "73932872509441646954",
-    "reserve1": "396547602",
+    "reserve0": "52866586711121517863",
+    "reserve1": "283556117",
     "poolType": "V2",
     "TVL": 107.40117847389155,
     "liquidity": 107.40117847389155,
@@ -3196,8 +3196,8 @@
       "decimals": 2,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HAPPY420.png"
     },
-    "reserve0": "75692",
-    "reserve1": "14",
+    "reserve0": "1886700000000075692",
+    "reserve1": "1",
     "poolType": "V2",
     "TVL": 9.456979823930506e-14,
     "liquidity": 9.456979823930506e-14,
@@ -3277,8 +3277,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/POOOH.png"
     },
-    "reserve0": "28907922245907142114",
-    "reserve1": "328763956119659121",
+    "reserve0": "31915922245907142114",
+    "reserve1": "297864622930521268",
     "poolType": "V2",
     "TVL": 36.1176395697426,
     "liquidity": 36.1176395697426,
@@ -3358,8 +3358,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/0XBIIG.png"
     },
-    "reserve0": "22009633255571545170",
-    "reserve1": "20055726726088647728",
+    "reserve0": "22026563655568691681",
+    "reserve1": "20049683629402967976",
     "poolType": "V2",
     "TVL": 27.49889785314829,
     "liquidity": 27.49889785314829,
@@ -3570,8 +3570,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APE.png"
     },
-    "reserve0": "65440566481795742061",
-    "reserve1": "161507408",
+    "reserve0": "26244840281639352569",
+    "reserve1": "181286491",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -3651,8 +3651,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DONT.png"
     },
-    "reserve0": "588201365816409735836",
-    "reserve1": "2617154047733598",
+    "reserve0": "36680149961586879532",
+    "reserve1": "2386016710351097",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -3678,8 +3678,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPHSOL.png"
     },
-    "reserve0": "73363508948624232",
-    "reserve1": "1383028967792",
+    "reserve0": "231996",
+    "reserve1": "5",
     "poolType": "V2",
     "TVL": 0.09166057495374472,
     "liquidity": 0.09166057495374472,
@@ -3705,8 +3705,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BERN.png"
     },
-    "reserve0": "988489",
-    "reserve1": "17",
+    "reserve0": "1",
+    "reserve1": "66530291954",
     "poolType": "V2",
     "TVL": 1.2350209439805056e-12,
     "liquidity": 1.2350209439805056e-12,
@@ -3732,8 +3732,8 @@
       "decimals": 3,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BULL.png"
     },
-    "reserve0": "8345277380258245456",
-    "reserve1": "60765387",
+    "reserve0": "5029792191",
+    "reserve1": "1",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -3786,8 +3786,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/LD77.png"
     },
-    "reserve0": "967947969745795691469",
-    "reserve1": "30994311",
+    "reserve0": "1933465058",
+    "reserve1": "1",
     "poolType": "V2",
     "TVL": 848.4338705400207,
     "liquidity": 848.4338705400207,
@@ -3975,8 +3975,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/TURBO.png"
     },
-    "reserve0": "43146831374263026837",
-    "reserve1": "21932253",
+    "reserve0": "42155147925788866488",
+    "reserve1": "22449762",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -4002,8 +4002,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DEGEN.png"
     },
-    "reserve0": "98736640657100565141",
-    "reserve1": "2160863316723",
+    "reserve0": "6822216",
+    "reserve1": "1",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -4056,8 +4056,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/APES.png"
     },
-    "reserve0": "27379",
-    "reserve1": "37",
+    "reserve0": "143608094296076912",
+    "reserve1": "7",
     "poolType": "V2",
     "TVL": 68.41413909447256,
     "liquidity": 68.41413909447256,
@@ -4083,8 +4083,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/CATS.png"
     },
-    "reserve0": "507996822084638527",
-    "reserve1": "4822151423614",
+    "reserve0": "166950342586099753",
+    "reserve1": "14702492643522",
     "poolType": "V2",
     "TVL": 0.6346926619821436,
     "liquidity": 0.6346926619821436,
@@ -4110,8 +4110,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ARK.png"
     },
-    "reserve0": "2070839393529235348511",
-    "reserve1": "75685959380824690",
+    "reserve0": "1647239260217172535540",
+    "reserve1": "67742127311205467",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -4137,8 +4137,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BONG.png"
     },
-    "reserve0": "1419532189594103860",
-    "reserve1": "709408303568341375",
+    "reserve0": "7832249674997640929",
+    "reserve1": "129074510824355762",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -4252,8 +4252,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTeth.png"
     },
-    "reserve0": "1591985312204349416",
-    "reserve1": "4275428",
+    "reserve0": "2230607429469108244",
+    "reserve1": "3054295",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -4275,8 +4275,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
     },
-    "reserve0": "1501855173025366872",
-    "reserve1": "4529529",
+    "reserve0": "2380780823553081997",
+    "reserve1": "2861001",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -4298,8 +4298,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BREAD.png"
     },
-    "reserve0": "751342541849439202",
-    "reserve1": "2673108148737739464473",
+    "reserve0": "529998947147342820",
+    "reserve1": "3792838172853627503963",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -4344,8 +4344,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JBTC.png"
     },
-    "reserve0": "503275602236911455948",
-    "reserve1": "626537974555205065",
+    "reserve0": "685300506657366339516",
+    "reserve1": "461482283655438568",
     "poolType": "V2",
     "TVL": 497.20350670313223,
     "liquidity": 497.20350670313223
@@ -4367,8 +4367,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JBTC.png"
     },
-    "reserve0": "24181055728288703400",
-    "reserve1": "49912395132715753",
+    "reserve0": "93498548072220681042",
+    "reserve1": "12956741535322874",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -4390,8 +4390,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JBTC.png"
     },
-    "reserve0": "58482288",
-    "reserve1": "154493945216613489",
+    "reserve0": "32653537",
+    "reserve1": "278100121053119735",
     "poolType": "V2",
     "TVL": 116.964576,
     "liquidity": 116.964576,
@@ -4417,8 +4417,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/JBTC.png"
     },
-    "reserve0": "51053398",
-    "reserve1": "132706622189977922",
+    "reserve0": "28540411",
+    "reserve1": "238243306541893782",
     "poolType": "V2",
     "TVL": 102.106796,
     "liquidity": 102.106796
@@ -4567,8 +4567,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SWAPA.png"
     },
-    "reserve0": "1241408815",
-    "reserve1": "1879286262273",
+    "reserve0": "24",
+    "reserve1": "100279942880260044323",
     "poolType": "V2",
     "TVL": 1.5510196740348357e-9,
     "liquidity": 1.5510196740348357e-9
@@ -4590,8 +4590,8 @@
       "decimals": 4,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/HIPPO.png"
     },
-    "reserve0": "92747820947621874266",
-    "reserve1": "64630628047",
+    "reserve0": "31691102561993294942",
+    "reserve1": "47340097503",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -4617,8 +4617,8 @@
       "decimals": 2,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ALPA.png"
     },
-    "reserve0": "821063966209476254",
-    "reserve1": "3877309493",
+    "reserve0": "451860212798953859",
+    "reserve1": "7056309493",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -4644,8 +4644,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BOAM.png"
     },
-    "reserve0": "21282050288213416770",
-    "reserve1": "9521700618769359611757683743",
+    "reserve0": "1",
+    "reserve1": "21301824",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -4671,8 +4671,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/POOP.png"
     },
-    "reserve0": "543877",
-    "reserve1": "2",
+    "reserve0": "2",
+    "reserve1": "993002",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
@@ -4694,8 +4694,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/DARE.png"
     },
-    "reserve0": "6130384935499159750",
-    "reserve1": "339671607264218740797",
+    "reserve0": "2813685578605045502",
+    "reserve1": "741590607318856236753",
     "poolType": "V2",
     "TVL": 7.659320225115344,
     "liquidity": 7.659320225115344,
@@ -4767,8 +4767,8 @@
       "decimals": 0,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/POPCAT.png"
     },
-    "reserve0": "286463651120385138410",
-    "reserve1": "689129427",
+    "reserve0": "103911206723573814394",
+    "reserve1": "475392968",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -4794,8 +4794,8 @@
       "decimals": 2,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/FIRE.png"
     },
-    "reserve0": "122412144090402859029",
-    "reserve1": "71165238",
+    "reserve0": "126510144090402859029",
+    "reserve1": "68866743",
     "poolType": "V2",
     "TVL": 120.93522353660401,
     "liquidity": 120.93522353660401,
@@ -4848,8 +4848,8 @@
       "decimals": 8,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/GOAT.png"
     },
-    "reserve0": "37033838637116198572",
-    "reserve1": "11668228655579147",
+    "reserve0": "34013814846882054847",
+    "reserve1": "10688839551993735",
     "poolType": "V2",
     "TVL": 46.27018242270067,
     "liquidity": 46.27018242270067,
@@ -4875,8 +4875,8 @@
       "decimals": 2,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ICE.png"
     },
-    "reserve0": "41546161056791600956",
-    "reserve1": "1950097",
+    "reserve0": "20604992378531230723",
+    "reserve1": "3940097",
     "poolType": "V2",
     "TVL": 51.90789077786893,
     "liquidity": 51.90789077786893,
@@ -4902,8 +4902,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/SYNC.png"
     },
-    "reserve0": "91073478599062493604",
-    "reserve1": "1747316827766278932315236",
+    "reserve0": "57013576507658575421",
+    "reserve1": "2794895437117623967877355",
     "poolType": "V2",
     "TVL": 113.78746097427742,
     "liquidity": 113.78746097427742,
@@ -4956,8 +4956,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/EX.png"
     },
-    "reserve0": "22984975306154632128",
-    "reserve1": "71875648448689491319",
+    "reserve0": "12889478648442525105",
+    "reserve1": "94999048563551755679",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -4983,8 +4983,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/PNUT.png"
     },
-    "reserve0": "118250962985909569496",
-    "reserve1": "262932643293275593",
+    "reserve0": "115073076842618684510",
+    "reserve1": "270215704453240000",
     "poolType": "V2",
     "TVL": 147.74308660335305,
     "liquidity": 147.74308660335305,
@@ -5010,8 +5010,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/EXY.png"
     },
-    "reserve0": "5874061384562179232",
-    "reserve1": "29441034154884496435616",
+    "reserve0": "13120638007358172530",
+    "reserve1": "13431303939134581344708",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -5037,8 +5037,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/NUTTY.png"
     },
-    "reserve0": "916758714775778876",
-    "reserve1": "2239609798469156038",
+    "reserve0": "4775830353996600451",
+    "reserve1": "434774995977903621",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -5064,8 +5064,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/BUILD.png"
     },
-    "reserve0": "2233360849226225940",
-    "reserve1": "27184646950852626446",
+    "reserve0": "876128143062893720",
+    "reserve1": "70335720582249352503",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -5091,8 +5091,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTbsc.png"
     },
-    "reserve0": "246968369",
-    "reserve1": "253349296419308794648",
+    "reserve0": "1",
+    "reserve1": "1000937462",
     "poolType": "V2",
     "TVL": 493.936738,
     "liquidity": 493.936738
@@ -5114,8 +5114,8 @@
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDTbsc.png"
     },
-    "reserve0": "797",
-    "reserve1": "1257",
+    "reserve0": "100000000000359780",
+    "reserve1": "36087",
     "poolType": "V2",
     "TVL": 23.469195861262975,
     "liquidity": 23.469195861262975
@@ -5137,8 +5137,8 @@
       "decimals": 9,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/ABX.png"
     },
-    "reserve0": "12573223",
-    "reserve1": "1",
+    "reserve0": "8740145360877752",
+    "reserve1": "48729185",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0,
@@ -5164,8 +5164,8 @@
       "decimals": 10,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/COPE.png"
     },
-    "reserve0": "2178257705070416025917",
-    "reserve1": "700133013435023688",
+    "reserve0": "1289934837102081621297",
+    "reserve1": "639192722617290233",
     "poolType": "V2",
     "TVL": 2176.856519210688,
     "liquidity": 2176.856519210688,
@@ -5241,8 +5241,8 @@
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/alephium/token-list/master/logos/USDCeth.png"
     },
-    "reserve0": "4163552",
-    "reserve1": "4162354",
+    "reserve0": "4138823",
+    "reserve1": "4233973",
     "poolType": "V2",
     "TVL": 0,
     "liquidity": 0
