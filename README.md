@@ -61,3 +61,5 @@ You can support Ayin Retro development by sending a donation (ALPH or any token)
 ```
 
 Use the **Donate** button in the site footer to send from your connected wallet.
+
+Thank you !
