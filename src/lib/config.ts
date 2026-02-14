@@ -12,6 +12,10 @@ export const TOKEN_LIST_URL =
 
 export const ALPH_TOKEN_ID = '0000000000000000000000000000000000000000000000000000000000000000'
 
+/** Donation address for the Donate button in the footer. Set via NEXT_PUBLIC_DONATION_ADDRESS. */
+export const DONATION_ADDRESS =
+  process.env.NEXT_PUBLIC_DONATION_ADDRESS || '1DHQcZ2GXvZxETD32CjLEuzirreGiY2XAGX4BH86SasT'
+
 /** AYIN token (contract id). */
 export const AYIN_TOKEN_ID = '1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800'
 

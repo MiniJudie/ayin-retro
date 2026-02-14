@@ -35,7 +35,7 @@ The app integrates [Matomo](https://matomo.org/) via [@socialgouv/matomo-next](h
 
 - **Page views** — automatic on route change
 - **Custom events** — swap (token pair + amounts), pool management (add/remove liquidity, pool name, amounts), staking (xAyin mint/burn, Pounder deposit/withdraw, LP stake/unstake with pool name and amount)
-- **User ID** — when a wallet is connected, the wallet address is set as the Matomo user ID for session attribution; it is reset on disconnect
+
 
 ## Learn More
 
@@ -51,3 +51,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Dev support
+
+You can support Ayin Retro development by sending a donation (ALPH or any token) to:
+
+```
+1DHQcZ2GXvZxETD32CjLEuzirreGiY2XAGX4BH86SasT
+```
+
+Use the **Donate** button in the site footer to send from your connected wallet.
