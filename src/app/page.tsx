@@ -140,6 +140,18 @@ export default function PoolsPage() {
             </p>
           </div>
 
+          <div className="mb-6 rounded-xl border border-[var(--card-border)] bg-[var(--card)] px-4 py-3 text-sm text-[var(--muted)]">
+            This tools only manage <strong className="text-white">Ayin Classic</strong> pools. If you have NFT LP from CLAMM Ayin Meta Fi, you can have a look at {' '}
+            <a
+              href="https://ayin.krk0d3r.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--accent)] hover:underline"
+            >
+              ayin.krk0d3r.com
+            </a>
+          </div>
+
           {loading && (
             <div className="rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-12 text-center text-[var(--muted)]">
               Loading pools…
