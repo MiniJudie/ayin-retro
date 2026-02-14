@@ -270,7 +270,7 @@ function SwapContent() {
         <div className="mx-auto max-w-lg space-y-6">
           <div className="rounded-xl border border-orange-500/40 bg-orange-950/30 px-4 py-3 text-sm text-orange-200/90 space-y-3">
             <p>This swap tool should not be used as a primary tool. It is here to allow users to swap old tokens that may not be available elsewhere. </p>
-            <p>For fully functionals, maintained DEXes please use:</p>
+            <p>For fully functionals, up to date DEXes please use:</p>
             <div className="flex gap-3">
               <a
                 href="https://elexium.finance/swap"
