@@ -140,8 +140,8 @@ export default function PoolsPage() {
             </p>
           </div>
 
-          <div className="mb-6 rounded-xl border border-[var(--card-border)] bg-[var(--card)] px-4 py-3 text-sm text-[var(--muted)]">
-            This tools only manage <strong className="text-white">Ayin Classic</strong> pools. If you have NFT LP from CLAMM Ayin Meta Fi, you can have a look at {' '}
+          <div className="mb-6 rounded-xl text-center border border-[var(--card-border)] bg-[var(--card)] px-4 py-3 text-sm text-[var(--muted)]">
+            This tool only manages <strong className="text-white">Ayin Classic</strong> pools with LP tokens. If you have NFT LP from <strong className="text-white">CLAMM Ayin</strong> Meta Fi, use {' '}
             <a
               href="https://ayin.krk0d3r.com/"
               target="_blank"

@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--card-border)] bg-[var(--background)]/80 backdrop-blur-md">
       <div className="border-b border-[var(--card-border)] bg-amber-500/10 px-4 py-1.5 text-center text-xs text-amber-200/90">
-        This interface is provided as is. We are not responsible for misuse or loss of funds. Use at your own risk.
+        This interface is provided as is. Community driven not related to ayin team. We are not responsible for misuse or loss of funds. Use at your own risk.
       </div>
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 text-xl font-semibold text-white">

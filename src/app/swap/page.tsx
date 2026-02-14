@@ -267,7 +267,31 @@ function SwapContent() {
     <div className="min-h-screen bg-[var(--background)]">
       <Header />
       <main className="pt-28 pb-12 px-4">
-        <div className="mx-auto max-w-lg">
+        <div className="mx-auto max-w-lg space-y-6">
+          <div className="rounded-xl border border-orange-500/40 bg-orange-950/30 px-4 py-3 text-sm text-orange-200/90 space-y-3">
+            <p>This swap tool should not be used as a primary tool. It is here to allow users to swap old tokens that may not be available elsewhere. </p>
+            <p>For fully functionals, maintained DEXes please use:</p>
+            <div className="flex gap-3">
+              <a
+                href="https://elexium.finance/swap"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center rounded-xl border border-orange-500/40 bg-black px-4 py-3 transition-colors hover:bg-black/80 hover:border-orange-400/50"
+              >
+                <img src="/dex-logos/elexium.svg" alt="Elexium" className="h-8 w-auto max-w-full object-contain" />
+              </a>
+              <a
+                href="https://nightshade.finance/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center rounded-xl border border-orange-500/40 bg-black px-4 py-3 transition-colors hover:bg-black/80 hover:border-orange-400/50"
+              >
+                <img src="/dex-logos/nightshade.png" alt="Nightshade" className="h-8 w-auto object-contain" />
+                &nbsp;NIGHTSHADE
+              </a>
+            </div>
+            <p>Users may experience high slippage depending on LP depth.</p>
+          </div>
           <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-6 shadow-xl">
             <div className="mb-4 flex items-center justify-between">
               <h1 className="text-xl font-semibold text-white">Swap</h1>
