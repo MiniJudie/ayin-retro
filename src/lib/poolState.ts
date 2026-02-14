@@ -43,6 +43,8 @@ export async function getPoolState(
       const instance = TokenPair.at(poolAddress)
       const state = await instance.fetchState()
       const fields = state.fields
+
+      console.log('fields', fields); 
       return {
         reserve0: fields.reserve0.toString(),
         reserve1: fields.reserve1.toString(),
