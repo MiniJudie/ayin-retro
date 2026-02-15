@@ -46,6 +46,9 @@ const MIN_ALPH_FOR_TX = BigInt('2000000000000000')
 /** Set to true to show the Single LP staking section (ALPHAYIN stake, earn AYIN). */
 const SHOW_SINGLE_LP_STAKING = false
 
+/** Set to true to show the Pounder section (deposit/withdraw ALPHAYIN). */
+const SHOW_POUNDER = false
+
 const TOKEN_LOGOS = {
   ayin: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png',
   xayin: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/XAYIN.png',
@@ -831,7 +834,8 @@ export default function StakingPage() {
             )}
           </section>
 
-          {/* Pounder section — separate card, 3 equal columns: Balance | Deposit | Withdraw */}
+          {/* Pounder section — separate card, 3 equal columns: Balance | Deposit | Withdraw. Hidden when SHOW_POUNDER is false. */}
+          {SHOW_POUNDER && (
           <section className="mt-4 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--card-border)] px-4 py-3">
               <div className="flex flex-wrap items-center gap-3">
@@ -941,6 +945,7 @@ export default function StakingPage() {
               </div>
             )}
           </section>
+          )}
 
           {/* Single staking — stake ALPHAYIN, earn AYIN (lib/Staking ABI). Hidden when SHOW_SINGLE_LP_STAKING is false. */}
           {SHOW_SINGLE_LP_STAKING && (
