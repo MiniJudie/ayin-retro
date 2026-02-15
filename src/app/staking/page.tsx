@@ -43,6 +43,9 @@ const DECIMALS = 18
 /** Minimum ALPH needed for tx fees / contract attachment (0.002 ALPH for staking account). */
 const MIN_ALPH_FOR_TX = BigInt('2000000000000000')
 
+/** Set to true to show the Single LP staking section (ALPHAYIN stake, earn AYIN). */
+const SHOW_SINGLE_LP_STAKING = false
+
 const TOKEN_LOGOS = {
   ayin: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png',
   xayin: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/XAYIN.png',
@@ -939,7 +942,8 @@ export default function StakingPage() {
             )}
           </section>
 
-          {/* Single staking — stake ALPHAYIN, earn AYIN (lib/Staking ABI) */}
+          {/* Single staking — stake ALPHAYIN, earn AYIN (lib/Staking ABI). Hidden when SHOW_SINGLE_LP_STAKING is false. */}
+          {SHOW_SINGLE_LP_STAKING && (
           <section className="mt-4 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--card-border)] px-4 py-3">
               <div className="flex flex-wrap items-center gap-3">
@@ -1066,6 +1070,7 @@ export default function StakingPage() {
               </div>
             )}
           </section>
+          )}
 
           {/* Top up AYIN modal — single LP staking */}
           {topUpModalOpen && (
@@ -1169,8 +1174,9 @@ export default function StakingPage() {
               </div>
             </div>
           )}
+          {      /* Debug LP — override address for single LP; optional public key to simulate as that user (signature still from connected wallet) */}        
+          {SHOW_SINGLE_LP_STAKING && (
 
-          {/* Debug LP — override address for single LP; optional public key to simulate as that user (signature still from connected wallet) */}
           <section className="mt-4 overflow-hidden rounded-xl border border-amber-500/30 bg-[var(--card)]">
             <button
               type="button"
@@ -1259,7 +1265,7 @@ export default function StakingPage() {
             </div>
             )}
           </section>
-
+          )} 
           {/* Pool staking — always visible; placeholders when wallet not connected */}
           <section className="mt-6 overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--card-border)] px-4 py-3">
