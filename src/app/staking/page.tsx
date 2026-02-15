@@ -1,8 +1,9 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useWallet } from '@alephium/web3-react'
-import { web3, binToHex, tokenIdFromAddress } from '@alephium/web3'
+import { web3, binToHex, tokenIdFromAddress, groupOfAddress, TransactionBuilder } from '@alephium/web3'
+import type { SignerProvider } from '@alephium/web3'
 import { Header } from '@/components/Header'
 import {
   AYIN_TOKEN_ID,
@@ -14,6 +15,7 @@ import {
   SINGLE_ALPHAYIN_STAKE_DEPOSIT_TOKEN,
   SINGLE_ALPHAYIN_USE_STAKING_V4,
   STAKING_POOLS_DEPLOYMENT,
+  BACKEND_URL,
   EXPLORER_URL,
   NODE_URL,
 } from '@/lib/config'
@@ -25,11 +27,16 @@ import { sendEvent } from '@socialgouv/matomo-next'
 import {
   executeStakeLp,
   executeUnstakeLp,
+  executeUnstakeLpChainedWithAyinTopUp,
   executeClaimRewards,
+  executeTopUpRewards,
   getEarnedReward,
   getStakedBalance,
+  getStakingContractOwner,
+  parseInsufficientAyinError,
   isStakingV4,
 } from '@/lib/lpStaking'
+import { fetchPublicKeyForAddress } from '@/lib/fetchPublicKey'
 import type { PoolInfo } from '@/lib/types'
 
 const DECIMALS = 18
@@ -100,9 +107,94 @@ export default function StakingPage() {
   const [pounderContractAlphayin, setPounderContractAlphayin] = useState<bigint | null>(null)
   const [pounderContractAyin, setPounderContractAyin] = useState<bigint | null>(null)
   const [singleStakingContractAyin, setSingleStakingContractAyin] = useState<bigint | null>(null)
+  const [singleStakingOwner, setSingleStakingOwner] = useState<string | null>(null)
   const [singleStaked, setSingleStaked] = useState<bigint>(0n)
   const [singleEarned, setSingleEarned] = useState<bigint>(0n)
+  const [topUpModalOpen, setTopUpModalOpen] = useState(false)
+  const [topUpAmount, setTopUpAmount] = useState('')
+  const [topUpOwnerLoading, setTopUpOwnerLoading] = useState(false)
+  const [insufficientAyinPopup, setInsufficientAyinPopup] = useState<{
+    expected: bigint
+    got: bigint
+    missing: bigint
+    unstakeAmount: bigint
+  } | null>(null)
+  const [debugLpAddress, setDebugLpAddress] = useState('')
+  const [debugLpPublicKey, setDebugLpPublicKey] = useState('')
+  const [debugLpPublicKeyFetching, setDebugLpPublicKeyFetching] = useState(false)
+  const [debugLpPublicKeyError, setDebugLpPublicKeyError] = useState<string | null>(null)
+  const [debugLpSectionOpen, setDebugLpSectionOpen] = useState(false)
+  const [unstakeWithTopUpModalOpen, setUnstakeWithTopUpModalOpen] = useState(false)
+  const [unstakeWithTopUpAyinAmount, setUnstakeWithTopUpAyinAmount] = useState('1')
+  const lastSingleUnstakeAmountRef = useRef<bigint>(0n)
   const SINGLE_STAKING_KEY = 'single_alphayin'
+  const effectiveSingleAddress = (debugLpAddress.trim() || account?.address) ?? ''
+
+  // When debug address is set, wrap signer so getSelectedAccount() returns the debug address (and getPublicKey returns debug key if set).
+  // Build/simulation will run as that user; signing still uses connected wallet so signature will fail (intended for reproducing errors).
+  const effectiveSingleSigner = useMemo((): SignerProvider | undefined => {
+    if (!signer || !debugLpAddress.trim()) return signer
+    const debugAddr = debugLpAddress.trim()
+    const debugPubKey = debugLpPublicKey.trim() || null
+    const real = signer as SignerProvider & { getPublicKey?(a: string): Promise<string>; signRaw?(a: string, h: string): Promise<string>; nodeProvider: SignerProvider['nodeProvider']; submitTransaction?(p: unknown): Promise<unknown> }
+    return {
+      get nodeProvider() {
+        return real.nodeProvider
+      },
+      get explorerProvider() {
+        return real.explorerProvider
+      },
+      async getSelectedAccount() {
+        const realAccount = await real.getSelectedAccount()
+        const pubKey = debugPubKey ?? realAccount.publicKey
+        const group = groupOfAddress(debugAddr)
+        return {
+          ...realAccount,
+          address: debugAddr,
+          publicKey: pubKey,
+          ...(typeof group === 'number' ? { group } : {}),
+        }
+      },
+      async signAndSubmitTransferTx(p) {
+        return real.signAndSubmitTransferTx(p)
+      },
+      async signAndSubmitDeployContractTx(p) {
+        return real.signAndSubmitDeployContractTx(p)
+      },
+      async signAndSubmitExecuteScriptTx(params) {
+        const publicKey = debugPubKey ?? (await real.getSelectedAccount()).publicKey
+        const response = await TransactionBuilder.from(real.nodeProvider!).buildExecuteScriptTx(params, publicKey)
+        const realAccount = await real.getSelectedAccount()
+        const r = response as { txId: string; unsignedTx: string; fundingTxs?: Array<{ txId: string; unsignedTx: string; [k: string]: unknown }> }
+        if (r.fundingTxs?.length) {
+          const signedFundingTxs: Array<{ txId: string; unsignedTx: string; signature: string; [k: string]: unknown }> = []
+          for (const ft of r.fundingTxs) {
+            const sig = await real.signRaw!(realAccount.address, ft.txId)
+            signedFundingTxs.push({ ...ft, signature: sig })
+            await real.submitTransaction!({ unsignedTx: ft.unsignedTx, signature: sig })
+          }
+          const sig = await real.signRaw!(realAccount.address, r.txId)
+          await real.submitTransaction!({ unsignedTx: r.unsignedTx, signature: sig })
+          return { ...response, signature: sig, fundingTxs: signedFundingTxs } as unknown as Awaited<ReturnType<SignerProvider['signAndSubmitExecuteScriptTx']>>
+        }
+        const sig = await real.signRaw!(realAccount.address, r.txId)
+        await real.submitTransaction!({ unsignedTx: r.unsignedTx, signature: sig })
+        return { ...response, signature: sig } as unknown as Awaited<ReturnType<SignerProvider['signAndSubmitExecuteScriptTx']>>
+      },
+      async signAndSubmitUnsignedTx(p) {
+        return real.signAndSubmitUnsignedTx(p)
+      },
+      async signAndSubmitChainedTx(p) {
+        return real.signAndSubmitChainedTx(p)
+      },
+      async signUnsignedTx(p) {
+        return real.signUnsignedTx(p)
+      },
+      async signMessage(p) {
+        return real.signMessage(p)
+      },
+    } as SignerProvider
+  }, [signer, debugLpAddress, debugLpPublicKey])
 
   useEffect(() => {
     web3.setCurrentNodeProvider(NODE_URL)
@@ -125,6 +217,27 @@ export default function StakingPage() {
     fetchContractBalances()
   }, [fetchContractBalances])
 
+  useEffect(() => {
+    if (!account?.address) {
+      setSingleStakingOwner(null)
+      return
+    }
+    getStakingContractOwner(SINGLE_ALPHAYIN_STAKE_ADDRESS).then(setSingleStakingOwner)
+  }, [account?.address])
+
+  // Force-load contract owner when Top up modal opens so it’s always fresh
+  useEffect(() => {
+    if (!topUpModalOpen) return
+    setTopUpOwnerLoading(true)
+    getStakingContractOwner(SINGLE_ALPHAYIN_STAKE_ADDRESS)
+      .then((owner) => {
+        setSingleStakingOwner(owner)
+      })
+      .finally(() => {
+        setTopUpOwnerLoading(false)
+      })
+  }, [topUpModalOpen])
+
   const refetchStakingPoolsAndPositions = useCallback(async () => {
     setRefreshingStaking(true)
     try {
@@ -134,6 +247,7 @@ export default function StakingPage() {
       setPools(list)
       if (account?.address) {
         const addr = account.address
+        const singleAddr = effectiveSingleAddress || addr
         await Promise.all([
           ...STAKING_POOLS_DEPLOYMENT.flatMap((entry) => [
             getEarnedReward(entry.stakingAddress, addr, isStakingV4(entry.key)).then((earned) =>
@@ -143,8 +257,8 @@ export default function StakingPage() {
               setStakedByKey((prev) => (prev[entry.key] === staked ? prev : { ...prev, [entry.key]: staked }))
             ),
           ]),
-          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned),
-          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked),
+          singleAddr ? getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, singleAddr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned) : Promise.resolve(),
+          singleAddr ? getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, singleAddr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked) : Promise.resolve(),
         ])
       }
       refreshBalances()
@@ -152,28 +266,36 @@ export default function StakingPage() {
     } finally {
       setRefreshingStaking(false)
     }
-  }, [account?.address, refreshBalances, fetchContractBalances])
+  }, [account?.address, effectiveSingleAddress, refreshBalances, fetchContractBalances])
 
   useEffect(() => {
-    if (!account?.address) {
+    if (!account?.address && !debugLpAddress.trim()) {
       setRewardsByKey({})
       setStakedByKey({})
       setSingleEarned(0n)
       setSingleStaked(0n)
       return
     }
-    const addr = account.address
-    STAKING_POOLS_DEPLOYMENT.forEach((entry) => {
-      getEarnedReward(entry.stakingAddress, addr, isStakingV4(entry.key)).then((earned) =>
-        setRewardsByKey((prev) => (prev[entry.key] === earned ? prev : { ...prev, [entry.key]: earned }))
-      )
-      getStakedBalance(entry.stakingAddress, addr, isStakingV4(entry.key)).then((staked) =>
-        setStakedByKey((prev) => (prev[entry.key] === staked ? prev : { ...prev, [entry.key]: staked }))
-      )
-    })
-    getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
-    getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
-  }, [account?.address])
+    const addr = account?.address ?? ''
+    const singleAddr = effectiveSingleAddress || addr
+    if (account?.address) {
+      STAKING_POOLS_DEPLOYMENT.forEach((entry) => {
+        getEarnedReward(entry.stakingAddress, addr, isStakingV4(entry.key)).then((earned) =>
+          setRewardsByKey((prev) => (prev[entry.key] === earned ? prev : { ...prev, [entry.key]: earned }))
+        )
+        getStakedBalance(entry.stakingAddress, addr, isStakingV4(entry.key)).then((staked) =>
+          setStakedByKey((prev) => (prev[entry.key] === staked ? prev : { ...prev, [entry.key]: staked }))
+        )
+      })
+    }
+    if (singleAddr) {
+      getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, singleAddr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
+      getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, singleAddr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
+    } else {
+      setSingleEarned(0n)
+      setSingleStaked(0n)
+    }
+  }, [account?.address, debugLpAddress, effectiveSingleAddress])
 
   useEffect(() => {
     fetch('/api/pools')
@@ -232,13 +354,24 @@ export default function StakingPage() {
         setSuccessTxId(txId)
       } catch (e) {
         const msg = e instanceof Error ? e.message : 'Transaction failed'
-        const alphMsg =
-          msg.includes('expected: 1000000000000000000') || msg.includes('Not enough approved balance')
-            ? 'Staking requires 1 ALPH to be attached. Ensure your wallet has at least 1 ALPH and try again.'
-            : msg.includes('expected 0.002 ALPH') || msg.includes('expected 0.001 ALPH') || msg.includes('got 0 ALPH')
-              ? 'Your staking account contract needs at least 0.002 ALPH. Send 0.002 ALPH to the address in the error (e.g. 17Cf96... or 22VZ7K...) from your wallet, then try claim or unstake again.'
-              : msg
-        setError(alphMsg)
+        const insufficientAyin = parseInsufficientAyinError(msg, SINGLE_ALPHAYIN_STAKE_ADDRESS, AYIN_TOKEN_ID)
+        if (insufficientAyin) {
+          setInsufficientAyinPopup({
+            ...insufficientAyin,
+            unstakeAmount: lastSingleUnstakeAmountRef.current,
+          })
+          setError(null)
+        } else {
+          const alphMsg =
+            msg.includes('expected: 1000000000000000000') || (msg.includes('Not enough approved balance') && !msg.includes(SINGLE_ALPHAYIN_STAKE_ADDRESS))
+              ? 'Staking requires 1 ALPH to be attached. Ensure your wallet has at least 1 ALPH and try again.'
+              : msg.includes('expected 0.002 ALPH') || msg.includes('expected 0.001 ALPH') || msg.includes('got 0 ALPH')
+                ? 'Your staking account contract needs at least 0.002 ALPH. Send 0.002 ALPH to the address in the error (e.g. 17Cf96... or 22VZ7K...) from your wallet, then try claim or unstake again.'
+                : msg.includes('Assertion Failed')
+                  ? 'Transaction rejected by the contract. For Top up rewards, only the contract owner can perform this action.'
+                  : msg
+          setError(alphMsg)
+        }
       } finally {
         setPending(null)
       }
@@ -394,7 +527,7 @@ export default function StakingPage() {
     }
     run(
       SINGLE_STAKING_KEY,
-      () => executeStakeLp(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, SINGLE_ALPHAYIN_USE_STAKING_V4),
+      () => executeStakeLp((effectiveSingleSigner ?? signer)!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, SINGLE_ALPHAYIN_USE_STAKING_V4),
       () => {
         sendEvent({ category: 'stake', action: 'stake', name: 'Single ALPHAYIN', value: stakeAmounts[SINGLE_STAKING_KEY] ?? '' })
         setStakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
@@ -405,7 +538,7 @@ export default function StakingPage() {
         }
       }
     )
-  }, [stakeAmounts, run, signer, account?.address, fetchContractBalances])
+  }, [stakeAmounts, run, effectiveSingleSigner, signer, account?.address, fetchContractBalances])
 
   const handleSingleUnstake = useCallback(() => {
     const amount = parseTokenAmount(unstakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS)
@@ -413,10 +546,18 @@ export default function StakingPage() {
       setError('Enter unstake amount')
       return
     }
+    
+    lastSingleUnstakeAmountRef.current = amount
     run(
       SINGLE_STAKING_KEY,
-() => executeUnstakeLp(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, SINGLE_ALPHAYIN_USE_STAKING_V4),
-        () => {
+      () =>
+        executeUnstakeLpChainedWithAyinTopUp(
+          (effectiveSingleSigner ?? signer)!,
+          SINGLE_ALPHAYIN_STAKE_ADDRESS,
+          amount,
+          AYIN_TOKEN_ID
+        ),
+      () => {
           sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN', value: unstakeAmounts[SINGLE_STAKING_KEY] ?? '' })
           setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
           fetchContractBalances()
@@ -426,12 +567,74 @@ export default function StakingPage() {
           }
         }
     )
-  }, [unstakeAmounts, run, signer, account?.address, fetchContractBalances])
+  }, [unstakeAmounts, run, effectiveSingleSigner, signer, account?.address, fetchContractBalances])
+
+  const handleUnstakeWithTopUpSubmit = useCallback(() => {
+    const amount = parseTokenAmount(unstakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS)
+    const ayinAmount = parseTokenAmount(unstakeWithTopUpAyinAmount, DECIMALS)
+    if (!amount || amount <= BigInt(0)) {
+      setError('Enter unstake amount')
+      return
+    }
+    if (!ayinAmount || ayinAmount <= BigInt(0)) {
+      setError('Enter AYIN amount to attach (e.g. 1)')
+      return
+    }
+    setUnstakeWithTopUpModalOpen(false)
+    run(
+      SINGLE_STAKING_KEY,
+      () =>
+        executeUnstakeLpChainedWithAyinTopUp(
+          (effectiveSingleSigner ?? signer)!,
+          SINGLE_ALPHAYIN_STAKE_ADDRESS,
+          amount,
+          AYIN_TOKEN_ID,
+          ayinAmount
+        ),
+      () => {
+        sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN (with top-up)' })
+        setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
+        setUnstakeWithTopUpAyinAmount('1')
+        fetchContractBalances()
+        if (account?.address) {
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
+        }
+      }
+    )
+  }, [unstakeAmounts, unstakeWithTopUpAyinAmount, run, signer, account?.address, fetchContractBalances])
+
+  const handleInsufficientAyinRetry = useCallback(() => {
+    if (!insufficientAyinPopup || !(effectiveSingleSigner ?? signer)) return
+    const { missing, unstakeAmount } = insufficientAyinPopup
+    const topUpAmount = missing + 1n
+    setInsufficientAyinPopup(null)
+    run(
+      SINGLE_STAKING_KEY,
+      () =>
+        executeUnstakeLpChainedWithAyinTopUp(
+          (effectiveSingleSigner ?? signer)!,
+          SINGLE_ALPHAYIN_STAKE_ADDRESS,
+          unstakeAmount,
+          AYIN_TOKEN_ID,
+          topUpAmount
+        ),
+      () => {
+        sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN (retry with top-up)' })
+        setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
+        fetchContractBalances()
+        if (account?.address) {
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
+        }
+      }
+    )
+  }, [insufficientAyinPopup, run, signer, account?.address, fetchContractBalances])
 
   const handleSingleClaim = useCallback(() => {
     run(
       SINGLE_STAKING_KEY,
-      () => executeClaimRewards(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, SINGLE_ALPHAYIN_USE_STAKING_V4),
+      () => executeClaimRewards((effectiveSingleSigner ?? signer)!, SINGLE_ALPHAYIN_STAKE_ADDRESS, SINGLE_ALPHAYIN_USE_STAKING_V4),
       () => {
         sendEvent({ category: 'stake', action: 'claim', name: 'Single ALPHAYIN' })
         fetchContractBalances()
@@ -441,7 +644,26 @@ export default function StakingPage() {
         }
       }
     )
-  }, [run, signer, account?.address, fetchContractBalances])
+  }, [run, effectiveSingleSigner, signer, account?.address, fetchContractBalances])
+
+  const TOP_UP_PENDING_KEY = 'single_topup'
+  const handleTopUpSubmit = useCallback(() => {
+    const amount = parseTokenAmount(topUpAmount, DECIMALS)
+    if (!amount || amount <= BigInt(0)) {
+      setError('Enter AYIN amount')
+      return
+    }
+    run(
+      TOP_UP_PENDING_KEY,
+      () => executeTopUpRewards((effectiveSingleSigner ?? signer)!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, AYIN_TOKEN_ID),
+      () => {
+        setTopUpModalOpen(false)
+        setTopUpAmount('')
+        fetchContractBalances()
+        sendEvent({ category: 'stake', action: 'topup', name: 'Single ALPHAYIN' })
+      }
+    )
+  }, [topUpAmount, run, effectiveSingleSigner, signer, fetchContractBalances])
 
   const handleStakeMax = useCallback(
     (entry: (typeof STAKING_POOLS_DEPLOYMENT)[0]) => {
@@ -735,14 +957,24 @@ export default function StakingPage() {
                   </span>
                 )}
               </div>
-              <a
-                href={`${EXPLORER_URL}/addresses/${SINGLE_ALPHAYIN_STAKE_ADDRESS}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-[var(--muted)] hover:text-white transition shrink-0"
-              >
-                Contract
-              </a>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => { setError(null); setTopUpModalOpen(true) }}
+                  disabled={!!pending}
+                  className="rounded border border-[var(--card-border)] px-2.5 py-1.5 text-xs font-medium text-white hover:bg-white/5 disabled:opacity-50"
+                >
+                  Top up
+                </button>
+                <a
+                  href={`${EXPLORER_URL}/addresses/${SINGLE_ALPHAYIN_STAKE_ADDRESS}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[var(--muted)] hover:text-white transition"
+                >
+                  Contract
+                </a>
+              </div>
             </div>
             {account?.address ? (
               <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 px-4 py-3">
@@ -760,20 +992,6 @@ export default function StakingPage() {
                       {formatTokenAmount(singleStaked, DECIMALS)}
                     </span>
                   </div>
-                  <div>
-                    <span className="text-[var(--muted)]">Earned (AYIN): </span>
-                    <span className={singleEarned > BigInt(0) ? 'font-medium text-white' : 'text-[var(--muted)]'}>
-                      {formatTokenAmount(singleEarned, DECIMALS)}
-                    </span>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={handleSingleClaim}
-                    disabled={!!pending }
-                    className="mt-2 rounded border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 disabled:opacity-50"
-                  >
-                    {pending === SINGLE_STAKING_KEY ? '…' : 'Claim'}
-                  </button>
                 </div>
                 <div className="flex min-w-0 flex-col gap-2">
                   <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Stake</div>
@@ -846,6 +1064,218 @@ export default function StakingPage() {
               <div className="px-4 py-6 text-center text-sm text-[var(--muted)]">
                 Connect your wallet to stake ALPHAYIN and earn AYIN.
               </div>
+            )}
+          </section>
+
+          {/* Top up AYIN modal — single LP staking */}
+          {topUpModalOpen && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+              onClick={() => setTopUpModalOpen(false)}
+            >
+              <div
+                className="w-full max-w-lg rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6 shadow-xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-white">Top up rewards (AYIN)</h3>
+                  <button
+                    type="button"
+                    onClick={() => setTopUpModalOpen(false)}
+                    className="rounded p-1 text-[var(--muted)] hover:bg-white/10 hover:text-white"
+                    aria-label="Close"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <p className="mb-4 text-sm text-[var(--muted)]">
+                  Send AYIN to the staking contract so it can pay rewards when users claim or unstake. Only the contract owner can submit a top-up. Enter the amount below and sign the transaction.
+                </p>
+                <div className="mb-4 rounded-lg border border-[var(--card-border)] bg-[var(--input-bg)] px-3 py-2">
+                  <div className="text-xs text-[var(--muted)]">Contract owner</div>
+                  <div className="mt-0.5 font-mono text-sm text-white break-all">
+                    {topUpOwnerLoading ? (
+                      <span className="text-[var(--muted)]">Loading…</span>
+                    ) : singleStakingOwner ? (
+                      <a
+                        href={`${EXPLORER_URL}/addresses/${singleStakingOwner}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[var(--accent)] hover:underline"
+                      >
+                        {singleStakingOwner}
+                      </a>
+                    ) : (
+                      <span className="text-[var(--muted)]">Unable to load</span>
+                    )}
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div>
+                    <label className="mb-1 block text-xs text-[var(--muted)]">AYIN amount</label>
+                    <input
+                      type="text"
+                      inputMode="decimal"
+                      placeholder="0.0"
+                      value={topUpAmount}
+                      onChange={(e) => {
+                        const v = e.target.value.replace(/,/g, '.')
+                        if (/^[0-9.]*$/.test(v) || v === '') setTopUpAmount(v)
+                      }}
+                      className="w-full rounded-lg border border-[var(--card-border)] bg-[var(--input-bg)] px-3 py-2 font-mono text-sm text-white placeholder:text-[var(--muted)]"
+                    />
+                  </div>
+                  {error && <p className="text-sm text-red-400">{error}</p>}
+                  <button
+                    type="button"
+                    onClick={handleTopUpSubmit}
+                    disabled={!!pending || !topUpAmount || !parseTokenAmount(topUpAmount, DECIMALS) || parseTokenAmount(topUpAmount, DECIMALS)! <= BigInt(0)}
+                    className="w-full rounded-xl bg-[var(--accent)] py-3 font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-50"
+                  >
+                    {pending === TOP_UP_PENDING_KEY ? '…' : 'Sign & top up'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Insufficient AYIN in contract — cannot unstake until top-up */}
+          {insufficientAyinPopup && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+              onClick={() => setInsufficientAyinPopup(null)}
+            >
+              <div
+                className="w-full max-w-md rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6 shadow-xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-white">Not enough AYIN in contract</h3>
+                  <button
+                    type="button"
+                    onClick={() => setInsufficientAyinPopup(null)}
+                    className="rounded p-1 text-[var(--muted)] hover:bg-white/10 hover:text-white"
+                    aria-label="Close"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <p className="mb-4 text-sm text-[var(--muted)]">
+                  We are sorry. There is not enough AYIN in the staking contract to pay your rewards. Because of that you cannot withdraw (unstake) until the contract is topped up.
+                </p>
+                <div className="mb-4 rounded-lg border border-[var(--card-border)] bg-[var(--input-bg)] px-3 py-2 font-mono text-sm">
+                  <div className="text-xs text-[var(--muted)]">Missing AYIN (to top up)</div>
+                  <div className="mt-0.5 text-white">{formatTokenAmount(insufficientAyinPopup.missing, DECIMALS)}</div>
+                  <div className="mt-2 text-xs">
+                    <span className="text-blue-400">Contract has: {formatTokenAmount(insufficientAyinPopup.got, DECIMALS)}</span>
+                    <span className="text-[var(--muted)]"> · </span>
+                    <span className="text-red-400">Needed: {formatTokenAmount(insufficientAyinPopup.expected, DECIMALS)}</span>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setInsufficientAyinPopup(null)}
+                    className="w-full rounded-xl border border-[var(--card-border)] py-2.5 text-sm text-[var(--muted)] hover:bg-white/5 hover:text-white"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Debug LP — override address for single LP; optional public key to simulate as that user (signature still from connected wallet) */}
+          <section className="mt-4 overflow-hidden rounded-xl border border-amber-500/30 bg-[var(--card)]">
+            <button
+              type="button"
+              onClick={() => setDebugLpSectionOpen((o) => !o)}
+              className="flex w-full items-center justify-between border-b border-amber-500/30 px-4 py-2 text-left hover:bg-white/5"
+              aria-expanded={debugLpSectionOpen}
+            >
+              <h2 className="text-sm font-semibold text-amber-400">Debug LP</h2>
+              <svg
+                className={`h-4 w-4 shrink-0 text-amber-400 transition-transform ${debugLpSectionOpen ? 'rotate-180' : ''}`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            {debugLpSectionOpen && (
+            <div className="px-4 py-3 space-y-3">
+              <p className="text-xs text-[var(--muted)] -mt-1">
+                Override wallet for single LP data and actions. When address is set, staked and single-LP actions (stake, unstake, top-up) run build/simulation as this address. Add the other user&apos;s public key to reproduce their errors (e.g. &quot;Not enough approved balance&quot;). Signing still uses the connected wallet so the final signature may be invalid.
+              </p>
+              <div>
+                <label className="mb-1 block text-xs text-[var(--muted)]">Wallet address (override)</label>
+                <input
+                  type="text"
+                  placeholder="Leave empty to use connected wallet"
+                  value={debugLpAddress}
+                  onChange={(e) => setDebugLpAddress(e.target.value)}
+                  className="w-full rounded-lg border border-[var(--card-border)] bg-[var(--input-bg)] px-3 py-2 font-mono text-sm text-white placeholder:text-[var(--muted)]"
+                />
+              </div>
+              {debugLpAddress.trim() && (
+                <div>
+                  <label className="mb-1 block text-xs text-[var(--muted)]">Public key (for simulation)</label>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <input
+                      type="text"
+                      placeholder="Paste or fetch from chain"
+                      value={debugLpPublicKey}
+                      onChange={(e) => { setDebugLpPublicKey(e.target.value); setDebugLpPublicKeyError(null) }}
+                      className="min-w-0 flex-1 rounded-lg border border-[var(--card-border)] bg-[var(--input-bg)] px-3 py-2 font-mono text-sm text-white placeholder:text-[var(--muted)]"
+                    />
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        const addr = debugLpAddress.trim()
+                        if (!addr) return
+                        setDebugLpPublicKeyFetching(true)
+                        setDebugLpPublicKeyError(null)
+                        try {
+                          const key = await fetchPublicKeyForAddress(BACKEND_URL, addr)
+                          if (key) {
+                            setDebugLpPublicKey(key)
+                          } else {
+                            setDebugLpPublicKeyError('Not found. Address must have signed at least one transaction (explorer + node).')
+                          }
+                        } catch (e) {
+                          setDebugLpPublicKeyError(e instanceof Error ? e.message : 'Fetch failed')
+                        } finally {
+                          setDebugLpPublicKeyFetching(false)
+                        }
+                      }}
+                      disabled={debugLpPublicKeyFetching}
+                      className="shrink-0 rounded-lg border border-amber-500/50 bg-amber-500/10 px-3 py-2 text-xs font-medium text-amber-400 hover:bg-amber-500/20 disabled:opacity-50"
+                    >
+                      {debugLpPublicKeyFetching ? '…' : 'Fetch from chain'}
+                    </button>
+                  </div>
+                  {debugLpPublicKeyError && (
+                    <p className="mt-1 text-xs text-amber-400">{debugLpPublicKeyError}</p>
+                  )}
+                  <p className="mt-1 text-xs text-[var(--muted)]">
+                    Without this, build uses the connected wallet key so simulation may not match the override address. Public key is visible in any transaction signed by this address (e.g. unlock script).
+                  </p>
+                </div>
+              )}
+              {debugLpAddress.trim() && (
+                <p className="text-xs text-[var(--muted)]">
+                  Viewing single LP as: <span className="font-mono text-white break-all">{debugLpAddress.trim()}</span>
+                </p>
+              )}
+            </div>
             )}
           </section>
 

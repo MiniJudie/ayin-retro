@@ -1,14 +1,24 @@
-import { signExecuteMethod, addressFromContractId } from '@alephium/web3'
+import {
+  signExecuteMethod,
+  addressFromContractId,
+  DUST_AMOUNT,
+  type SignerProvider,
+  type SignExecuteScriptTxParams,
+  type SignChainedTxParams,
+  type SignTransferTxParams,
+  type SignDeployContractTxParams,
+  type SignUnsignedTxParams,
+  type SignMessageParams,
+} from '@alephium/web3'
 
 /** 1 ALPH required by StakingV4/Staking for stake (create/fund staking account). */
 const ONE_ALPH = BigInt('1000000000000000000')
 /** ALPH to attach for claim/unstake (staking account may require 0.002 ALPH). */
 const MIN_ALPH_FOR_CLAIM_UNSTAKE = BigInt('2000000000000000') // 0.002 ALPH
-import type { SignerProvider } from '@alephium/web3'
 import { Staking } from './Staking'
 import { StakingV4 } from './StakingV4'
 import { StakingAccount } from './StakingAccount'
-import { STAKING_V4_KEYS } from './config'
+import { SINGLE_ALPHAYIN_STAKE_ADDRESS, STAKING_V4_KEYS } from './config'
 import { registerCodeHashAlias } from './contracts-registry'
 
 // On-chain StakingV4 deployments may have a different code hash. Map them to our StakingV4 contract.
@@ -25,6 +35,36 @@ registerCodeHashAlias(
   '8674144cd2f1351516913e68b9e3014d6340d5c572dcde909615d61b4fda587c',
   Staking
 )
+
+/** Error used to capture ExecuteScript tx params from signExecuteMethod without submitting. */
+class CapturedExecuteScriptParamsError extends Error {
+  constructor(public readonly params: SignExecuteScriptTxParams) {
+    super('CaptureExecuteScriptParams')
+    this.name = 'CapturedExecuteScriptParamsError'
+  }
+}
+
+/** Signer that captures ExecuteScript params when signAndSubmitExecuteScriptTx is called and throws with them. */
+function createCaptureExecuteScriptSigner(real: SignerProvider): SignerProvider {
+  return {
+    get nodeProvider() {
+      return real.nodeProvider
+    },
+    get explorerProvider() {
+      return real.explorerProvider
+    },
+    getSelectedAccount: () => real.getSelectedAccount(),
+    signAndSubmitTransferTx: (p: SignTransferTxParams) => real.signAndSubmitTransferTx(p),
+    signAndSubmitDeployContractTx: (p: SignDeployContractTxParams) => real.signAndSubmitDeployContractTx(p),
+    async signAndSubmitExecuteScriptTx(params: SignExecuteScriptTxParams) {
+      throw new CapturedExecuteScriptParamsError(params)
+    },
+    signAndSubmitUnsignedTx: (p: SignUnsignedTxParams) => real.signAndSubmitUnsignedTx(p),
+    signAndSubmitChainedTx: (p: SignChainedTxParams[]) => real.signAndSubmitChainedTx(p),
+    signUnsignedTx: (p: SignUnsignedTxParams) => real.signUnsignedTx(p),
+    signMessage: (p: SignMessageParams) => real.signMessage(p),
+  } as unknown as SignerProvider
+}
 
 /** If address is a StakingAccount contract, return the staker (wallet) address; otherwise return the input. Use when the user might pass a StakingAccount address instead of their wallet. */
 export async function resolveStakerAddress(address: string): Promise<string> {
@@ -405,6 +445,170 @@ export async function executeUnstakeLp(
     })
     return { txId: result.txId }
   }
+}
+
+/**
+ * Unstake LP from a StakingV4 pool in one signature: first sends 0.002 ALPH to the user's StakingAccount, then calls unstake.
+ * Use this when the StakingAccount has no ALPH (avoids "expected 0.002 ALPH" and a second tx). Only supports StakingV4.
+ */
+export async function executeUnstakeLpChained(
+  signer: SignerProvider,
+  stakingAddress: string,
+  amount: bigint
+): Promise<{ txId: string }> {
+  const instance = StakingV4.at(stakingAddress)
+  const account = await signer.getSelectedAccount()
+
+  const accountRes = await instance.view.getStakingAccount({
+    args: { staker: account.address as `@${string}` },
+  })
+  const raw = (accountRes as { returns?: unknown }).returns
+  const rawVal = Array.isArray(raw) ? raw[0] : raw
+  const hex =
+    typeof rawVal === 'string'
+      ? rawVal.startsWith('0x')
+        ? rawVal.slice(2)
+        : rawVal
+      : ''
+  if (hex.length !== 64 || !/^[0-9a-fA-F]+$/.test(hex)) {
+    throw new Error('No staking account found for this address. Stake first before unstaking.')
+  }
+  const stakingAccountAddress = addressFromContractId(hex)
+
+  const captureSigner = createCaptureExecuteScriptSigner(signer)
+  let scriptParams: SignExecuteScriptTxParams | undefined
+  try {
+    await signExecuteMethod(StakingV4, instance, 'unstake', {
+      signer: captureSigner,
+      args: { amount },
+      attoAlphAmount: 0n,
+    })
+  } catch (e) {
+    if (e instanceof CapturedExecuteScriptParamsError) {
+      scriptParams = e.params
+    } else {
+      throw e
+    }
+  }
+  if (!scriptParams) {
+    throw new Error('Failed to build unstake script params')
+  }
+
+  const transferParams: SignChainedTxParams = {
+    type: 'Transfer',
+    signerAddress: account.address,
+    signerKeyType: account.keyType,
+    destinations: [
+      {
+        address: stakingAccountAddress,
+        attoAlphAmount: MIN_ALPH_FOR_CLAIM_UNSTAKE,
+      },
+    ],
+  }
+  const executeScriptParams: SignChainedTxParams = {
+    type: 'ExecuteScript',
+    ...scriptParams,
+  }
+
+  const results = await signer.signAndSubmitChainedTx([transferParams, executeScriptParams])
+  const unstakeResult = results[1]
+  if (!unstakeResult || unstakeResult.type !== 'ExecuteScript') {
+    throw new Error('Chained tx failed: missing unstake result')
+  }
+  return { txId: unstakeResult.txId }
+}
+
+/** 1 AYIN in smallest units (18 decimals). */
+const ONE_AYIN_RAW = 10n ** 18n
+
+/** Normalize token id to 32-char hex for contract calls. */
+function normalizeTokenIdForTopUp(id: string): string {
+  const s = (id ?? '').trim().toLowerCase().replace(/^0x/, '')
+  if (s.length !== 64 || !/^[0-9a-f]+$/.test(s)) throw new Error('Invalid AYIN token id')
+  return s
+}
+
+/**
+ * Parse "Not enough approved balance" error for a given contract and AYIN token.
+ * Returns { expected, got, missing } when the error matches (expected = amount needed, got = current balance; missing = expected - got).
+ */
+export function parseInsufficientAyinError(
+  message: string,
+  contractAddress: string,
+  ayinTokenId: string
+): { expected: bigint; got: bigint; missing: bigint } | null {
+  if (!message.includes('Not enough approved balance')) return null
+  const normContract = (contractAddress ?? '').trim()
+  const normToken = (ayinTokenId ?? '').trim().toLowerCase().replace(/^0x/, '')
+  if (normContract && !message.includes(normContract)) return null
+  if (normToken.length === 64 && !message.toLowerCase().includes(normToken)) return null
+  const match = message.match(/expected\s*:?\s*(\d+)\s*,\s*got\s*:?\s*(\d+)/i)
+  if (!match) return null
+  const expected = BigInt(match[1])
+  const got = BigInt(match[2])
+  const missing = expected > got ? expected - got : 0n
+  return { expected, got, missing }
+}
+
+/** Get the owner address of a StakingV4 staking contract. Returns null if fetch fails. */
+export async function getStakingContractOwner(stakingAddress: string): Promise<string | null> {
+  try {
+    const instance = StakingV4.at(stakingAddress)
+    const state = await instance.fetchState()
+    const owner = (state.fields as { owner_?: string }).owner_
+    return owner ?? null
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Top up the staking contract's AYIN rewards balance. Only the contract owner can call this; others will get an assertion error.
+ */
+export async function executeTopUpRewards(
+  signer: SignerProvider,
+  stakingAddress: string,
+  amount: bigint,
+  ayinTokenId: string
+): Promise<{ txId: string }> {
+  const instance = StakingV4.at(stakingAddress)
+  const normalizedAyinId = normalizeTokenIdForTopUp(ayinTokenId)
+  const result = await signExecuteMethod(StakingV4, instance, 'topUpRewards', {
+    signer,
+    args: { amount },
+    attoAlphAmount: DUST_AMOUNT,
+    tokens: [{ id: normalizedAyinId, amount }],
+  })
+  return { txId: result.txId }
+}
+
+/**
+ * Unstake LP from a StakingV4 pool in one transaction. Optionally attach AYIN to the unstake call so the contract can pay rewards
+ * (e.g. from parseInsufficientAyinError: missing + 1n). Default is 1 AYIN when not specified.
+ */
+export async function executeUnstakeLpChainedWithAyinTopUp(
+  signer: SignerProvider,
+  stakingAddress: string,
+  amount: bigint,
+  ayinTokenId: string,
+  ayinTopUpAmount?: bigint
+): Promise<{ txId: string }> {
+  const instance = StakingV4.at(stakingAddress)
+  const normalizedAyinId = (ayinTokenId ?? '').trim().toLowerCase().replace(/^0x/, '')
+  if (normalizedAyinId.length !== 64 || !/^[0-9a-f]+$/.test(normalizedAyinId)) {
+    throw new Error('Invalid AYIN token id')
+  }
+  const ayinToAttach = ayinTopUpAmount ?? ONE_AYIN_RAW
+  if (ayinToAttach <= 0n) throw new Error('AYIN amount to attach must be positive')
+    const result = await signExecuteMethod(StakingV4, instance, 'unstake', {
+      signer,
+      args: { amount },
+      attoAlphAmount: MIN_ALPH_FOR_CLAIM_UNSTAKE,
+      tokens: [{ id: normalizedAyinId, amount: ayinToAttach }],
+    })
+        return { txId: result.txId }
+  
+  
 }
 
 export function isStakingV4(poolKey: string): boolean {

@@ -8,6 +8,10 @@ export const NODE_URL =
 export const EXPLORER_URL =
   process.env.NEXT_PUBLIC_EXPLORER_URL || 'https://explorer.alephium.org'
 
+/** Explorer backend API (addresses/transactions, public-key). Use for fetch-public-key. */
+export const BACKEND_URL =
+  process.env.NEXT_PUBLIC_BACKEND_URL || 'https://backend.mainnet.alephium.org'
+
 export const ROUTER_ADDRESS = 'vj1SmG6q4gMTA5dRB9TB4pJfyBXdTSNRFbJu2CC38Jw9'
 export const ROUTER_CONTRACT_ID = '1e3e4da6d35ddd6c8b4a30c5a580273b1892a14d7540fba5fa8825ce0a046000'
 
