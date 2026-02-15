@@ -1,7 +1,13 @@
-import { signExecuteMethod, ONE_ALPH, web3, addressFromContractId } from '@alephium/web3'
+import { signExecuteMethod, addressFromContractId } from '@alephium/web3'
+
+/** 1 ALPH required by StakingV4/Staking for stake (create/fund staking account). */
+const ONE_ALPH = BigInt('1000000000000000000')
+/** ALPH to attach for claim/unstake (staking account may require 0.002 ALPH). */
+const MIN_ALPH_FOR_CLAIM_UNSTAKE = BigInt('2000000000000000') // 0.002 ALPH
 import type { SignerProvider } from '@alephium/web3'
 import { Staking } from './Staking'
 import { StakingV4 } from './StakingV4'
+import { StakingAccount } from './StakingAccount'
 import { STAKING_V4_KEYS } from './config'
 import { registerCodeHashAlias } from './contracts-registry'
 
@@ -19,6 +25,20 @@ registerCodeHashAlias(
   '8674144cd2f1351516913e68b9e3014d6340d5c572dcde909615d61b4fda587c',
   Staking
 )
+
+/** If address is a StakingAccount contract, return the staker (wallet) address; otherwise return the input. Use when the user might pass a StakingAccount address instead of their wallet. */
+export async function resolveStakerAddress(address: string): Promise<string> {
+  try {
+    const account = StakingAccount.at(address)
+    const res = await account.view.getStaker()
+    const ret = (res as { returns?: unknown }).returns
+    const staker = Array.isArray(ret) ? ret[0] : ret
+    if (staker != null && typeof staker === 'string') return staker
+  } catch {
+    // not a StakingAccount or call failed
+  }
+  return address
+}
 
 /** Normalize token id to 32-char hex (no 0x) for tx building. */
 function normalizeTokenId(id: string): string {
@@ -46,8 +66,66 @@ export async function getLpTokenIdFromStakingContract(
   return normalized
 }
 
-/** Fetch earned (unclaimed) reward for a staker. Returns 0n if no account or on error. */
+const REWARD_PRECISION = BigInt('1000000000000000000') // 1e18 for reward math
+
+function parseViewReturn<T>(res: unknown): T {
+  const ret = (res as { returns?: unknown }).returns
+  const v = Array.isArray(ret) ? ret[0] : ret
+  return v as T
+}
+
+/** Fetch earned (unclaimed) reward for a staker. Returns 0n if no account or on error. For StakingV4, uses parent earned(acc) when possible; if that returns 0, computes from StakingAccount state + parent rewardPerToken. */
 export async function getEarnedReward(
+  stakingAddress: string,
+  userAddress: string,
+  useStakingV4: boolean
+): Promise<bigint> {
+  try {
+    const instance = useStakingV4
+      ? StakingV4.at(stakingAddress)
+      : Staking.at(stakingAddress)
+    const accountRes = await instance.view.getStakingAccount({
+      args: { staker: userAddress as `@${string}` },
+    })
+    const raw = parseViewReturn<unknown>(accountRes)
+    if (raw == null) return 0n
+
+    const hex = typeof raw === 'string' ? (raw.startsWith('0x') ? raw.slice(2) : raw) : ''
+    const isAccountRef = hex.length === 64 && /^[0-9a-fA-F]+$/.test(hex)
+
+    if (useStakingV4 && isAccountRef) {
+      const earnedRes = await instance.view.earned({ args: { acc: raw as string } })
+      const earnedVal = parseViewReturn<bigint | number>(earnedRes)
+      const fromParent = typeof earnedVal === 'bigint' ? earnedVal : BigInt(earnedVal ?? 0)
+      if (fromParent > 0n) return fromParent
+
+      const accountAddress = addressFromContractId(hex)
+      const account = StakingAccount.at(accountAddress)
+      const [rewardsRes, amountRes, paidRes, rptRes] = await Promise.all([
+        account.view.getRewards(),
+        account.view.getAmountStaked(),
+        account.view.getRewardPerTokenPaid(),
+        instance.view.calculateRewardPerToken(),
+      ])
+      const rewards = BigInt(parseViewReturn<bigint | number>(rewardsRes) ?? 0)
+      const amountStaked = BigInt(parseViewReturn<bigint | number>(amountRes) ?? 0)
+      const rewardPerTokenPaid = BigInt(parseViewReturn<bigint | number>(paidRes) ?? 0)
+      const rewardPerToken = BigInt(parseViewReturn<bigint | number>(rptRes) ?? 0)
+      const delta = rewardPerToken - rewardPerTokenPaid
+      const accrued = (amountStaked * delta) / REWARD_PRECISION
+      return rewards + accrued
+    }
+
+    const earnedRes = await instance.view.earned({ args: { acc: raw as string } })
+    const earnedRaw = parseViewReturn<bigint | number>(earnedRes)
+    return typeof earnedRaw === 'bigint' ? earnedRaw : BigInt(earnedRaw ?? 0)
+  } catch {
+    return 0n
+  }
+}
+
+/** Fetch amountStaked * rewardPerTokenPaid for a staker (StakingAccount only). Returns 0n if no StakingAccount contract or on error. */
+export async function getRewardToPaid(
   stakingAddress: string,
   userAddress: string,
   useStakingV4: boolean
@@ -62,15 +140,58 @@ export async function getEarnedReward(
     const accountReturns = (accountRes as { returns?: unknown }).returns
     const raw = Array.isArray(accountReturns) ? accountReturns[0] : accountReturns
     if (raw == null) return 0n
-    const earnedRes = await instance.view.earned({ args: { acc: raw as string } })
-    const earnedReturns = (earnedRes as { returns?: unknown }).returns
-    const earnedRaw = Array.isArray(earnedReturns) ? earnedReturns[0] : earnedReturns
-    return typeof earnedRaw === 'bigint' ? earnedRaw : BigInt(earnedRaw ?? 0)
+
+    const hex = typeof raw === 'string' ? (raw.startsWith('0x') ? raw.slice(2) : raw) : ''
+    if (hex.length !== 64 || !/^[0-9a-fA-F]+$/.test(hex)) return 0n
+
+    const accountAddress = addressFromContractId(hex)
+    const account = StakingAccount.at(accountAddress)
+    const [amountRes, rewardPerTokenRes] = await Promise.all([
+      account.view.getAmountStaked(),
+      account.view.getRewardPerTokenPaid(),
+    ])
+    const toBigInt = (res: unknown): bigint => {
+      const ret = (res as { returns?: unknown }).returns
+      const v = Array.isArray(ret) ? ret[0] : ret
+      return typeof v === 'bigint' ? v : BigInt(v ?? 0)
+    }
+    const amountStaked = toBigInt(amountRes)
+    const rewardPerTokenPaid = toBigInt(rewardPerTokenRes)
+    return amountStaked * rewardPerTokenPaid
   } catch {
     return 0n
   }
 }
+/** Fetch rewardPerTokenPaid for a staker (StakingAccount only). Returns 0n if no StakingAccount contract or on error. */
+export async function getRewardPerTokenPaid(
+  stakingAddress: string,
+  userAddress: string,
+  useStakingV4: boolean
+): Promise<bigint> {
+  try {
+    const instance = useStakingV4
+      ? StakingV4.at(stakingAddress)
+      : Staking.at(stakingAddress)
+    const accountRes = await instance.view.getStakingAccount({
+      args: { staker: userAddress as `@${string}` },
+    })
+    const accountReturns = (accountRes as { returns?: unknown }).returns
+    const raw = Array.isArray(accountReturns) ? accountReturns[0] : accountReturns
+    if (raw == null) return 0n
 
+    const hex = typeof raw === 'string' ? (raw.startsWith('0x') ? raw.slice(2) : raw) : ''
+    if (hex.length !== 64 || !/^[0-9a-fA-F]+$/.test(hex)) return 0n
+
+    const accountAddress = addressFromContractId(hex)
+    const account = StakingAccount.at(accountAddress)
+    const rewardPerTokenRes = await account.view.getRewardPerTokenPaid()
+    const amountReturns = (rewardPerTokenRes as { returns?: unknown }).returns
+    const val = Array.isArray(amountReturns) ? amountReturns[0] : amountReturns
+    return typeof val === 'bigint' ? val : BigInt(val ?? 0)
+  } catch {
+    return 0n
+  }
+}
 // Sanity cap: no reasonable LP stake is above this (avoids showing rewardPerTokenPaid or wrong field).
 const MAX_REASONABLE_STAKED = BigInt('1000000000000000000000000') // 1e24 with 18 decimals
 
@@ -120,29 +241,6 @@ function parseStakedAmountFromRaw(raw: unknown, debugLabel?: string): bigint {
   return amt
 }
 
-/** When getStakingAccount returns a 64-char hex (staking account contract id), fetch that contract's state and read staked amount from fields. */
-async function getStakedAmountFromAccountContract(accountContractIdHex: string): Promise<bigint> {
-  const hex = accountContractIdHex.startsWith('0x') ? accountContractIdHex.slice(2) : accountContractIdHex
-  if (hex.length !== 64 || !/^[0-9a-fA-F]+$/.test(hex)) return 0n
-  try {
-    const nodeProvider = web3.getCurrentNodeProvider()
-    if (!nodeProvider) return 0n
-    const address = addressFromContractId(hex)
-    const state = await nodeProvider.contracts.getContractsAddressState(address)
-    const fields = [...(state.immFields ?? []), ...(state.mutFields ?? [])]
-    for (const f of fields) {
-      const v = (f as { type?: string; value?: string }).value
-      const t = (f as { type?: string }).type
-      if (t !== 'U256' && t !== 'I256' || v === undefined) continue
-      const n = BigInt(v)
-      if (n >= 0n && n <= MAX_REASONABLE_STAKED) return n
-    }
-  } catch {
-    // ignore
-  }
-  return 0n
-}
-
 /** Fetch staked LP amount for a staker. Handles ByteVec (Staking), StakingAccount struct (StakingV4), and 64-char account contract id. Returns 0n if no account or on error. */
 export async function getStakedBalance(
   stakingAddress: string,
@@ -161,15 +259,20 @@ export async function getStakedBalance(
     const isArray = Array.isArray(returns)
     const raw = isArray ? returns[0] : returns
     console.log(`${label}: getStakingAccount returns isArray=${isArray} raw type=${typeof raw}`, raw != null && typeof raw === 'object' ? { keys: Object.keys(raw as object) } : raw)
-    let result = parseStakedAmountFromRaw(raw, label)
-    // When the return is a 64-char hex (staking account contract id), parsing yields 0n; fetch amount from that contract.
-    if (result === 0n && typeof raw === 'string') {
-      const hex = raw.startsWith('0x') ? raw.slice(2) : raw
-      if (hex.length === 64 && /^[0-9a-fA-F]+$/.test(hex)) {
-        result = await getStakedAmountFromAccountContract(raw)
-        console.log(`${label}: account contract fallback → result=${result}`)
-      }
+
+    const hex = typeof raw === 'string' ? (raw.startsWith('0x') ? raw.slice(2) : raw) : ''
+    if (hex.length === 64 && /^[0-9a-fA-F]+$/.test(hex)) {
+      const accountAddress = addressFromContractId(hex)
+      const account = StakingAccount.at(accountAddress)
+      const amountRes = await account.view.getAmountStaked()
+      const amountReturns = (amountRes as { returns?: unknown }).returns
+      const val = Array.isArray(amountReturns) ? amountReturns[0] : amountReturns
+      const result = typeof val === 'bigint' ? val : BigInt(val ?? 0)
+      console.log(`${label}: StakingAccount.getAmountStaked → result=${result}`)
+      return result
     }
+
+    const result = parseStakedAmountFromRaw(raw, label)
     console.log(`${label}: → result=${result}`)
     return result
   } catch (e) {
@@ -178,17 +281,62 @@ export async function getStakedBalance(
   }
 }
 
-/** Claim pending rewards from a pool's staking contract. */
+/** Fetch unclaimed rewards for a staker. Handles 64-char StakingAccount contract id (StakingAccount.getRewards) and fallback to staking.earned(acc). Returns 0n if no account or on error. */
+export async function getRewardsBalance(
+  stakingAddress: string,
+  userAddress: string,
+  useStakingV4: boolean
+): Promise<bigint> {
+  const label = `getRewardsBalance ${useStakingV4 ? 'V4' : 'V2'} ${stakingAddress.slice(0, 8)}…`
+  try {
+    const instance = useStakingV4
+      ? StakingV4.at(stakingAddress)
+      : Staking.at(stakingAddress)
+    const accountRes = await instance.view.getStakingAccount({
+      args: { staker: userAddress as `@${string}` },
+    })
+    const returns = (accountRes as { returns?: unknown }).returns
+    const isArray = Array.isArray(returns)
+    const raw = isArray ? returns[0] : returns
+    if (raw == null) return 0n
+
+    const hex = typeof raw === 'string' ? (raw.startsWith('0x') ? raw.slice(2) : raw) : ''
+    if (hex.length === 64 && /^[0-9a-fA-F]+$/.test(hex)) {
+      const accountAddress = addressFromContractId(hex)
+      const account = StakingAccount.at(accountAddress)
+      const rewardsRes = await account.view.getRewards()
+      const rewardsReturns = (rewardsRes as { returns?: unknown }).returns
+      const val = Array.isArray(rewardsReturns) ? rewardsReturns[0] : rewardsReturns
+      const result = typeof val === 'bigint' ? val : BigInt(val ?? 0)
+      console.log(`${label}: StakingAccount.getRewards → result=${result}`)
+      return result
+    }
+
+    const earnedRes = await instance.view.earned({ args: { acc: raw as string } })
+    const earnedReturns = (earnedRes as { returns?: unknown }).returns
+    const earnedRaw = Array.isArray(earnedReturns) ? earnedReturns[0] : earnedReturns
+    const result = typeof earnedRaw === 'bigint' ? earnedRaw : BigInt(earnedRaw ?? 0)
+    console.log(`${label}: → result=${result}`)
+    return result
+  } catch (e) {
+    console.log(`${label}: catch`, e)
+    return 0n
+  }
+}
+
+/** Claim pending rewards from a pool's staking contract. Attaches 0.001 ALPH for StakingV4 (sent to parent contract). If you see "expected 0.001 ALPH, got 0 ALPH" for an address, that is your staking account contract — send 0.001 ALPH to that address once from your wallet, then try claiming again. */
 export async function executeClaimRewards(
   signer: SignerProvider,
   stakingAddress: string,
   useStakingV4: boolean
 ): Promise<{ txId: string }> {
+  const attoAlphAmount = MIN_ALPH_FOR_CLAIM_UNSTAKE
   if (useStakingV4) {
     const instance = StakingV4.at(stakingAddress)
     const result = await signExecuteMethod(StakingV4, instance, 'claimRewards', {
       signer,
       args: {},
+      attoAlphAmount,
     })
     return { txId: result.txId }
   } else {
@@ -196,6 +344,7 @@ export async function executeClaimRewards(
     const result = await signExecuteMethod(Staking, instance, 'claimRewards', {
       signer,
       args: {},
+      attoAlphAmount,
     })
     return { txId: result.txId }
   }
@@ -209,7 +358,6 @@ export async function executeStakeLp(
   useStakingV4: boolean
 ): Promise<{ txId: string }> {
   const lpTokenId = await getLpTokenIdFromStakingContract(stakingAddress, useStakingV4)
-  // Contract requires exactly 1 ALPH to be attached (validated on-chain).
   const attoAlphAmount = ONE_ALPH
   if (useStakingV4) {
     const instance = StakingV4.at(stakingAddress)
@@ -232,18 +380,20 @@ export async function executeStakeLp(
   }
 }
 
-/** Unstake LP tokens from a pool's staking contract. */
+/** Unstake LP tokens from a pool's staking contract. Attaches 0.002 ALPH so the StakingAccount (StakingV4) or script has the required balance. */
 export async function executeUnstakeLp(
   signer: SignerProvider,
   stakingAddress: string,
   amount: bigint,
   useStakingV4: boolean
 ): Promise<{ txId: string }> {
+  const attoAlphAmount = MIN_ALPH_FOR_CLAIM_UNSTAKE
   if (useStakingV4) {
     const instance = StakingV4.at(stakingAddress)
     const result = await signExecuteMethod(StakingV4, instance, 'unstake', {
       signer,
       args: { amount },
+      attoAlphAmount,
     })
     return { txId: result.txId }
   } else {
@@ -251,6 +401,7 @@ export async function executeUnstakeLp(
     const result = await signExecuteMethod(Staking, instance, 'unstake', {
       signer,
       args: { amount },
+      attoAlphAmount,
     })
     return { txId: result.txId }
   }

@@ -35,8 +35,10 @@ export const POUNDER_VAULT_ADDRESS = '26gS9VNF7HJmHrV5SCppHGmsyCZKY65uAf3WdN3a6K
 export const ALPHAYIN_TOKEN_ID = 'a7ca90b2af892713ed95f23b37a6db00c0650c16bad1ccc601443e9020f89f00'
 
 
-export const SINGLE_ALPHAYIN_STAKE_ADDRESS = 'tuuAwnJNwxew6chSHV74CW9Er18EE925Ss2fQMmZbWtF'; 
-export const SINGLE_ALPHAYIN_STAKE_DEPOSIT_TOKEN = "25ywM8iGxKpZWuGA5z6DXKGcZCXtPBmnbQyJEsjvjjWTy"; // alph-ayin
+export const SINGLE_ALPHAYIN_STAKE_ADDRESS = 'tuuAwnJNwxew6chSHV74CW9Er18EE925Ss2fQMmZbWtF'
+export const SINGLE_ALPHAYIN_STAKE_DEPOSIT_TOKEN = '25ywM8iGxKpZWuGA5z6DXKGcZCXtPBmnbQyJEsjvjjWTy' // alph-ayin
+/** Single ALPH/AYIN staking uses StakingV4 (StakingAccount sub-contracts). */
+export const SINGLE_ALPHAYIN_USE_STAKING_V4 = true
 
 /**
  * Staking contract address by pool pair key (token1_token0 lowercase, e.g. alf_alph).

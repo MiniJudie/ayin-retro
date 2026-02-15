@@ -12,6 +12,7 @@ import {
   POUNDER_VAULT_ADDRESS,
   SINGLE_ALPHAYIN_STAKE_ADDRESS,
   SINGLE_ALPHAYIN_STAKE_DEPOSIT_TOKEN,
+  SINGLE_ALPHAYIN_USE_STAKING_V4,
   STAKING_POOLS_DEPLOYMENT,
   EXPLORER_URL,
   NODE_URL,
@@ -32,6 +33,8 @@ import {
 import type { PoolInfo } from '@/lib/types'
 
 const DECIMALS = 18
+/** Minimum ALPH needed for tx fees / contract attachment (0.002 ALPH for staking account). */
+const MIN_ALPH_FOR_TX = BigInt('2000000000000000')
 
 const TOKEN_LOGOS = {
   ayin: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png',
@@ -41,7 +44,11 @@ const TOKEN_LOGOS = {
 
 function formatTokenAmount(amount: bigint, decimals: number): string {
   const s = amount.toString()
-  if (s.length <= decimals) return '0.' + s.padStart(decimals, '0').slice(0, Math.min(decimals, 6))
+  if (s.length <= decimals) {
+    const padded = s.padStart(decimals, '0')
+    const frac = padded.replace(/0+$/, '')
+    return frac ? '0.' + frac.slice(0, 18) : '0'
+  }
   const int = s.slice(0, -decimals)
   const frac = s.slice(-decimals).replace(/0+$/, '').slice(0, 6)
   return frac ? `${int}.${frac}` : int
@@ -92,6 +99,7 @@ export default function StakingPage() {
   const [xAyinContractAyin, setXAyinContractAyin] = useState<bigint | null>(null)
   const [pounderContractAlphayin, setPounderContractAlphayin] = useState<bigint | null>(null)
   const [pounderContractAyin, setPounderContractAyin] = useState<bigint | null>(null)
+  const [singleStakingContractAyin, setSingleStakingContractAyin] = useState<bigint | null>(null)
   const [singleStaked, setSingleStaked] = useState<bigint>(0n)
   const [singleEarned, setSingleEarned] = useState<bigint>(0n)
   const SINGLE_STAKING_KEY = 'single_alphayin'
@@ -101,14 +109,16 @@ export default function StakingPage() {
   }, [])
 
   const fetchContractBalances = useCallback(async () => {
-    const [xayinAyin, pounderAlphayin, pounderAyin] = await Promise.all([
+    const [xayinAyin, pounderAlphayin, pounderAyin, singleStakingAyin] = await Promise.all([
       getAddressTokenBalance(XAYIN_LIQUID_STAKING_ADDRESS, AYIN_TOKEN_ID),
       getAddressTokenBalance(POUNDER_VAULT_ADDRESS, ALPHAYIN_TOKEN_ID),
       getAddressTokenBalance(POUNDER_VAULT_ADDRESS, AYIN_TOKEN_ID),
+      getAddressTokenBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, AYIN_TOKEN_ID),
     ])
     setXAyinContractAyin(xayinAyin)
     setPounderContractAlphayin(pounderAlphayin)
     setPounderContractAyin(pounderAyin)
+    setSingleStakingContractAyin(singleStakingAyin)
   }, [])
 
   useEffect(() => {
@@ -133,8 +143,8 @@ export default function StakingPage() {
               setStakedByKey((prev) => (prev[entry.key] === staked ? prev : { ...prev, [entry.key]: staked }))
             ),
           ]),
-          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, false).then(setSingleEarned),
-          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, false).then(setSingleStaked),
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned),
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked),
         ])
       }
       refreshBalances()
@@ -161,8 +171,8 @@ export default function StakingPage() {
         setStakedByKey((prev) => (prev[entry.key] === staked ? prev : { ...prev, [entry.key]: staked }))
       )
     })
-    getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, false).then(setSingleEarned)
-    getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, false).then(setSingleStaked)
+    getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
+    getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, addr, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
   }, [account?.address])
 
   useEffect(() => {
@@ -208,6 +218,10 @@ export default function StakingPage() {
   const run = useCallback(
     async (key: string, fn: () => Promise<{ txId: string }>, onSuccess?: () => void) => {
       if (!signer || !account?.address) return
+      if (balances && balances.alph < MIN_ALPH_FOR_TX) {
+        setError('Insufficient ALPH for transaction fees. You need at least 0.002 ALPH. Please add ALPH to your wallet.')
+        return
+      }
       setError(null)
       setPending(key)
       try {
@@ -217,12 +231,19 @@ export default function StakingPage() {
         setError(null)
         setSuccessTxId(txId)
       } catch (e) {
-        setError(e instanceof Error ? e.message : 'Transaction failed')
+        const msg = e instanceof Error ? e.message : 'Transaction failed'
+        const alphMsg =
+          msg.includes('expected: 1000000000000000000') || msg.includes('Not enough approved balance')
+            ? 'Staking requires 1 ALPH to be attached. Ensure your wallet has at least 1 ALPH and try again.'
+            : msg.includes('expected 0.002 ALPH') || msg.includes('expected 0.001 ALPH') || msg.includes('got 0 ALPH')
+              ? 'Your staking account contract needs at least 0.002 ALPH. Send 0.002 ALPH to the address in the error (e.g. 17Cf96... or 22VZ7K...) from your wallet, then try claim or unstake again.'
+              : msg
+        setError(alphMsg)
       } finally {
         setPending(null)
       }
     },
-    [signer, account?.address, refreshBalances]
+    [signer, account?.address, refreshBalances, balances]
   )
 
   const handleMint = useCallback(() => {
@@ -373,17 +394,18 @@ export default function StakingPage() {
     }
     run(
       SINGLE_STAKING_KEY,
-      () => executeStakeLp(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, false),
+      () => executeStakeLp(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, SINGLE_ALPHAYIN_USE_STAKING_V4),
       () => {
         sendEvent({ category: 'stake', action: 'stake', name: 'Single ALPHAYIN', value: stakeAmounts[SINGLE_STAKING_KEY] ?? '' })
         setStakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
+        fetchContractBalances()
         if (account?.address) {
-          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleEarned)
-          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleStaked)
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
         }
       }
     )
-  }, [stakeAmounts, run, signer, account?.address])
+  }, [stakeAmounts, run, signer, account?.address, fetchContractBalances])
 
   const handleSingleUnstake = useCallback(() => {
     const amount = parseTokenAmount(unstakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS)
@@ -393,30 +415,33 @@ export default function StakingPage() {
     }
     run(
       SINGLE_STAKING_KEY,
-      () => executeUnstakeLp(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, false),
-      () => {
-        sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN', value: unstakeAmounts[SINGLE_STAKING_KEY] ?? '' })
-        setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
-        if (account?.address) {
-          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleEarned)
-          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleStaked)
+() => executeUnstakeLp(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, SINGLE_ALPHAYIN_USE_STAKING_V4),
+        () => {
+          sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN', value: unstakeAmounts[SINGLE_STAKING_KEY] ?? '' })
+          setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
+          fetchContractBalances()
+          if (account?.address) {
+            getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
+            getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
+          }
         }
-      }
     )
-  }, [unstakeAmounts, run, signer, account?.address])
+  }, [unstakeAmounts, run, signer, account?.address, fetchContractBalances])
 
   const handleSingleClaim = useCallback(() => {
     run(
       SINGLE_STAKING_KEY,
-      () => executeClaimRewards(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, false),
+      () => executeClaimRewards(signer!, SINGLE_ALPHAYIN_STAKE_ADDRESS, SINGLE_ALPHAYIN_USE_STAKING_V4),
       () => {
         sendEvent({ category: 'stake', action: 'claim', name: 'Single ALPHAYIN' })
+        fetchContractBalances()
         if (account?.address) {
-          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, false).then(setSingleEarned)
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
         }
       }
     )
-  }, [run, signer, account?.address])
+  }, [run, signer, account?.address, fetchContractBalances])
 
   const handleStakeMax = useCallback(
     (entry: (typeof STAKING_POOLS_DEPLOYMENT)[0]) => {
@@ -704,6 +729,11 @@ export default function StakingPage() {
                 <span className="text-xs text-[var(--muted)]">
                   Stake ALPHAYIN, earn AYIN
                 </span>
+                {singleStakingContractAyin !== null && (
+                  <span className="text-xs text-[var(--muted)]">
+                    AYIN in contract: <span className="font-medium text-white">{formatTokenAmount(singleStakingContractAyin, DECIMALS)}</span>
+                  </span>
+                )}
               </div>
               <a
                 href={`${EXPLORER_URL}/addresses/${SINGLE_ALPHAYIN_STAKE_ADDRESS}`}
@@ -739,7 +769,7 @@ export default function StakingPage() {
                   <button
                     type="button"
                     onClick={handleSingleClaim}
-                    disabled={!!pending || singleEarned === BigInt(0)}
+                    disabled={!!pending }
                     className="mt-2 rounded border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-white hover:bg-white/5 disabled:opacity-50"
                   >
                     {pending === SINGLE_STAKING_KEY ? '…' : 'Claim'}
