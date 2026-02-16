@@ -1199,7 +1199,7 @@ export default function StakingPage() {
                   </button>
                 </div>
                 <p className="mb-4 text-sm text-[var(--muted)]">
-                  Send AYIN to the staking contract so it can pay rewards when users claim or unstake. Only the contract owner can submit a top-up. Enter the amount below and sign the transaction.
+                  Anyone can top up the contract with AYIN so it can pay rewards when users claim or unstake. Enter the amount below and sign the transaction.
                 </p>
                 <div className="space-y-3">
                   <div>
