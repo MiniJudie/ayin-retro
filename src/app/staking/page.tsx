@@ -969,9 +969,7 @@ export default function StakingPage() {
                   <img src={TOKEN_LOGOS.ayin} alt="" className="-ml-2 h-6 w-6 rounded-full ring-2 ring-[var(--card)] shrink-0" />
                   <h2 className="text-sm font-semibold text-white">Single LP staking</h2>
                 </div>
-                <span className="text-xs text-[var(--muted)]">
-                  Stake ALPHAYIN, earn AYIN
-                </span>
+                
                 {singleStakingContractAyin !== null && (
                   <span className="text-xs text-[var(--muted)]">
                     AYIN in contract: <span className="font-medium text-white">{formatTokenAmount(singleStakingContractAyin, DECIMALS)}</span>
