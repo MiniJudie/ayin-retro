@@ -27,7 +27,7 @@ export const DONATION_ADDRESS =
 
 /** AYIN token (contract id). */
 export const AYIN_TOKEN_ID = '1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800'
-
+export const AYIN_DECIMALS = 18
 /** Liquid staking: mint xAyin from AYIN, burn xAyin for AYIN. */
 export const XAYIN_LIQUID_STAKING_ADDRESS = 'zst5zMzizEeFYFis6DNSknY5GCYTpM85D3yXeRLe2ug3'
 /** xAyin token id (issued by LiquidStaking contract). */

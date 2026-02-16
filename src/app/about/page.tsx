@@ -79,7 +79,6 @@ export default function AboutPage() {
               <li>Swap between token pairs</li>
               <li>Add / remove liquidity for any pool</li>
               <li>xAyin mint and burn (liquid staking)</li>
-              <li>Pounder vault deposit and withdraw</li>
               <li>LP pool staking (stake and unstake)</li>
             </ul>
           </section>

@@ -11,6 +11,8 @@ import {
   type SignMessageParams,
 } from '@alephium/web3'
 
+import { web3, waitForTxConfirmation, DappTransactionBuilder} from '@alephium/web3'
+
 /** 1 ALPH required by StakingV4/Staking for stake (create/fund staking account). */
 const ONE_ALPH = BigInt('1000000000000000000')
 /** ALPH to attach for claim/unstake (staking account may require 0.002 ALPH). */
@@ -18,7 +20,7 @@ const MIN_ALPH_FOR_CLAIM_UNSTAKE = BigInt('2000000000000000') // 0.002 ALPH
 import { Staking } from './Staking'
 import { StakingV4 } from './StakingV4'
 import { StakingAccount } from './StakingAccount'
-import { SINGLE_ALPHAYIN_STAKE_ADDRESS, STAKING_V4_KEYS } from './config'
+import { AYIN_DECIMALS, SINGLE_ALPHAYIN_STAKE_ADDRESS, STAKING_V4_KEYS } from './config'
 import { registerCodeHashAlias } from './contracts-registry'
 
 // On-chain StakingV4 deployments may have a different code hash. Map them to our StakingV4 contract.
@@ -303,6 +305,7 @@ export async function getStakedBalance(
     const hex = typeof raw === 'string' ? (raw.startsWith('0x') ? raw.slice(2) : raw) : ''
     if (hex.length === 64 && /^[0-9a-fA-F]+$/.test(hex)) {
       const accountAddress = addressFromContractId(hex)
+      console.log(`${label}: accountAddress=${accountAddress} for staker=${userAddress}`)
       const account = StakingAccount.at(accountAddress)
       const amountRes = await account.view.getAmountStaked()
       const amountReturns = (amountRes as { returns?: unknown }).returns
@@ -562,6 +565,22 @@ export async function getStakingContractOwner(stakingAddress: string): Promise<s
   }
 }
 
+const TOP_UP_CONTRACT_ADDRESS = 'tuuAwnJNwxew6chSHV74CW9Er18EE925Ss2fQMmZbWtF'
+const AYIN_TOKEN_ID_FOR_TOP_UP = '1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800'
+
+/** Build tx params for topUpRewards (execute script). amount = human AYIN (1n = 1 AYIN). */
+function buildTopUpRewardsTxParams(signerAddress: string, amountHuman: bigint): SignExecuteScriptTxParams {
+  const rawAmount = amountHuman * (10n ** BigInt(AYIN_DECIMALS))
+  const builder = new DappTransactionBuilder(signerAddress)
+  return builder.callContract({
+    contractAddress: TOP_UP_CONTRACT_ADDRESS,
+    methodIndex: 20,
+    args: [rawAmount],
+    attoAlphAmount: DUST_AMOUNT,
+    tokens: [{ id: AYIN_TOKEN_ID_FOR_TOP_UP, amount: rawAmount }],
+  }).getResult()
+}
+
 /**
  * Top up the staking contract's AYIN rewards balance. Only the contract owner can call this; others will get an assertion error.
  */
@@ -571,15 +590,56 @@ export async function executeTopUpRewards(
   amount: bigint,
   ayinTokenId: string
 ): Promise<{ txId: string }> {
+  const account = await signer.getSelectedAccount()
+  if (!account) throw new Error('No account selected')
+  const topUpParams = buildTopUpRewardsTxParams(account.address, amount)
+  const txResult = await signer.signAndSubmitExecuteScriptTx(topUpParams)
+
+  return { txId: txResult.txId }
+}
+
+/**
+ * Chained tx: first top up the staking contract's AYIN rewards, then unstake LP.
+ * Use when the contract has insufficient AYIN to pay rewards on unstake. Only StakingV4.
+ */
+export async function executeTopUpRewardsThenUnstake(
+  signer: SignerProvider,
+  stakingAddress: string,
+  unstakeAmount: bigint,
+  ayinTopUpAmountHuman: bigint,
+  ayinTokenId: string
+): Promise<{ txId: string }> {
+  if (ayinTopUpAmountHuman <= 0n) throw new Error('AYIN top-up amount must be positive')
+  const account = await signer.getSelectedAccount()
+  if (!account) throw new Error('No account selected')
+
+  const topUpParams = buildTopUpRewardsTxParams(account.address, ayinTopUpAmountHuman)
+
   const instance = StakingV4.at(stakingAddress)
-  const normalizedAyinId = normalizeTokenIdForTopUp(ayinTokenId)
-  const result = await signExecuteMethod(StakingV4, instance, 'topUpRewards', {
-    signer,
-    args: { amount },
-    attoAlphAmount: DUST_AMOUNT,
-    tokens: [{ id: normalizedAyinId, amount }],
-  })
-  return { txId: result.txId }
+  const captureSigner = createCaptureExecuteScriptSigner(signer)
+  let unstakeParams: SignExecuteScriptTxParams | undefined
+  try {
+    await signExecuteMethod(StakingV4, instance, 'unstake', {
+      signer: captureSigner,
+      args: { amount: unstakeAmount },
+      attoAlphAmount: MIN_ALPH_FOR_CLAIM_UNSTAKE,
+    })
+  } catch (e) {
+    if (e instanceof CapturedExecuteScriptParamsError) {
+      unstakeParams = e.params
+    } else {
+      throw e
+    }
+  }
+  if (!unstakeParams) throw new Error('Failed to build unstake tx params')
+
+  const results = await signer.signAndSubmitChainedTx([
+    { type: 'ExecuteScript', ...topUpParams },
+    { type: 'ExecuteScript', ...unstakeParams },
+  ])
+  const last = results[results.length - 1]
+  const txId = last && 'txId' in last ? (last as { txId: string }).txId : ''
+  return { txId }
 }
 
 /**
@@ -600,13 +660,22 @@ export async function executeUnstakeLpChainedWithAyinTopUp(
   }
   const ayinToAttach = ayinTopUpAmount ?? ONE_AYIN_RAW
   if (ayinToAttach <= 0n) throw new Error('AYIN amount to attach must be positive')
-    const result = await signExecuteMethod(StakingV4, instance, 'unstake', {
-      signer,
-      args: { amount },
-      attoAlphAmount: MIN_ALPH_FOR_CLAIM_UNSTAKE,
-      tokens: [{ id: normalizedAyinId, amount: ayinToAttach }],
-    })
-        return { txId: result.txId }
+
+
+    const account = await signer.getSelectedAccount()
+
+    const builder = new DappTransactionBuilder(account?.address)
+    
+    const result = builder.callContract({
+      contractAddress: 'tuuAwnJNwxew6chSHV74CW9Er18EE925Ss2fQMmZbWtF',
+      methodIndex: 20,
+      args: [ayinToAttach],
+      attoAlphAmount: DUST_AMOUNT,
+      tokens: [{ id: '1a281053ba8601a658368594da034c2e99a0fb951b86498d05e76aedfe666800', amount: ayinToAttach }],
+    }).getResult()
+
+    const txResult = await signer.signAndSubmitExecuteScriptTx(result)
+    return { txId: txResult.txId }
   
   
 }

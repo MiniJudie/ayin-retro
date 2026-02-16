@@ -68,6 +68,7 @@ async function main() {
   const results = await Promise.all(
     addresses.map(async (address) => {
       const stakerAddress = await resolveStakerAddress(address)
+      console.log('Staker address:', stakerAddress); 
       const [staked, earned, rewards, rewardToPaid] = await Promise.all([
         getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, stakerAddress, SINGLE_ALPHAYIN_USE_STAKING_V4),
         getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, stakerAddress, SINGLE_ALPHAYIN_USE_STAKING_V4),

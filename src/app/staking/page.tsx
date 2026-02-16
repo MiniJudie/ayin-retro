@@ -28,6 +28,7 @@ import {
   executeStakeLp,
   executeUnstakeLp,
   executeUnstakeLpChainedWithAyinTopUp,
+  executeTopUpRewardsThenUnstake,
   executeClaimRewards,
   executeTopUpRewards,
   getEarnedReward,
@@ -44,10 +45,10 @@ const DECIMALS = 18
 const MIN_ALPH_FOR_TX = BigInt('2000000000000000')
 
 /** Set to true to show the Single LP staking section (ALPHAYIN stake, earn AYIN). */
-const SHOW_SINGLE_LP_STAKING = false
+const SHOW_SINGLE_LP_STAKING = true
 
 /** Set to true to show the Pounder section (deposit/withdraw ALPHAYIN). */
-const SHOW_POUNDER = false
+const SHOW_POUNDER = true
 
 const TOKEN_LOGOS = {
   ayin: 'https://raw.githubusercontent.com/alephium/token-list/master/logos/AYIN.png',
@@ -576,26 +577,31 @@ export default function StakingPage() {
   }, [unstakeAmounts, run, effectiveSingleSigner, signer, account?.address, fetchContractBalances])
 
   const handleUnstakeWithTopUpSubmit = useCallback(() => {
-    const amount = parseTokenAmount(unstakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS)
-    const ayinAmount = parseTokenAmount(unstakeWithTopUpAyinAmount, DECIMALS)
-    if (!amount || amount <= BigInt(0)) {
+    const unstakeAmountRaw = parseTokenAmount(unstakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS)
+    const ayinAmountRaw = parseTokenAmount(unstakeWithTopUpAyinAmount, DECIMALS)
+    if (!unstakeAmountRaw || unstakeAmountRaw <= BigInt(0)) {
       setError('Enter unstake amount')
       return
     }
-    if (!ayinAmount || ayinAmount <= BigInt(0)) {
-      setError('Enter AYIN amount to attach (e.g. 1)')
+    if (!ayinAmountRaw || ayinAmountRaw <= BigInt(0)) {
+      setError('Enter AYIN amount to top up (e.g. 1)')
+      return
+    }
+    const ayinHuman = ayinAmountRaw / (10n ** BigInt(DECIMALS))
+    if (ayinHuman <= 0n) {
+      setError('AYIN amount too small')
       return
     }
     setUnstakeWithTopUpModalOpen(false)
     run(
       SINGLE_STAKING_KEY,
       () =>
-        executeUnstakeLpChainedWithAyinTopUp(
+        executeTopUpRewardsThenUnstake(
           (effectiveSingleSigner ?? signer)!,
           SINGLE_ALPHAYIN_STAKE_ADDRESS,
-          amount,
-          AYIN_TOKEN_ID,
-          ayinAmount
+          unstakeAmountRaw,
+          ayinHuman,
+          AYIN_TOKEN_ID
         ),
       () => {
         sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN (with top-up)' })
@@ -608,7 +614,7 @@ export default function StakingPage() {
         }
       }
     )
-  }, [unstakeAmounts, unstakeWithTopUpAyinAmount, run, signer, account?.address, fetchContractBalances])
+  }, [unstakeAmounts, unstakeWithTopUpAyinAmount, run, effectiveSingleSigner, signer, account?.address, fetchContractBalances])
 
   const handleInsufficientAyinRetry = useCallback(() => {
     if (!insufficientAyinPopup || !(effectiveSingleSigner ?? signer)) return
@@ -654,14 +660,20 @@ export default function StakingPage() {
 
   const TOP_UP_PENDING_KEY = 'single_topup'
   const handleTopUpSubmit = useCallback(() => {
-    const amount = parseTokenAmount(topUpAmount, DECIMALS)
-    if (!amount || amount <= BigInt(0)) {
+    const amountRaw = parseTokenAmount(topUpAmount, DECIMALS)
+    if (!amountRaw || amountRaw <= BigInt(0)) {
       setError('Enter AYIN amount')
+      return
+    }
+    // Pass human AYIN (1n = 1 AYIN) so lib can scale to raw; avoids large bigint serialization.
+    const amountHuman = amountRaw / (10n ** BigInt(DECIMALS))
+    if (amountHuman <= 0n) {
+      setError('Amount too small')
       return
     }
     run(
       TOP_UP_PENDING_KEY,
-      () => executeTopUpRewards((effectiveSingleSigner ?? signer)!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amount, AYIN_TOKEN_ID),
+      () => executeTopUpRewards((effectiveSingleSigner ?? signer)!, SINGLE_ALPHAYIN_STAKE_ADDRESS, amountHuman, AYIN_TOKEN_ID),
       () => {
         setTopUpModalOpen(false)
         setTopUpAmount('')
@@ -986,7 +998,7 @@ export default function StakingPage() {
               </div>
             </div>
             {account?.address ? (
-              <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 px-4 py-3">
+              <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 px-4 py-3 items-start">
                 <div className="min-w-0 font-mono text-sm">
                   <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Balance</div>
                   <div className="mt-1">
@@ -1004,7 +1016,7 @@ export default function StakingPage() {
                 </div>
                 <div className="flex min-w-0 flex-col gap-2">
                   <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Stake</div>
-                  <div className="flex flex-nowrap items-center gap-2">
+                  <div className="flex flex-nowrap items-start gap-2">
                     <input
                       type="text"
                       inputMode="decimal"
@@ -1037,7 +1049,7 @@ export default function StakingPage() {
                 </div>
                 <div className="flex min-w-0 flex-col gap-2">
                   <div className="text-xs uppercase tracking-wider text-[var(--muted)]">Unstake</div>
-                  <div className="flex flex-nowrap items-center gap-2">
+                  <div className="flex flex-nowrap items-start gap-2">
                     <input
                       type="text"
                       inputMode="decimal"
@@ -1058,14 +1070,25 @@ export default function StakingPage() {
                     >
                       Max
                     </button>
-                    <button
-                      type="button"
-                      onClick={handleSingleUnstake}
-                      disabled={!!pending}
-                      className="shrink-0 rounded bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-50"
-                    >
-                      {pending === SINGLE_STAKING_KEY ? '…' : 'Unstake'}
-                    </button>
+                    <div className="flex shrink-0 flex-col items-end gap-1">
+                      <button
+                        type="button"
+                        onClick={handleSingleUnstake}
+                        disabled={!!pending}
+                        className="w-full rounded bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-50"
+                      >
+                        {pending === SINGLE_STAKING_KEY ? '…' : 'Unstake'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setUnstakeWithTopUpModalOpen(true)}
+                        disabled={!!pending || singleStaked === BigInt(0)}
+                        className="w-full rounded border border-[var(--card-border)] px-3 py-1.5 text-sm font-medium text-[var(--muted)] hover:bg-white/5 hover:text-white disabled:opacity-50"
+                        title="Top up contract AYIN then unstake in one chained transaction"
+                      >
+                        Unstake with top-up
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1075,6 +1098,81 @@ export default function StakingPage() {
               </div>
             )}
           </section>
+          )}
+
+          {/* Unstake with top-up modal — single LP: select AYIN amount, then chain topUp + unstake */}
+          {unstakeWithTopUpModalOpen && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+              onClick={() => setUnstakeWithTopUpModalOpen(false)}
+            >
+              <div
+                className="w-full max-w-lg rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6 shadow-xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-white">Unstake with top-up</h3>
+                  <button
+                    type="button"
+                    onClick={() => setUnstakeWithTopUpModalOpen(false)}
+                    className="rounded p-1 text-[var(--muted)] hover:bg-white/10 hover:text-white"
+                    aria-label="Close"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <p className="mb-4 text-sm text-[var(--muted)]">
+                  First send AYIN to the staking contract (top-up), then unstake your LP in one chained transaction. Use this when the contract has insufficient AYIN to pay rewards.
+                </p>
+                <div className="space-y-3">
+                  <div>
+                    <label className="mb-1 block text-xs text-[var(--muted)]">Unstake amount (ALPHAYIN)</label>
+                    <input
+                      type="text"
+                      inputMode="decimal"
+                      placeholder="0.0"
+                      value={unstakeAmounts[SINGLE_STAKING_KEY] ?? ''}
+                      onChange={(e) => {
+                        const v = e.target.value.replace(/,/g, '.')
+                        if (/^[0-9.]*$/.test(v) || v === '') setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: v }))
+                      }}
+                      className="w-full rounded-lg border border-[var(--card-border)] bg-[var(--input-bg)] px-3 py-2 font-mono text-sm text-white placeholder:text-[var(--muted)]"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-xs text-[var(--muted)]">AYIN to top up (sent to contract)</label>
+                    <input
+                      type="text"
+                      inputMode="decimal"
+                      placeholder="1"
+                      value={unstakeWithTopUpAyinAmount}
+                      onChange={(e) => {
+                        const v = e.target.value.replace(/,/g, '.')
+                        if (/^[0-9.]*$/.test(v) || v === '') setUnstakeWithTopUpAyinAmount(v)
+                      }}
+                      className="w-full rounded-lg border border-[var(--card-border)] bg-[var(--input-bg)] px-3 py-2 font-mono text-sm text-white placeholder:text-[var(--muted)]"
+                    />
+                  </div>
+                  {error && <p className="text-sm text-red-400">{error}</p>}
+                  <button
+                    type="button"
+                    onClick={handleUnstakeWithTopUpSubmit}
+                    disabled={
+                      !!pending ||
+                      !parseTokenAmount(unstakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS) ||
+                      parseTokenAmount(unstakeAmounts[SINGLE_STAKING_KEY] ?? '', DECIMALS)! <= BigInt(0) ||
+                      !parseTokenAmount(unstakeWithTopUpAyinAmount, DECIMALS) ||
+                      parseTokenAmount(unstakeWithTopUpAyinAmount, DECIMALS)! <= BigInt(0)
+                    }
+                    className="w-full rounded-xl bg-[var(--accent)] py-3 font-medium text-white hover:bg-[var(--accent-hover)] disabled:opacity-50"
+                  >
+                    {pending === SINGLE_STAKING_KEY ? '…' : 'Sign & run (top-up then unstake)'}
+                  </button>
+                </div>
+              </div>
+            </div>
           )}
 
           {/* Top up AYIN modal — single LP staking */}
