@@ -291,6 +291,7 @@ function SwapContent() {
               </a>
             </div>
             <p>Users may experience high slippage depending on LP depth.</p>
+            <p className="font-semibold">It can be used to swap AYIN because there is more LP here than on Elexium.</p>
           </div>
           <div className="rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-6 shadow-xl">
             <div className="mb-4 flex items-center justify-between">
