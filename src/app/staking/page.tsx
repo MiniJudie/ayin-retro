@@ -553,26 +553,25 @@ export default function StakingPage() {
       setError('Enter unstake amount')
       return
     }
-    
     lastSingleUnstakeAmountRef.current = amount
     run(
       SINGLE_STAKING_KEY,
       () =>
-        executeUnstakeLpChainedWithAyinTopUp(
+        executeUnstakeLp(
           (effectiveSingleSigner ?? signer)!,
           SINGLE_ALPHAYIN_STAKE_ADDRESS,
           amount,
-          AYIN_TOKEN_ID
+          SINGLE_ALPHAYIN_USE_STAKING_V4
         ),
       () => {
-          sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN', value: unstakeAmounts[SINGLE_STAKING_KEY] ?? '' })
-          setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
-          fetchContractBalances()
-          if (account?.address) {
-            getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
-            getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
-          }
+        sendEvent({ category: 'stake', action: 'unstake', name: 'Single ALPHAYIN', value: unstakeAmounts[SINGLE_STAKING_KEY] ?? '' })
+        setUnstakeAmounts((p) => ({ ...p, [SINGLE_STAKING_KEY]: '' }))
+        fetchContractBalances()
+        if (account?.address) {
+          getEarnedReward(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleEarned)
+          getStakedBalance(SINGLE_ALPHAYIN_STAKE_ADDRESS, account.address, SINGLE_ALPHAYIN_USE_STAKING_V4).then(setSingleStaked)
         }
+      }
     )
   }, [unstakeAmounts, run, effectiveSingleSigner, signer, account?.address, fetchContractBalances])
 
